@@ -18,12 +18,13 @@ A universal LLM prompt-system that transforms any keyword or brief into a struct
 8. [Phase 4 — SEO & Schema.org](#8-phase-4--seo--schemaorg)
 9. [Phase 5 — Quality Gates](#9-phase-5--quality-gates)
 10. [Structure du JSON de sortie](#10-structure-du-json-de-sortie)
-11. [Protocole de chunking](#11-protocole-de-chunking)
-12. [Guide d'utilisation](#12-guide-dutilisation)
-13. [Exemples d'inputs et d'outputs attendus](#13-exemples-dinputs-et-doutputs-attendus)
-14. [Comparatif v1 → v2](#14-comparatif-v1--v2)
-15. [Limites & cas particuliers](#15-limites--cas-particuliers)
-16. [FAQ](#16-faq)
+11. [Génération automatique du sitemap.xml](#11-génération-automatique-du-sitemap.xml)  
+12. [Protocole de chunking](#12-protocole-de-chunking)
+13. [Guide d'utilisation](#13-guide-dutilisation)
+14. [Exemples d'inputs et d'outputs attendus](#14-exemples-dinputs-et-doutputs-attendus)
+15. [Comparatif v1 → v2](#15-comparatif-v1--v2)
+16. [Limites & cas particuliers](#16-limites--cas-particuliers)
+17. [FAQ](#17-faq)
 
 ---
 
@@ -582,7 +583,27 @@ Cet ordre est intentionnel : on définit les tokens de design avant de scaffolde
 
 ---
 
-## 11. Protocole de chunking
+## 11. Génération automatique du sitemap.xml
+
+Le bloc `site_structure` du blueprint contient toutes les informations nécessaires pour générer un `sitemap.xml` production-ready sans aucune saisie manuelle supplémentaire : routes, URLs canoniques, directives `robots`, `hreflang` par locale et type de page. Le script `generate-sitemap.mjs` inclus dans ce repo exploite directement ces données pour produire un fichier conforme au **Sitemaps Protocol 0.9**, le seul standard reconnu nativement par Google, Bing et l'ensemble des crawlers SEO. Il n'a aucune dépendance externe et tourne sur Node.js 18+ natif. Le script applique automatiquement une logique de filtrage (exclusion des routes `noindex`, des pages `/legal`, des routes encore en placeholder `{{}}`) et calcule les valeurs de `changefreq` et `priority` selon le type de route — la page d'accueil obtient toujours `priority: 1.0` et `changefreq: weekly`, les articles de blog `0.7 / weekly`, les pages statiques `0.8 / monthly`. Si le blueprint déclare des entrées `hreflang`, les balises `xhtml:link` correspondantes sont automatiquement insérées dans chaque entrée `<url>`. Le fichier de sortie est déposable directement dans le dossier `public/` de n'importe quel framework (Next.js, Astro, Nuxt) ou à la racine d'un hébergement statique, sans modification.
+
+```bash
+# Usage standard
+node generate-sitemap.mjs --blueprint ./blueprint.json --domain https://ton-domaine.com
+
+# Avec chemin de sortie explicite (convention Next.js / Astro)
+node generate-sitemap.mjs --blueprint ./blueprint.json \
+  --domain https://ton-domaine.com \
+  --output ./public/sitemap.xml
+```
+
+---
+
+> Ce paragraphe est volontairement dense et technique parce qu'il s'adresse à quelqu'un qui lit un README de repo GitHub — il veut savoir exactement ce que fait le script, pourquoi il n'a pas à installer de lib, et comment l'intégrer en deux commandes.
+
+---
+
+## 12. Protocole de chunking
 
 ### Pourquoi le chunking est nécessaire
 
@@ -626,7 +647,7 @@ Le champ `reconstruction_order` dans `meta.chunking` indique l'ordre de réassem
 
 ---
 
-## 12. Guide d'utilisation
+## 13. Guide d'utilisation
 
 ### Usage minimal
 
@@ -690,7 +711,7 @@ schema = blueprint["master_blueprint"]["seo_schema"]
 
 ---
 
-## 13. Exemples d'inputs et d'outputs attendus
+## 14. Exemples d'inputs et d'outputs attendus
 
 ### Exemple 1 — Input minimal
 
@@ -733,7 +754,7 @@ schema = blueprint["master_blueprint"]["seo_schema"]
 
 ---
 
-## 14. Comparatif v1 → v2
+## 15. Comparatif v1 → v2
 
 | Dimension | v1 | v2 |
 |---|---|---|
@@ -763,7 +784,7 @@ schema = blueprint["master_blueprint"]["seo_schema"]
 
 ---
 
-## 15. Limites & cas particuliers
+## 16. Limites & cas particuliers
 
 ### Ce que le générateur ne fait pas
 
@@ -784,7 +805,7 @@ schema = blueprint["master_blueprint"]["seo_schema"]
 
 ---
 
-## 16. FAQ
+## 17. FAQ
 
 **Q : Peut-on utiliser ce prompt avec n'importe quel LLM ?**
 R : Oui. Il est écrit en anglais pour maximiser la compatibilité, mais les instructions et la structure fonctionnent avec Claude, GPT-4o, Gemini Pro et Mistral Large. Les résultats varient selon la capacité du modèle à suivre des instructions complexes ; Claude et GPT-4o donnent les meilleurs résultats.
