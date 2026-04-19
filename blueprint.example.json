@@ -1,0 +1,91 @@
+{
+  "master_blueprint": {
+    "meta": {
+      "version": "2.0",
+      "brand_name": "Acme Studio",
+      "domain": "https://acme-studio.fr",
+      "locale": "fr-FR"
+    },
+    "site_structure": [
+      {
+        "route": "/",
+        "page_title": "Acme Studio — Design & Développement web",
+        "seo": {
+          "title_tag": "Acme Studio — Agence web Paris",
+          "meta_description": "Agence web spécialisée en design et développement.",
+          "canonical": "https://acme-studio.fr/",
+          "robots": "index, follow",
+          "hreflang": [
+            { "lang": "fr", "url": "https://acme-studio.fr/" },
+            { "lang": "en", "url": "https://acme-studio.fr/en/" }
+          ]
+        }
+      },
+      {
+        "route": "/services",
+        "page_title": "Nos services — Acme Studio",
+        "seo": {
+          "title_tag": "Services web & design — Acme Studio",
+          "meta_description": "Découvrez nos services : design, développement, SEO.",
+          "canonical": "https://acme-studio.fr/services",
+          "robots": "index, follow",
+          "hreflang": [
+            { "lang": "fr", "url": "https://acme-studio.fr/services" },
+            { "lang": "en", "url": "https://acme-studio.fr/en/services" }
+          ]
+        }
+      },
+      {
+        "route": "/about",
+        "page_title": "À propos — Acme Studio",
+        "seo": {
+          "title_tag": "L'équipe Acme Studio",
+          "meta_description": "Qui sommes-nous ? Notre histoire, nos valeurs.",
+          "canonical": "https://acme-studio.fr/about",
+          "robots": "index, follow",
+          "hreflang": []
+        }
+      },
+      {
+        "route": "/blog",
+        "page_title": "Blog — Acme Studio",
+        "seo": {
+          "title_tag": "Blog design & dev — Acme Studio",
+          "meta_description": "Articles, guides et ressources sur le web moderne.",
+          "canonical": "https://acme-studio.fr/blog",
+          "robots": "index, follow",
+          "hreflang": []
+        }
+      },
+      {
+        "route": "/contact",
+        "page_title": "Contact — Acme Studio",
+        "seo": {
+          "title_tag": "Nous contacter — Acme Studio",
+          "meta_description": "Parlez-nous de votre projet.",
+          "canonical": "https://acme-studio.fr/contact",
+          "robots": "index, follow",
+          "hreflang": []
+        }
+      },
+      {
+        "route": "/legal/privacy",
+        "page_title": "Politique de confidentialité",
+        "seo": {
+          "canonical": "https://acme-studio.fr/legal/privacy",
+          "robots": "noindex, follow",
+          "hreflang": []
+        }
+      },
+      {
+        "route": "/legal/terms",
+        "page_title": "Mentions légales",
+        "seo": {
+          "canonical": "https://acme-studio.fr/legal/terms",
+          "robots": "noindex, follow",
+          "hreflang": []
+        }
+      }
+    ]
+  }
+}
