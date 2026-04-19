@@ -18,7 +18,7 @@ A universal LLM prompt-system that transforms any keyword or brief into a struct
 8. [Phase 4 — SEO & Schema.org](#8-phase-4--seo--schemaorg)
 9. [Phase 5 — Quality Gates](#9-phase-5--quality-gates)
 10. [Structure du JSON de sortie](#10-structure-du-json-de-sortie)
-11. [Génération automatique du sitemap.xml](#11-génération-automatique-du-sitemap.xml)  
+11. [Génération automatique du sitemap.xml](#11-génération-automatique-du-sitemapxml)
 12. [Protocole de chunking](#12-protocole-de-chunking)
 13. [Guide d'utilisation](#13-guide-dutilisation)
 14. [Exemples d'inputs et d'outputs attendus](#14-exemples-dinputs-et-doutputs-attendus)
