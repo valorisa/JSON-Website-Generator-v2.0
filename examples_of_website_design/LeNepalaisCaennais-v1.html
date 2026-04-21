@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html lang="fr" data-page="home">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Nepali Caen | Cuisine Traditionnelle | Le Népalais Caennais</title>
+<meta name="description" content="Découvrez la cuisine traditionnelle népalaise à Caen. Le Népalais Caennais vous propose des plats authentiques préparés avec des épices himalayennes. Réservation recommandée.">
+<meta property="og:title" content="Le Népalais Caennais | Cuisine Traditionnelle Népalaise à Caen">
+<meta property="og:description" content="Expérience culinaire authentique du Népal au cœur de Caen.">
+<meta property="og:type" content="restaurant">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Restaurant",
+      "name": "Le Népalais Caennais",
+      "description": "Restaurant de cuisine traditionnelle népalaise à Caen, Calvados",
+      "url": "https://lenepalaiscaennais.fr",
+      "telephone": "+332XXXXXXXX",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 Rue de la Gare",
+        "addressLocality": "Caen",
+        "postalCode": "14000",
+        "addressCountry": "FR"
+      },
+      "servesCuisine": ["Nepali", "Himalayan"],
+      "priceRange": "€€"
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: hsl(22, 15%, 7%);
+  --bg-surface: hsl(22, 12%, 10%);
+  --bg-card: hsl(22, 10%, 13%);
+  --primary: hsl(25, 72%, 52%);
+  --primary-hover: hsl(25, 72%, 44%);
+  --gold: hsl(43, 88%, 56%);
+  --gold-dim: hsl(43, 70%, 42%);
+  --text: hsl(35, 20%, 92%);
+  --text-muted: hsl(30, 12%, 62%);
+  --text-faint: hsl(30, 8%, 42%);
+  --border: hsla(30, 20%, 70%, 0.10);
+  --border-strong: hsla(30, 20%, 70%, 0.20);
+  --ff-head: 'Playfair Display', Georgia, serif;
+  --ff-body: 'Source Sans 3', system-ui, sans-serif;
+  --r: 0px;
+  --nav-h: 72px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: var(--ff-body); border: none; background: none; color: inherit; }
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+nav.scrolled {
+  background: hsla(22, 15%, 6%, 0.96);
+  border-color: var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+  font-family: var(--ff-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.nav-logo span {
+  font-size: 0.65rem;
+  font-family: var(--ff-body);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  height: 1px;
+  width: 0;
+  background: var(--primary);
+  transition: width 0.3s var(--ease);
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--text);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-cta {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bg) !important;
+  background: var(--primary);
+  padding: 0.55rem 1.4rem;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.nav-cta:hover {
+  background: var(--primary-hover) !important;
+  transform: translateY(-1px);
+}
+
+.nav-cta::after { display: none !important; }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  z-index: 110;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--text);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* mobile nav */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.nav-mobile.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-mobile a {
+  font-family: var(--ff-head);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.nav-mobile a:hover { color: var(--text); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile { display: flex; }
+}
+
+/* ─── PAGES ─── */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ─── DECORATIVE MANDALA ─── */
+.mandala {
+  position: absolute;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: var(--nav-h) 0 0;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, hsla(25, 60%, 25%, 0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 20% 80%, hsla(43, 80%, 20%, 0.2) 0%, transparent 60%),
+    var(--bg);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+  text-align: left;
+}
+
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease) 0.2s forwards;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--primary);
+}
+
+.hero h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.35s forwards;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--primary);
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.5s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.65s forwards;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  background: var(--primary);
+  color: #fff;
+  transition: background 0.2s, transform 0.15s var(--spring);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  transition: border-color 0.2s, color 0.2s, transform 0.15s var(--spring);
+}
+
+.btn-ghost:hover {
+  border-color: var(--primary);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.hero-rating {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.8s forwards;
+}
+
+.stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; }
+
+.hero-rating-text {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+.hero-rating-text strong {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.hero-deco {
+  position: absolute;
+  right: -5%;
+  top: 10%;
+  width: 45vw;
+  max-width: 700px;
+  opacity: 0;
+  animation: fadeIn 1.2s var(--ease) 0.4s forwards;
+  pointer-events: none;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.hero-scroll::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--primary), transparent);
+}
+
+/* ─── SECTION BASE ─── */
+section {
+  position: relative;
+  z-index: 1;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.section-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--primary);
+}
+
+.section-title {
+  font-family: var(--ff-head);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--primary);
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-top: 1rem;
+  line-height: 1.7;
+}
+
+/* ─── DIVIDER ─── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+/* ─── TESTIMONIALS ─── */
+.testimonials {
+  background: var(--bg-surface);
+  overflow: hidden;
+}
+
+.testimonials-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonials-header {
+  margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5px;
+  background: var(--border);
+}
+
+.testimonial-card {
+  background: var(--bg-surface);
+  padding: 2rem;
+  transition: background 0.3s;
+}
+
+.testimonial-card:hover { background: var(--bg-card); }
+
+.testimonial-stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 3px; margin-bottom: 1rem; }
+
+.testimonial-quote {
+  font-family: var(--ff-head);
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.testimonial-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.testimonial-meta {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+/* ─── STORY ─── */
+.story {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) { .story { grid-template-columns: 1fr; gap: 3rem; } }
+
+.story-image-wrap {
+  position: relative;
+}
+
+.story-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.story-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.story-image-placeholder svg {
+  width: 60%;
+  height: 60%;
+  opacity: 0.15;
+}
+
+.story-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 110px;
+  height: 110px;
+  background: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.story-badge-num {
+  font-family: var(--ff-head);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.story-badge-text {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: hsla(0,0%,100%,0.8);
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.story-content { padding: 1rem 0; }
+
+.story-body {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-top: 1.5rem;
+}
+
+.story-body p + p { margin-top: 1rem; }
+
+.story-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.story-value-item { border-left: 2px solid var(--primary); padding-left: 1rem; }
+
+.story-value-title {
+  font-family: var(--ff-head);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.story-value-body {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+/* ─── MENU PREVIEW ─── */
+.menu-preview {
+  background: var(--bg-surface);
+}
+
+.menu-preview-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.menu-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.menu-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+
+.menu-card {
+  background: var(--bg-surface);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  cursor: default;
+}
+
+.menu-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+
+.menu-card:hover { background: var(--bg-card); }
+.menu-card:hover::before { transform: scaleX(1); }
+
+.menu-card-number {
+  font-family: var(--ff-head);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: hsla(25, 72%, 52%, 0.12);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+
+.menu-card-title {
+  font-family: var(--ff-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.menu-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.menu-card-price {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+/* ─── GALLERY ─── */
+.gallery-section { overflow: hidden; }
+
+.gallery-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-header { margin-bottom: 2.5rem; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 8px;
+}
+
+.gallery-item {
+  background: var(--bg-card);
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover::after { opacity: 0.15; }
+
+.gallery-item-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem 1rem 0.75rem;
+  background: linear-gradient(to top, hsla(22,20%,4%,0.85) 0%, transparent 100%);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: hsl(35,20%,88%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption { opacity: 1; }
+
+.gallery-item svg { opacity: 0.08; }
+
+.gi-1 { grid-column: 1 / 7; grid-row: 1; aspect-ratio: 4/3; }
+.gi-2 { grid-column: 7 / 10; grid-row: 1; aspect-ratio: 3/4; }
+.gi-3 { grid-column: 10 / 13; grid-row: 1; aspect-ratio: 1; }
+.gi-4 { grid-column: 1 / 4; grid-row: 2; aspect-ratio: 1; }
+.gi-5 { grid-column: 4 / 8; grid-row: 2; aspect-ratio: 4/3; }
+.gi-6 { grid-column: 8 / 13; grid-row: 2; aspect-ratio: 16/9; }
+
+@media (max-width: 768px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 4px; }
+  .gi-1, .gi-2, .gi-3, .gi-4, .gi-5, .gi-6 {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 1;
+  }
+}
+
+/* ─── CONVERSION CTA ─── */
+.conversion-cta {
+  background: var(--primary);
+  text-align: center;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.conversion-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.conversion-cta-inner { position: relative; max-width: 700px; margin: 0 auto; }
+
+.conversion-cta h2 {
+  font-family: var(--ff-head);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.conversion-cta p {
+  font-size: 1rem;
+  color: hsla(0,0%,100%,0.8);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  background: #fff;
+  color: var(--primary);
+  transition: transform 0.15s var(--spring), background 0.2s;
+}
+
+.btn-white:hover {
+  transform: translateY(-2px);
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* ─── MENU PAGE ─── */
+.menu-page-hero {
+  padding-top: calc(var(--nav-h) + 3rem);
+  padding-bottom: 3rem;
+  padding-left: clamp(1.5rem, 5vw, 4rem);
+  padding-right: clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+  background:
+    radial-gradient(ellipse 70% 70% at 50% 0%, hsla(25, 60%, 20%, 0.4) 0%, transparent 70%),
+    var(--bg);
+}
+
+.menu-page-hero h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.menu-page-hero p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-style: italic;
+  font-family: var(--ff-head);
+  font-weight: 400;
+}
+
+.menu-categories {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem clamp(1.5rem, 5vw, 4rem) 6rem;
+}
+
+.menu-category {
+  margin-bottom: 3.5rem;
+}
+
+.menu-category-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu-category-title {
+  font-family: var(--ff-head);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.menu-category-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.menu-items { display: flex; flex-direction: column; gap: 0; }
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: padding-left 0.2s;
+}
+
+.menu-item:hover { padding-left: 0.5rem; }
+
+.menu-item-left { flex: 1; min-width: 0; }
+
+.menu-item-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.menu-item-desc {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+.menu-item-price {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gold);
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+/* ─── ABOUT PAGE ─── */
+.about-hero {
+  padding-top: calc(var(--nav-h) + 3rem);
+  padding-bottom: 0;
+  padding-left: clamp(1.5rem, 5vw, 4rem);
+  padding-right: clamp(1.5rem, 5vw, 4rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+  min-height: 70vh;
+}
+
+@media (max-width: 768px) { .about-hero { grid-template-columns: 1fr; min-height: auto; } }
+
+.about-hero-text h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.about-hero-text h1 em {
+  font-style: italic;
+  color: var(--primary);
+}
+
+.about-hero-text p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-hero-image {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero-image svg { opacity: 0.1; width: 50%; }
+
+.about-values {
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  background: var(--bg-surface);
+}
+
+.about-values-inner { max-width: 1100px; margin: 0 auto; }
+
+.about-values-header { margin-bottom: 3rem; }
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+
+.value-card {
+  background: var(--bg-surface);
+  padding: 2.5rem 2rem;
+  transition: background 0.3s;
+}
+
+.value-card:hover { background: var(--bg-card); }
+
+.value-number {
+  font-family: var(--ff-head);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.value-title {
+  font-family: var(--ff-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.value-body {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.about-quote {
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.about-quote blockquote {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: var(--ff-head);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.about-quote blockquote::before { content: '\201C'; color: var(--primary); }
+.about-quote blockquote::after { content: '\201D'; color: var(--primary); }
+
+.about-quote cite {
+  display: block;
+  margin-top: 1.5rem;
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* ─── CONTACT PAGE ─── */
+.contact-hero {
+  padding-top: calc(var(--nav-h) + 3rem);
+  padding-bottom: 3rem;
+  padding-left: clamp(1.5rem, 5vw, 4rem);
+  padding-right: clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, hsla(25, 60%, 20%, 0.35) 0%, transparent 70%),
+    var(--bg);
+}
+
+.contact-hero h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.contact-hero p { font-size: 1rem; color: var(--text-muted); }
+
+.contact-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem clamp(1.5rem, 5vw, 4rem) 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+.contact-info-title {
+  font-family: var(--ff-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-detail {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.contact-detail-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-detail-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--primary);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-detail-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 0.2rem;
+}
+
+.contact-detail-value {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.hours-table {
+  margin-top: 2.5rem;
+}
+
+.hours-title {
+  font-family: var(--ff-head);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.hours-day { color: var(--text-muted); }
+.hours-time { color: var(--text); font-weight: 500; }
+.hours-closed { color: var(--text-faint); font-style: italic; }
+.hours-row.today .hours-day { color: var(--primary); font-weight: 600; }
+.hours-row.today .hours-time { color: var(--primary); }
+
+/* ─── FORM ─── */
+.reservation-form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.form-title {
+  font-family: var(--ff-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.form-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.form-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-size: 0.92rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  appearance: none;
+}
+
+.form-input::placeholder { color: var(--text-faint); }
+.form-input:focus { border-color: var(--primary); }
+
+select.form-input { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+
+textarea.form-input { resize: vertical; min-height: 100px; }
+
+.form-submit {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s var(--spring);
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.form-submit:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.form-success.show { display: block; }
+.form-success-icon { font-size: 2rem; margin-bottom: 1rem; }
+.form-success-title { font-family: var(--ff-head); font-size: 1.3rem; color: var(--text); margin-bottom: 0.5rem; }
+.form-success-text { font-size: 0.88rem; color: var(--text-muted); }
+
+/* ─── MAP PLACEHOLDER ─── */
+.map-section {
+  padding: 0 clamp(1.5rem, 5vw, 4rem) 6rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-placeholder-text {
+  text-align: center;
+}
+
+.map-placeholder-text p {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin-top: 0.5rem;
+}
+
+.map-placeholder-text a {
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  padding: 4rem clamp(1.5rem, 5vw, 4rem) 2rem;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+@media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } }
+
+.footer-brand-name {
+  font-family: var(--ff-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.footer-brand-sub {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.footer-brand-desc {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  line-height: 1.6;
+  max-width: 240px;
+}
+
+.footer-col-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--primary); }
+
+.footer-hours { font-size: 0.82rem; color: var(--text-faint); line-height: 2; }
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal a {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover { color: var(--primary); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ─── COOKIE BANNER ─── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-strong);
+  padding: 1.25rem clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  z-index: 200;
+  transform: translateY(0);
+  transition: transform 0.4s var(--ease);
+}
+
+.cookie-banner.hidden { transform: translateY(100%); pointer-events: none; }
+
+.cookie-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.cookie-text a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
+
+.cookie-actions { display: flex; gap: 0.75rem; }
+
+.cookie-accept {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.2rem;
+  background: var(--primary);
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.cookie-accept:hover { background: var(--primary-hover); }
+
+.cookie-decline {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.2rem;
+  border: 1px solid var(--border-strong);
+  color: var(--text-faint);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cookie-decline:hover { border-color: var(--primary); color: var(--text); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="sr-only">Aller au contenu principal</a>
+
+<!-- ─── NAV ─── -->
+<nav id="navbar" role="banner">
+  <a href="#" class="nav-logo" onclick="showPage('home'); return false;" aria-label="Le Népalais Caennais — Accueil">
+    Le Népalais Caennais
+    <span>Cuisine Himalayenne · Caen</span>
+  </a>
+
+  <ul class="nav-links" role="navigation" aria-label="Navigation principale">
+    <li><a href="#" class="nav-link active" data-page="home" onclick="showPage('home'); return false;">Accueil</a></li>
+    <li><a href="#" class="nav-link" data-page="menu" onclick="showPage('menu'); return false;">Menu</a></li>
+    <li><a href="#" class="nav-link" data-page="about" onclick="showPage('about'); return false;">Histoire</a></li>
+    <li><a href="#" class="nav-link" data-page="contact" onclick="showPage('contact'); return false;">Contact</a></li>
+    <li><a href="#" class="nav-link nav-cta" data-page="contact" onclick="showPage('contact'); return false;">Réserver</a></li>
+  </ul>
+
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+  <a href="#" onclick="showPage('home'); closeMobileNav(); return false;">Accueil</a>
+  <a href="#" onclick="showPage('menu'); closeMobileNav(); return false;">Menu</a>
+  <a href="#" onclick="showPage('about'); closeMobileNav(); return false;">Notre Histoire</a>
+  <a href="#" onclick="showPage('contact'); closeMobileNav(); return false;">Contact & Réservation</a>
+</div>
+
+<main id="main-content">
+
+<!-- ═══════════════════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Présentation principale">
+    <div class="hero-bg"></div>
+
+    <!-- Decorative mandala -->
+    <svg class="hero-deco" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="300" cy="300" r="280" stroke="hsl(25,72%,52%)" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="240" stroke="hsl(43,88%,56%)" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="200" stroke="hsl(25,72%,52%)" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="160" stroke="hsl(43,88%,56%)" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="120" stroke="hsl(25,72%,52%)" stroke-width="1"/>
+      <circle cx="300" cy="300" r="60" stroke="hsl(43,88%,56%)" stroke-width="1"/>
+      <circle cx="300" cy="300" r="8" fill="hsl(25,72%,52%)"/>
+      <!-- Spokes -->
+      <g stroke="hsl(25,72%,52%)" stroke-width="0.4">
+        <line x1="300" y1="20" x2="300" y2="580"/>
+        <line x1="20" y1="300" x2="580" y2="300"/>
+        <line x1="103" y1="103" x2="497" y2="497"/>
+        <line x1="497" y1="103" x2="103" y2="497"/>
+        <line x1="300" y1="20" x2="497" y2="300"/><line x1="497" y1="300" x2="300" y2="580"/>
+        <line x1="300" y1="580" x2="103" y2="300"/><line x1="103" y1="300" x2="300" y2="20"/>
+        <line x1="20" y1="180" x2="420" y2="580"/><line x1="180" y1="20" x2="580" y2="420"/>
+        <line x1="420" y1="20" x2="20" y2="420"/><line x1="580" y1="180" x2="180" y2="580"/>
+      </g>
+      <!-- Petal ornaments on inner circle -->
+      <g fill="hsl(25,72%,52%)" fill-opacity="0.4">
+        <circle cx="300" cy="140" r="6"/>
+        <circle cx="300" cy="460" r="6"/>
+        <circle cx="140" cy="300" r="6"/>
+        <circle cx="460" cy="300" r="6"/>
+        <circle cx="187" cy="187" r="5"/>
+        <circle cx="413" cy="413" r="5"/>
+        <circle cx="413" cy="187" r="5"/>
+        <circle cx="187" cy="413" r="5"/>
+      </g>
+      <g fill="hsl(43,88%,56%)" fill-opacity="0.6">
+        <circle cx="300" cy="180" r="4"/>
+        <circle cx="300" cy="420" r="4"/>
+        <circle cx="180" cy="300" r="4"/>
+        <circle cx="420" cy="300" r="4"/>
+        <circle cx="215" cy="215" r="3"/>
+        <circle cx="385" cy="385" r="3"/>
+        <circle cx="385" cy="215" r="3"/>
+        <circle cx="215" cy="385" r="3"/>
+      </g>
+    </svg>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Bienvenue à Caen</p>
+      <h1>L'Authenticité<br><em>Himalayenne</em><br>à Caen</h1>
+      <p class="hero-sub">Cuisine traditionnelle népalaise, préparée avec des épices rares et des recettes ancestrales transmises de génération en génération.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary" onclick="showPage('contact'); return false;">
+          Réserver une table
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+        <a href="#" class="btn-ghost" onclick="showPage('menu'); return false;">Découvrir notre menu</a>
+      </div>
+      <div class="hero-rating">
+        <div class="stars" aria-label="4.8 étoiles sur 5">★★★★★</div>
+        <p class="hero-rating-text"><strong>4.8/5</strong> sur Google · Recommandé par les gastronomes caennais</p>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">Découvrir</div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials reveal" aria-labelledby="testimonials-heading">
+    <div class="testimonials-inner">
+      <div class="testimonials-header">
+        <p class="section-eyebrow">Témoignages</p>
+        <h2 class="section-title" id="testimonials-heading">Ce que disent<br>nos <em>convives</em></h2>
+      </div>
+      <div class="testimonials-grid" role="list">
+        <article class="testimonial-card reveal reveal-delay-1" role="listitem">
+          <div class="testimonial-stars" aria-label="5 étoiles">★★★★★</div>
+          <blockquote class="testimonial-quote">"Une expérience culinaire extraordinaire. Les momos sont absolument divins — jamais goûté quelque chose d'aussi authentique en dehors du Népal. L'accueil chaleureux nous a transportés."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">MC</div>
+            <div>
+              <p class="testimonial-name">Marie-Claire D.</p>
+              <p class="testimonial-meta">Habitante de Caen · Dal Bhat</p>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal reveal-delay-2" role="listitem">
+          <div class="testimonial-stars" aria-label="5 étoiles">★★★★★</div>
+          <blockquote class="testimonial-quote">"Le Thali complet est une révélation. Chaque saveur raconte une histoire. Un endroit qui mérite absolument le détour — notre restaurant préféré à Caen depuis l'ouverture."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">JL</div>
+            <div>
+              <p class="testimonial-name">Jean-Luc M.</p>
+              <p class="testimonial-meta">Gastronome · Thali complet</p>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal reveal-delay-3" role="listitem">
+          <div class="testimonial-stars" aria-label="5 étoiles">★★★★★</div>
+          <blockquote class="testimonial-quote">"Ambiance feutrée, service attentionné, et une cuisine d'une authenticité remarquable. Le Masala Chai en fin de repas est un pur bonheur. On revient toujours avec plaisir."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">SB</div>
+            <div>
+              <p class="testimonial-name">Sophie B.</p>
+              <p class="testimonial-meta">Blogueuse culinaire · Normandie</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section aria-labelledby="story-heading">
+    <div class="story reveal">
+      <div class="story-image-wrap">
+        <div class="story-image-placeholder" role="img" aria-label="Chef préparant un plat traditionnel népalais">
+          <img
+            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80&fit=crop"
+            alt="Chef préparant avec soin un plat népalais traditionnel, épices et ingrédients frais"
+            loading="lazy"
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+          >
+        </div>
+        <div class="story-badge" aria-label="Depuis 2018">
+          <span class="story-badge-num">7+</span>
+          <span class="story-badge-text">Années de passion</span>
+        </div>
+      </div>
+      <div class="story-content">
+        <p class="section-eyebrow">Notre Histoire</p>
+        <h2 class="section-title" id="story-heading">Une histoire<br>de <em>saveurs</em></h2>
+        <div class="story-body">
+          <p>Né d'une passion profonde pour les traditions culinaires de l'Himalaya, Le Népalais Caennais a ouvert ses portes avec une seule mission : apporter l'authenticité des saveurs népalaises au cœur de la Normandie.</p>
+          <p>Chaque plat est une invitation au voyage. Nos épices sont soigneusement sélectionnées, nos recettes fidèlement transmises par des générations de cuisiniers népalais, et notre hospitalité reflète le <em>nepali aatithya</em> — l'art de l'accueil himalayen.</p>
+        </div>
+        <div class="story-values">
+          <div class="story-value-item">
+            <p class="story-value-title">Authenticité</p>
+            <p class="story-value-body">Recettes ancestrales préservées avec intégrité</p>
+          </div>
+          <div class="story-value-item">
+            <p class="story-value-title">Qualité</p>
+            <p class="story-value-body">Ingrédients sélectionnés avec soin</p>
+          </div>
+          <div class="story-value-item">
+            <p class="story-value-title">Tradition</p>
+            <p class="story-value-body">Techniques transmises de génération en génération</p>
+          </div>
+          <div class="story-value-item">
+            <p class="story-value-title">Accueil</p>
+            <p class="story-value-body">L'hospitalité himalayenne à chaque table</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU PREVIEW -->
+  <section class="menu-preview" aria-labelledby="menu-preview-heading">
+    <div class="menu-preview-inner">
+      <div class="menu-preview-header reveal">
+        <div>
+          <p class="section-eyebrow">Nos Spécialités</p>
+          <h2 class="section-title" id="menu-preview-heading">Les plats<br><em>emblématiques</em></h2>
+        </div>
+        <a href="#" class="btn-ghost" onclick="showPage('menu'); return false;">
+          Voir le menu complet
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="menu-cards" role="list">
+        <article class="menu-card reveal reveal-delay-1" role="listitem">
+          <div class="menu-card-number" aria-hidden="true">01</div>
+          <h3 class="menu-card-title">Dal Bhat</h3>
+          <p class="menu-card-desc">Notre plat signature — riz basmati, lentilles épicées, légumes de saison et achar traditionnel</p>
+          <p class="menu-card-price">18 – 25 €</p>
+        </article>
+        <article class="menu-card reveal reveal-delay-2" role="listitem">
+          <div class="menu-card-number" aria-hidden="true">02</div>
+          <h3 class="menu-card-title">Momos</h3>
+          <p class="menu-card-desc">Raviolis vapeur traditionnels, farce viande ou légumes, sauce sésame-tomate maison</p>
+          <p class="menu-card-price">12 – 15 €</p>
+        </article>
+        <article class="menu-card reveal reveal-delay-3" role="listitem">
+          <div class="menu-card-number" aria-hidden="true">03</div>
+          <h3 class="menu-card-title">Thali</h3>
+          <p class="menu-card-desc">Plateau complet avec dal, riz, curry, légumes sautés, pain Roti et dessert kheer</p>
+          <p class="menu-card-price">22 – 28 €</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" aria-labelledby="gallery-heading">
+    <div class="gallery-inner">
+      <div class="gallery-header reveal">
+        <p class="section-eyebrow">Ambiance</p>
+        <h2 class="section-title" id="gallery-heading"><em>L'expérience</em><br>en images</h2>
+      </div>
+      <div class="gallery-grid" role="list" aria-label="Galerie photos du restaurant">
+
+        <div class="gallery-item gi-1 reveal" role="listitem" aria-label="Salle principale du restaurant — ambiance chaleureuse">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1517244683847-7456b63c5969?w=1200&q=80&fit=crop"
+              alt="Salle principale du restaurant, éclairage chaud et tables dressées"
+              loading="lazy"
+            >
+            <p class="gallery-caption">L'ambiance du restaurant</p>
+          </div>
+        </div>
+
+        <div class="gallery-item gi-2 reveal reveal-delay-1" role="listitem" aria-label="Momos traditionnels vapeur">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=800&q=80&fit=crop"
+              alt="Momos traditionnels népalais vapeur servis avec sauce achar"
+              loading="lazy"
+            >
+            <p class="gallery-caption">Momos maison</p>
+          </div>
+        </div>
+
+        <div class="gallery-item gi-3 reveal reveal-delay-2" role="listitem" aria-label="Épices himalayennes de qualité">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&q=80&fit=crop"
+              alt="Épices himalayennes — curcuma, cardamome, gingembre"
+              loading="lazy"
+            >
+            <p class="gallery-caption">Épices d'exception</p>
+          </div>
+        </div>
+
+        <div class="gallery-item gi-4 reveal reveal-delay-1" role="listitem" aria-label="Table dressée pour le service">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&fit=crop"
+              alt="Table dressée pour le service du soir, atmosphère intime"
+              loading="lazy"
+            >
+            <p class="gallery-caption">Tables dressées</p>
+          </div>
+        </div>
+
+        <div class="gallery-item gi-5 reveal reveal-delay-2" role="listitem" aria-label="Dal Bhat traditionnel — plat signature">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1000&q=80&fit=crop"
+              alt="Dal Bhat traditionnel — riz, lentilles, légumes et achar, plat signature"
+              loading="lazy"
+            >
+            <p class="gallery-caption">Dal Bhat — plat signature</p>
+          </div>
+        </div>
+
+        <div class="gallery-item gi-6 reveal reveal-delay-3" role="listitem" aria-label="Préparation des plats en cuisine">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=80&fit=crop"
+              alt="Masala chai et plats servis — hospitalité himalayenne"
+              loading="lazy"
+            >
+            <p class="gallery-caption">Hospitalité himalayenne</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONVERSION CTA -->
+  <section class="conversion-cta" aria-labelledby="cta-heading">
+    <div class="conversion-cta-inner reveal">
+      <h2 id="cta-heading">Réservez<br>Votre Table</h2>
+      <p>Laissez-vous emporter par les saveurs de l'Himalaya. Chaque repas est une invitation au voyage — réservez dès aujourd'hui pour une expérience inoubliable.</p>
+      <a href="#" class="btn-white" onclick="showPage('contact'); return false;">
+        Réserver maintenant
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+
+<!-- ═══════════════════════════════════════════════
+     MENU PAGE
+═══════════════════════════════════════════════ -->
+<div class="page" id="page-menu">
+
+  <header class="menu-page-hero">
+    <p class="section-eyebrow" style="justify-content:center; margin-bottom:1rem;">Notre Carte</p>
+    <h1>Notre Menu</h1>
+    <p>Des recettes ancestrales, des ingrédients d'exception</p>
+  </header>
+
+  <div class="menu-categories" role="main">
+
+    <div class="menu-category reveal">
+      <div class="menu-category-header">
+        <div class="menu-category-icon" aria-hidden="true">E</div>
+        <h2 class="menu-category-title">Entrées</h2>
+      </div>
+      <div class="menu-items" role="list">
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Momos</p>
+            <p class="menu-item-desc">Raviolis vapeur traditionnels, farce viande ou légumes, sauce sésame-tomate</p>
+          </div>
+          <p class="menu-item-price">12 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Samosa</p>
+            <p class="menu-item-desc">Beignets croustillants épicés, farce pommes de terre-épices, chutney coriandre</p>
+          </div>
+          <p class="menu-item-price">9 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Sel Roti</p>
+            <p class="menu-item-desc">Pain beignet traditionnel népalais, croustillant à l'extérieur, moelleux à l'intérieur</p>
+          </div>
+          <p class="menu-item-price">8 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Soupe Thukpa</p>
+            <p class="menu-item-desc">Soupe de nouilles himalayenne, bouillon épicé, légumes et herbes fraîches</p>
+          </div>
+          <p class="menu-item-price">11 €</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category reveal">
+      <div class="menu-category-header">
+        <div class="menu-category-icon" aria-hidden="true">P</div>
+        <h2 class="menu-category-title">Plats Principaux</h2>
+      </div>
+      <div class="menu-items" role="list">
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Dal Bhat <span style="font-size:0.7rem; color:var(--primary); margin-left:0.5rem; font-weight:600; letter-spacing:0.08em;">SIGNATURE</span></p>
+            <p class="menu-item-desc">Riz basmati, lentilles dorées, légumes de saison, achar maison, accompagnements</p>
+          </div>
+          <p class="menu-item-price">18 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Thali Complet</p>
+            <p class="menu-item-desc">Plateau traditionnel : dal, riz, curry agneau, légumes sautés, roti, pickles, kheer</p>
+          </div>
+          <p class="menu-item-price">25 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Chicken Curry Népalais</p>
+            <p class="menu-item-desc">Curry de poulet mijoté aux épices himalayennes, servi avec riz basmati parfumé</p>
+          </div>
+          <p class="menu-item-price">22 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Vegetable Thali <span style="font-size:0.7rem; color:hsl(145,45%,50%); margin-left:0.5rem; font-weight:600; letter-spacing:0.06em;">VÉG.</span></p>
+            <p class="menu-item-desc">Plateau végétarien complet avec dhal, légumes de saison, raïta, roti et dessert</p>
+          </div>
+          <p class="menu-item-price">18 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Lamb Rara</p>
+            <p class="menu-item-desc">Agneau mijoté en sauce épaisse aux épices, spécialité des montagnes, avec riz</p>
+          </div>
+          <p class="menu-item-price">26 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Kwati</p>
+            <p class="menu-item-desc">Soupe festive aux neuf légumineuses, tradition des célébrations népalaises</p>
+          </div>
+          <p class="menu-item-price">16 €</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category reveal">
+      <div class="menu-category-header">
+        <div class="menu-category-icon" aria-hidden="true">D</div>
+        <h2 class="menu-category-title">Desserts</h2>
+      </div>
+      <div class="menu-items" role="list">
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Kheer</p>
+            <p class="menu-item-desc">Riz au lait traditionnel, parfumé à la cardamome, pistaches et eau de rose</p>
+          </div>
+          <p class="menu-item-price">8 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Mango Lassi</p>
+            <p class="menu-item-desc">Boisson yaourt à la mangue fraîche, légèrement sucrée et rafraîchissante</p>
+          </div>
+          <p class="menu-item-price">6 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Yomari</p>
+            <p class="menu-item-desc">Boulettes de farine de riz fourrées au miel et sésame, spécialité néwar</p>
+          </div>
+          <p class="menu-item-price">9 €</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category reveal">
+      <div class="menu-category-header">
+        <div class="menu-category-icon" aria-hidden="true">B</div>
+        <h2 class="menu-category-title">Boissons</h2>
+      </div>
+      <div class="menu-items" role="list">
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Masala Chai</p>
+            <p class="menu-item-desc">Thé épicé traditionnel, gingembre, cardamome, cannelle, lait entier</p>
+          </div>
+          <p class="menu-item-price">5 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Lassi Nature ou Sucré</p>
+            <p class="menu-item-desc">Boisson yaourt battu, nature ou sucré, légère et désaltérante</p>
+          </div>
+          <p class="menu-item-price">6 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Tongba</p>
+            <p class="menu-item-desc">Bière de millet fermenté himalayenne chaude, tradition des hauts plateaux</p>
+          </div>
+          <p class="menu-item-price">8 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Eau, Sodas, Jus</p>
+            <p class="menu-item-desc">Sélection de boissons sans alcool</p>
+          </div>
+          <p class="menu-item-price">3 – 5 €</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; padding: 0 2rem 6rem;">
+    <a href="#" class="btn-primary" onclick="showPage('contact'); return false;">
+      Réserver une table
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+
+</div><!-- /page-menu -->
+
+
+<!-- ═══════════════════════════════════════════════
+     ABOUT PAGE
+═══════════════════════════════════════════════ -->
+<div class="page" id="page-about">
+
+  <div class="about-hero">
+    <div class="about-hero-text">
+      <p class="section-eyebrow" style="margin-bottom:1.25rem;">Notre Histoire</p>
+      <h1>L'Authenticité<br>au Service de<br><em>Votre Palais</em></h1>
+      <p>Né d'un rêve himalyen et d'une passion pour les traditions culinaires du Népal, Le Népalais Caennais est bien plus qu'un restaurant — c'est un voyage sensoriel au cœur des montagnes.</p>
+      <p>Fondé par une famille amoureuse des saveurs de Katmandou et de Pokhara, nous avons apporté à Caen les recettes ancestrales, les épices rares et surtout, l'hospitalité chaleureuse qui caractérise le peuple népalais.</p>
+      <p>Chaque plat que nous servons est une ode à notre héritage. Nos épices voyagent directement des marchés de Thamel. Nos techniques de cuisson sont transmises de maître à élève depuis des générations. Notre engagement : ne jamais transiger sur l'authenticité.</p>
+    </div>
+    <div class="about-hero-image" role="img" aria-label="L'équipe du Népalais Caennais en cuisine">
+      <img
+        src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=900&q=80&fit=crop"
+        alt="L'équipe du Népalais Caennais — passion et transmission de la cuisine himalayenne"
+        loading="lazy"
+      >
+    </div>
+  </div>
+
+  <section class="about-values" aria-labelledby="values-heading">
+    <div class="about-values-inner">
+      <div class="about-values-header reveal">
+        <p class="section-eyebrow">Nos Engagements</p>
+        <h2 class="section-title" id="values-heading">Ce qui nous<br><em>définit</em></h2>
+      </div>
+      <div class="values-grid" role="list">
+        <article class="value-card reveal reveal-delay-1" role="listitem">
+          <p class="value-number">01</p>
+          <h3 class="value-title">Authenticité</h3>
+          <p class="value-body">Nous ne faisons aucun compromis sur nos recettes. Chaque préparation suit les traditions ancestrales du Népal, des épices importées directement aux techniques de cuisson transmises de génération en génération.</p>
+        </article>
+        <article class="value-card reveal reveal-delay-2" role="listitem">
+          <p class="value-number">02</p>
+          <h3 class="value-title">Qualité</h3>
+          <p class="value-body">Nos ingrédients sont soigneusement sélectionnés : épices rares de l'Himalaya, légumes frais de producteurs locaux normands, et viandes de qualité supérieure. Le meilleur des deux mondes.</p>
+        </article>
+        <article class="value-card reveal reveal-delay-3" role="listitem">
+          <p class="value-number">03</p>
+          <h3 class="value-title">Accueil</h3>
+          <p class="value-body">Le <em>Nepali Aatithya</em> — l'art de l'hospitalité himalayenne — est au cœur de notre service. Chez nous, chaque convive est traité comme un invité d'honneur, avec chaleur et attention.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-quote reveal" aria-label="Citation du fondateur">
+    <blockquote>
+      La cuisine népalaise n'est pas seulement une nourriture pour le corps — c'est une conversation entre les générations, une célébration de la terre et une expression de notre âme.
+    </blockquote>
+    <cite>— Le fondateur, Le Népalais Caennais</cite>
+  </section>
+
+  <div style="text-align:center; padding: 0 2rem 6rem;">
+    <a href="#" class="btn-primary" onclick="showPage('contact'); return false;">
+      Venez nous rencontrer
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+
+</div><!-- /page-about -->
+
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT PAGE
+═══════════════════════════════════════════════ -->
+<div class="page" id="page-contact">
+
+  <header class="contact-hero">
+    <p class="section-eyebrow" style="justify-content:center; margin-bottom:1rem;">Nous Trouver</p>
+    <h1>Contact &<br>Réservation</h1>
+    <p>Nous serons ravis de vous accueillir autour d'une table</p>
+  </header>
+
+  <div class="contact-grid">
+    <!-- Info -->
+    <div>
+      <p class="contact-info-title">Nos Coordonnées</p>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <p class="contact-detail-label">Adresse</p>
+          <p class="contact-detail-value">12 Rue de la Gare<br>14000 Caen, Calvados</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.82 12 19.79 19.79 0 01.77 3.38 2 2 0 012.75 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.4a16 16 0 006.69 6.69l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <p class="contact-detail-label">Téléphone</p>
+          <p class="contact-detail-value">02 XX XX XX XX</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <p class="contact-detail-label">Email</p>
+          <p class="contact-detail-value">contact@lenepalaiscaennais.fr</p>
+        </div>
+      </div>
+
+      <div class="hours-table">
+        <p class="hours-title">Horaires d'ouverture</p>
+        <div id="hours-rows"></div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div id="reservation-anchor">
+      <div class="form-success" id="formSuccess">
+        <p class="form-success-icon">✓</p>
+        <p class="form-success-title">Demande envoyée !</p>
+        <p class="form-success-text">Nous vous confirmerons votre réservation dans les plus brefs délais. À très bientôt au Népalais Caennais !</p>
+      </div>
+      <form class="reservation-form" id="reservationForm" novalidate aria-label="Formulaire de réservation">
+        <p class="form-title">Réserver une Table</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-name">Nom complet *</label>
+            <input class="form-input" type="text" id="res-name" name="name" placeholder="Jean Dupont" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-email">Email *</label>
+            <input class="form-input" type="email" id="res-email" name="email" placeholder="jean@exemple.fr" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-phone">Téléphone</label>
+            <input class="form-input" type="tel" id="res-phone" name="phone" placeholder="06 XX XX XX XX" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-guests">Nombre de couverts *</label>
+            <select class="form-input" id="res-guests" name="guests" required>
+              <option value="">Sélectionner…</option>
+              <option>1 personne</option>
+              <option>2 personnes</option>
+              <option>3 personnes</option>
+              <option>4 personnes</option>
+              <option>5 personnes</option>
+              <option>6 personnes</option>
+              <option>7+ personnes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-date">Date souhaitée *</label>
+            <input class="form-input" type="date" id="res-date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-time">Service *</label>
+            <select class="form-input" id="res-time" name="time" required>
+              <option value="">Sélectionner…</option>
+              <optgroup label="Déjeuner">
+                <option>12:00</option>
+                <option>12:30</option>
+                <option>13:00</option>
+                <option>13:30</option>
+              </optgroup>
+              <optgroup label="Dîner">
+                <option>19:00</option>
+                <option>19:30</option>
+                <option>20:00</option>
+                <option>20:30</option>
+                <option>21:00</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="res-notes">Remarques ou demandes spéciales</label>
+          <textarea class="form-input" id="res-notes" name="notes" placeholder="Allergies, anniversaire, régime particulier…"></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">
+          Envoyer ma demande de réservation
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="map-section">
+    <div class="map-container" role="img" aria-label="Carte de localisation — 12 Rue de la Gare, 14000 Caen">
+      <div class="map-placeholder-text">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="hsl(25,72%,52%)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        <p>12 Rue de la Gare, 14000 Caen</p>
+        <p style="margin-top:0.5rem;">
+          <a href="https://maps.google.com?q=12+Rue+de+la+Gare+14000+Caen" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-contact -->
+
+</main><!-- /main-content -->
+
+
+<!-- ─── FOOTER ─── -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand-name">Le Népalais Caennais</p>
+        <p class="footer-brand-sub">Cuisine Himalayenne</p>
+        <p class="footer-brand-desc">Cuisine traditionnelle népalaise au cœur de Caen depuis 2018. Une expérience authentique de l'Himalaya.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="#" onclick="showPage('home'); return false;">Accueil</a></li>
+          <li><a href="#" onclick="showPage('menu'); return false;">Notre Menu</a></li>
+          <li><a href="#" onclick="showPage('about'); return false;">Notre Histoire</a></li>
+          <li><a href="#" onclick="showPage('contact'); return false;">Contact</a></li>
+          <li><a href="#" onclick="showPage('contact'); return false;">Réservation</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <ul class="footer-links">
+          <li><a>12 Rue de la Gare, Caen</a></li>
+          <li><a>02 XX XX XX XX</a></li>
+          <li><a>contact@lenepalaiscaennais.fr</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Horaires</p>
+        <div class="footer-hours">
+          <p>Mar – Jeu : 12h–14h / 19h–22h</p>
+          <p>Ven – Sam : 12h–14h / 19h–23h</p>
+          <p>Dimanche : 12h–14h / 19h–21h</p>
+          <p style="color:var(--text-faint);">Lundi : Fermé</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 Le Népalais Caennais. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── COOKIE BANNER ─── -->
+<div class="cookie-banner" id="cookieBanner" role="region" aria-label="Consentement aux cookies">
+  <p class="cookie-text">
+    Ce site utilise des cookies pour améliorer votre expérience. En continuant votre navigation, vous acceptez notre <a href="#">politique de confidentialité</a>.
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-decline" onclick="dismissCookieBanner()">Refuser</button>
+    <button class="cookie-accept" onclick="dismissCookieBanner()">Accepter</button>
+  </div>
+</div>
+
+<script>
+// ─── PAGE NAVIGATION ───
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const page = document.getElementById('page-' + pageId);
+  if (page) { page.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.querySelectorAll('.nav-link').forEach(a => {
+    a.classList.toggle('active', a.dataset.page === pageId);
+  });
+  document.documentElement.setAttribute('data-page', pageId);
+  initReveal();
+}
+
+// ─── NAVBAR SCROLL ───
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ─── MOBILE NAV ───
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+let mobileOpen = false;
+
+hamburger.addEventListener('click', () => {
+  mobileOpen = !mobileOpen;
+  mobileNav.classList.toggle('open', mobileOpen);
+  hamburger.setAttribute('aria-expanded', mobileOpen);
+  const spans = hamburger.querySelectorAll('span');
+  if (mobileOpen) {
+    spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
+    spans[1].style.opacity = '0';
+    spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
+  } else {
+    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+  }
+});
+
+function closeMobileNav() {
+  mobileOpen = false;
+  mobileNav.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+}
+
+// ─── SCROLL REVEAL ───
+function initReveal() {
+  const els = document.querySelectorAll('.page.active .reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(e => e.classList.add('visible'));
+    return;
+  }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(e => obs.observe(e));
+}
+setTimeout(initReveal, 100);
+
+// ─── HOURS ───
+const scheduleData = {
+  'Lundi': null,
+  'Mardi': ['12:00–14:00', '19:00–22:00'],
+  'Mercredi': ['12:00–14:00', '19:00–22:00'],
+  'Jeudi': ['12:00–14:00', '19:00–22:00'],
+  'Vendredi': ['12:00–14:00', '19:00–23:00'],
+  'Samedi': ['12:00–14:00', '19:00–23:00'],
+  'Dimanche': ['12:00–14:00', '19:00–21:00']
+};
+const dayIdxFr = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const today = dayIdxFr[new Date().getDay()];
+const hoursRows = document.getElementById('hours-rows');
+if (hoursRows) {
+  Object.entries(scheduleData).forEach(([day, hours]) => {
+    const row = document.createElement('div');
+    row.className = 'hours-row' + (day === today ? ' today' : '');
+    if (hours) {
+      row.innerHTML = `<span class="hours-day">${day}</span><span class="hours-time">${hours.join(' · ')}</span>`;
+    } else {
+      row.innerHTML = `<span class="hours-day">${day}</span><span class="hours-closed">Fermé</span>`;
+    }
+    hoursRows.appendChild(row);
+  });
+}
+
+// ─── FORM ───
+const form = document.getElementById('reservationForm');
+const formSuccess = document.getElementById('formSuccess');
+if (form) {
+  const dateInput = document.getElementById('res-date');
+  if (dateInput) {
+    const now = new Date();
+    now.setDate(now.getDate() + 1);
+    dateInput.min = now.toISOString().split('T')[0];
+  }
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(el => {
+      if (!el.value.trim()) { el.style.borderColor = 'hsl(0,60%,50%)'; valid = false; }
+      else { el.style.borderColor = ''; }
+    });
+    if (!valid) return;
+    form.style.display = 'none';
+    formSuccess.classList.add('show');
+  });
+  form.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('input', () => { input.style.borderColor = ''; });
+  });
+}
+
+// ─── COOKIE BANNER ───
+const cookieBanner = document.getElementById('cookieBanner');
+if (localStorage.getItem('cookieConsent')) {
+  cookieBanner.classList.add('hidden');
+}
+function dismissCookieBanner() {
+  localStorage.setItem('cookieConsent', 'true');
+  cookieBanner.classList.add('hidden');
+}
+
+// ─── KEYBOARD ESC for mobile nav ───
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && mobileOpen) closeMobileNav();
+});
+</script>
+</body>
+</html>
