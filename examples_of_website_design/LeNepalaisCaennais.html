@@ -589,6 +589,13 @@ section {
   position: relative;
 }
 
+.story-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .story-image-placeholder svg {
   width: 60%;
   height: 60%;
@@ -783,7 +790,37 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem 1rem 0.75rem;
+  background: linear-gradient(to top, hsla(22,20%,4%,0.85) 0%, transparent 100%);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: hsl(35,20%,88%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption { opacity: 1; }
 
 .gallery-item svg { opacity: 0.08; }
 
@@ -1012,6 +1049,12 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-hero-image svg { opacity: 0.1; width: 50%; }
@@ -1525,6 +1568,239 @@ footer {
     transition-duration: 0ms !important;
   }
 }
+
+/* ════════════════════════════════════════
+   AMÉLIORATION 1 — VIDEO HERO + PARALLAX
+════════════════════════════════════════ */
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+.hero-video.loaded { opacity: 1; }
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, hsla(22,30%,4%,0.88) 0%, hsla(20,25%,8%,0.55) 55%, hsla(22,30%,4%,0.82) 100%);
+  z-index: 1;
+}
+.hero-video-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, transparent 30%, hsla(22,30%,4%,0.65) 100%);
+}
+
+/* Cinematic animated fallback — visible before/if video loads */
+@keyframes heroGlow {
+  0%   { background: radial-gradient(ellipse 90% 65% at 62% 38%, hsl(25,55%,17%) 0%, hsl(22,15%,6%) 65%); }
+  33%  { background: radial-gradient(ellipse 75% 80% at 55% 50%, hsl(32,48%,15%) 0%, hsl(22,15%,6%) 60%); }
+  66%  { background: radial-gradient(ellipse 100% 55% at 66% 32%, hsl(18,58%,13%) 0%, hsl(22,15%,6%) 72%); }
+  100% { background: radial-gradient(ellipse 82% 72% at 50% 46%, hsl(38,42%,17%) 0%, hsl(22,15%,6%) 60%); }
+}
+.hero-bg { animation: heroGlow 9s ease-in-out infinite alternate; }
+
+/* Parallax targets */
+.hero-deco   { will-change: transform; transition: transform 0.05s linear; }
+.hero-content { will-change: transform; transition: transform 0.05s linear; }
+
+/* ════════════════════════════════════════
+   AMÉLIORATION 2 — STICKY MOBILE CTA
+════════════════════════════════════════ */
+.sticky-cta-mobile {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 95;
+  padding: 0.75rem 1.25rem;
+  background: hsla(22, 18%, 6%, 0.97);
+  border-top: 1px solid var(--border-strong);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transform: translateY(0);
+  transition: transform 0.35s var(--ease);
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.sticky-cta-mobile.hidden { transform: translateY(110%); }
+@media (max-width: 768px) { .sticky-cta-mobile { display: flex; } }
+
+.sticky-cta-info { display: flex; flex-direction: column; gap: 0.15rem; flex: 1; min-width: 0; }
+
+.sticky-cta-status {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.sticky-cta-status::before {
+  content: '';
+  display: block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.sticky-cta-status.open { color: hsl(145, 55%, 50%); }
+.sticky-cta-status.open::before { background: hsl(145, 55%, 50%); box-shadow: 0 0 6px hsl(145,55%,50%); }
+.sticky-cta-status.closed { color: var(--text-faint); }
+.sticky-cta-status.closed::before { background: var(--text-faint); }
+
+.sticky-cta-hours { font-size: 0.68rem; color: var(--text-faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.sticky-cta-actions { display: flex; gap: 0.5rem; flex-shrink: 0; }
+
+.sticky-cta-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.sticky-cta-phone:hover { border-color: var(--primary); color: var(--text); }
+.sticky-cta-phone svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+.sticky-cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.1rem;
+  background: var(--primary);
+  color: #fff;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s var(--spring);
+  flex-shrink: 0;
+}
+.sticky-cta-btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.sticky-cta-btn svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ════════════════════════════════════════
+   AMÉLIORATION 3 — THEFORK + FORMSPREE
+════════════════════════════════════════ */
+.booking-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+@media (max-width: 480px) { .booking-options { grid-template-columns: 1fr; } }
+
+.booking-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s var(--spring);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.booking-option::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.booking-option:hover { border-color: var(--primary); transform: translateY(-2px); }
+.booking-option:hover::before { opacity: 0.04; }
+
+.booking-option.featured { border-color: hsl(150,55%,42%); }
+.booking-option.featured::before { background: hsl(150,55%,42%); }
+.booking-option.featured:hover { border-color: hsl(150,55%,35%); }
+
+.booking-option-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.booking-option.featured .booking-option-icon { background: hsl(150,55%,42%); color: #fff; }
+.booking-option:not(.featured) .booking-option-icon { background: var(--primary); color: #fff; font-style: italic; }
+
+.booking-option-text { position: relative; z-index: 1; }
+.booking-option-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+}
+.booking-option-sub { font-size: 0.7rem; color: var(--text-faint); }
+
+.booking-option-arrow {
+  margin-left: auto;
+  color: var(--text-faint);
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s, color 0.2s;
+}
+.booking-option:hover .booking-option-arrow { transform: translateX(3px); color: var(--primary); }
+.booking-option.featured:hover .booking-option-arrow { color: hsl(150,55%,42%); }
+
+.booking-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.booking-divider::before, .booking-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.booking-divider span {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+/* Page transition overlay */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--primary);
+  z-index: 300;
+  clip-path: circle(0% at 50% 50%);
+  pointer-events: none;
+  transition: clip-path 0.5s var(--ease);
+}
+.page-transition-overlay.active { clip-path: circle(150% at 50% 50%); pointer-events: all; }
 </style>
 </head>
 <body>
@@ -1568,7 +1844,29 @@ footer {
 
   <!-- HERO -->
   <section class="hero" aria-label="Présentation principale">
-    <div class="hero-bg"></div>
+    <div class="hero-bg" id="heroBg"></div>
+
+    <!-- Video cinématique en arrière-plan -->
+    <div class="hero-video-wrap" aria-hidden="true">
+      <video
+        class="hero-video"
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      >
+        <!-- Vidéo principale : cuisine népalaise / épices -->
+        <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4" type="video/mp4">
+        <!-- Fallback : ambiance cuisine -->
+        <source src="https://videos.pexels.com/video-files/4194752/4194752-hd_1920_1080_25fps.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <!-- Page transition overlay -->
+    <div class="page-transition-overlay" id="pageTransition"></div>
 
     <!-- Decorative mandala -->
     <svg class="hero-deco" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1683,16 +1981,12 @@ footer {
     <div class="story reveal">
       <div class="story-image-wrap">
         <div class="story-image-placeholder" role="img" aria-label="Chef préparant un plat traditionnel népalais">
-          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="100" cy="100" r="80" stroke="hsl(25,72%,52%)" stroke-width="1"/>
-            <circle cx="100" cy="100" r="55" stroke="hsl(43,88%,56%)" stroke-width="0.8"/>
-            <circle cx="100" cy="100" r="30" stroke="hsl(25,72%,52%)" stroke-width="1"/>
-            <circle cx="100" cy="100" r="8" fill="hsl(43,88%,56%)"/>
-            <line x1="20" y1="100" x2="180" y2="100" stroke="hsl(25,72%,52%)" stroke-width="0.5"/>
-            <line x1="100" y1="20" x2="100" y2="180" stroke="hsl(25,72%,52%)" stroke-width="0.5"/>
-            <line x1="43" y1="43" x2="157" y2="157" stroke="hsl(25,72%,52%)" stroke-width="0.4"/>
-            <line x1="157" y1="43" x2="43" y2="157" stroke="hsl(25,72%,52%)" stroke-width="0.4"/>
-          </svg>
+          <img
+            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80&fit=crop"
+            alt="Chef préparant avec soin un plat népalais traditionnel, épices et ingrédients frais"
+            loading="lazy"
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+          >
         </div>
         <div class="story-badge" aria-label="Depuis 2018">
           <span class="story-badge-num">7+</span>
@@ -1772,63 +2066,73 @@ footer {
         <h2 class="section-title" id="gallery-heading"><em>L'expérience</em><br>en images</h2>
       </div>
       <div class="gallery-grid" role="list" aria-label="Galerie photos du restaurant">
-        <div class="gallery-item gi-1 reveal" role="listitem" aria-label="Salle principale du restaurant">
+
+        <div class="gallery-item gi-1 reveal" role="listitem" aria-label="Salle principale du restaurant — ambiance chaleureuse">
           <div class="gallery-item-content">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="10" y="20" width="60" height="40" rx="2" stroke="hsl(25,72%,52%)" stroke-width="1"/>
-              <circle cx="28" cy="35" r="6" stroke="hsl(43,88%,56%)" stroke-width="1"/>
-              <path d="M10 50l20-15 15 12 10-8 15 21" stroke="hsl(25,72%,52%)" stroke-width="1"/>
-            </svg>
+            <img
+              src="https://images.unsplash.com/photo-1517244683847-7456b63c5969?w=1200&q=80&fit=crop"
+              alt="Salle principale du restaurant, éclairage chaud et tables dressées"
+              loading="lazy"
+            >
+            <p class="gallery-caption">L'ambiance du restaurant</p>
           </div>
         </div>
+
         <div class="gallery-item gi-2 reveal reveal-delay-1" role="listitem" aria-label="Momos traditionnels vapeur">
           <div class="gallery-item-content">
-            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="30" cy="30" r="20" stroke="hsl(43,88%,56%)" stroke-width="1"/>
-              <circle cx="22" cy="28" r="4" fill="hsl(25,72%,52%)" fill-opacity="0.5"/>
-              <circle cx="30" cy="26" r="4" fill="hsl(25,72%,52%)" fill-opacity="0.5"/>
-              <circle cx="38" cy="28" r="4" fill="hsl(25,72%,52%)" fill-opacity="0.5"/>
-              <circle cx="26" cy="34" r="4" fill="hsl(25,72%,52%)" fill-opacity="0.5"/>
-              <circle cx="34" cy="34" r="4" fill="hsl(25,72%,52%)" fill-opacity="0.5"/>
-            </svg>
+            <img
+              src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=800&q=80&fit=crop"
+              alt="Momos traditionnels népalais vapeur servis avec sauce achar"
+              loading="lazy"
+            >
+            <p class="gallery-caption">Momos maison</p>
           </div>
         </div>
-        <div class="gallery-item gi-3 reveal reveal-delay-2" role="listitem" aria-label="Épices himalayennes">
+
+        <div class="gallery-item gi-3 reveal reveal-delay-2" role="listitem" aria-label="Épices himalayennes de qualité">
           <div class="gallery-item-content">
-            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M25 5L30 20H45L33 29L38 44L25 35L12 44L17 29L5 20H20L25 5Z" stroke="hsl(43,88%,56%)" stroke-width="1" fill="hsl(43,88%,56%)" fill-opacity="0.15"/>
-            </svg>
+            <img
+              src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&q=80&fit=crop"
+              alt="Épices himalayennes — curcuma, cardamome, gingembre"
+              loading="lazy"
+            >
+            <p class="gallery-caption">Épices d'exception</p>
           </div>
         </div>
-        <div class="gallery-item gi-4 reveal reveal-delay-1" role="listitem" aria-label="Table dressée">
+
+        <div class="gallery-item gi-4 reveal reveal-delay-1" role="listitem" aria-label="Table dressée pour le service">
           <div class="gallery-item-content">
-            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="8" y="20" width="34" height="20" rx="1" stroke="hsl(25,72%,52%)" stroke-width="1"/>
-              <rect x="15" y="14" width="20" height="8" rx="1" stroke="hsl(43,88%,56%)" stroke-width="1"/>
-              <line x1="8" y1="20" x2="42" y2="20" stroke="hsl(25,72%,52%)" stroke-width="1"/>
-            </svg>
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&fit=crop"
+              alt="Table dressée pour le service du soir, atmosphère intime"
+              loading="lazy"
+            >
+            <p class="gallery-caption">Tables dressées</p>
           </div>
         </div>
-        <div class="gallery-item gi-5 reveal reveal-delay-2" role="listitem" aria-label="Dal Bhat traditionnel">
+
+        <div class="gallery-item gi-5 reveal reveal-delay-2" role="listitem" aria-label="Dal Bhat traditionnel — plat signature">
           <div class="gallery-item-content">
-            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <ellipse cx="35" cy="40" rx="25" ry="10" stroke="hsl(25,72%,52%)" stroke-width="1"/>
-              <ellipse cx="35" cy="38" rx="20" ry="12" stroke="hsl(43,88%,56%)" stroke-width="0.8"/>
-              <ellipse cx="35" cy="28" rx="15" ry="12" fill="hsl(25,72%,52%)" fill-opacity="0.2" stroke="hsl(25,72%,52%)" stroke-width="0.8"/>
-            </svg>
+            <img
+              src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1000&q=80&fit=crop"
+              alt="Dal Bhat traditionnel — riz, lentilles, légumes et achar, plat signature"
+              loading="lazy"
+            >
+            <p class="gallery-caption">Dal Bhat — plat signature</p>
           </div>
         </div>
-        <div class="gallery-item gi-6 reveal reveal-delay-3" role="listitem" aria-label="Entrée du restaurant">
+
+        <div class="gallery-item gi-6 reveal reveal-delay-3" role="listitem" aria-label="Préparation des plats en cuisine">
           <div class="gallery-item-content">
-            <svg width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="5" y="10" width="70" height="45" stroke="hsl(25,72%,52%)" stroke-width="1"/>
-              <rect x="15" y="5" width="50" height="8" stroke="hsl(43,88%,56%)" stroke-width="0.8"/>
-              <rect x="30" y="30" width="20" height="25" stroke="hsl(25,72%,52%)" stroke-width="0.8"/>
-              <rect x="10" y="20" width="14" height="14" stroke="hsl(43,88%,56%)" stroke-width="0.8"/>
-              <rect x="56" y="20" width="14" height="14" stroke="hsl(43,88%,56%)" stroke-width="0.8"/>
-            </svg>
+            <img
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=80&fit=crop"
+              alt="Masala chai et plats servis — hospitalité himalayenne"
+              loading="lazy"
+            >
+            <p class="gallery-caption">Hospitalité himalayenne</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -2041,27 +2345,12 @@ footer {
       <p>Fondé par une famille amoureuse des saveurs de Katmandou et de Pokhara, nous avons apporté à Caen les recettes ancestrales, les épices rares et surtout, l'hospitalité chaleureuse qui caractérise le peuple népalais.</p>
       <p>Chaque plat que nous servons est une ode à notre héritage. Nos épices voyagent directement des marchés de Thamel. Nos techniques de cuisson sont transmises de maître à élève depuis des générations. Notre engagement : ne jamais transiger sur l'authenticité.</p>
     </div>
-    <div class="about-hero-image" role="img" aria-label="L'équipe du Népalais Caennais">
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="100" cy="100" r="80" stroke="hsl(25,72%,52%)" stroke-width="1"/>
-        <circle cx="100" cy="100" r="55" stroke="hsl(43,88%,56%)" stroke-width="0.8"/>
-        <circle cx="100" cy="100" r="30" stroke="hsl(25,72%,52%)" stroke-width="1"/>
-        <circle cx="100" cy="100" r="8" fill="hsl(25,72%,52%)"/>
-        <line x1="20" y1="100" x2="180" y2="100" stroke="hsl(25,72%,52%)" stroke-width="0.5"/>
-        <line x1="100" y1="20" x2="100" y2="180" stroke="hsl(25,72%,52%)" stroke-width="0.5"/>
-        <line x1="43" y1="43" x2="157" y2="157" stroke="hsl(43,88%,56%)" stroke-width="0.4"/>
-        <line x1="157" y1="43" x2="43" y2="157" stroke="hsl(43,88%,56%)" stroke-width="0.4"/>
-        <g fill="hsl(43,88%,56%)" fill-opacity="0.7">
-          <circle cx="100" cy="45" r="4"/>
-          <circle cx="100" cy="155" r="4"/>
-          <circle cx="45" cy="100" r="4"/>
-          <circle cx="155" cy="100" r="4"/>
-          <circle cx="61" cy="61" r="3"/>
-          <circle cx="139" cy="139" r="3"/>
-          <circle cx="139" cy="61" r="3"/>
-          <circle cx="61" cy="139" r="3"/>
-        </g>
-      </svg>
+    <div class="about-hero-image" role="img" aria-label="L'équipe du Népalais Caennais en cuisine">
+      <img
+        src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=900&q=80&fit=crop"
+        alt="L'équipe du Népalais Caennais — passion et transmission de la cuisine himalayenne"
+        loading="lazy"
+      >
     </div>
   </div>
 
@@ -2163,12 +2452,69 @@ footer {
     <!-- Form -->
     <div id="reservation-anchor">
       <div class="form-success" id="formSuccess">
-        <p class="form-success-icon">✓</p>
+        <div class="form-success-icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="23" stroke="hsl(145,50%,50%)" stroke-width="1.5"/>
+            <path d="M14 24l7 7 13-14" stroke="hsl(145,50%,50%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <p class="form-success-title">Demande envoyée !</p>
-        <p class="form-success-text">Nous vous confirmerons votre réservation dans les plus brefs délais. À très bientôt au Népalais Caennais !</p>
+        <p class="form-success-text">Merci ! Nous confirmerons votre réservation par email dans les 2h. À très bientôt au Népalais Caennais !</p>
       </div>
-      <form class="reservation-form" id="reservationForm" novalidate aria-label="Formulaire de réservation">
-        <p class="form-title">Réserver une Table</p>
+
+      <p class="form-title">Réserver une Table</p>
+
+      <!-- OPTIONS DE RÉSERVATION — TheFork + Téléphone -->
+      <div class="booking-options" role="group" aria-label="Choisir un mode de réservation">
+        <a
+          href="https://www.thefork.fr/restaurants/caen-c511212"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="booking-option featured"
+          aria-label="Réserver sur TheFork — confirmation instantanée"
+        >
+          <div class="booking-option-icon" aria-hidden="true">TF</div>
+          <div class="booking-option-text">
+            <p class="booking-option-name">TheFork</p>
+            <p class="booking-option-sub">Confirmation instantanée</p>
+          </div>
+          <span class="booking-option-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a
+          href="tel:+33200000000"
+          class="booking-option"
+          aria-label="Réserver par téléphone au 02 XX XX XX XX"
+        >
+          <div class="booking-option-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.82 12 19.79 19.79 0 01.77 3.38 2 2 0 012.75 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.4a16 16 0 006.69 6.69l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="booking-option-text">
+            <p class="booking-option-name">Téléphone</p>
+            <p class="booking-option-sub">02 XX XX XX XX</p>
+          </div>
+          <span class="booking-option-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="booking-divider">
+        <span>ou envoyez une demande par email</span>
+      </div>
+
+      <!-- FORMULAIRE RÉEL — Formspree (remplacer l'endpoint par votre clé Formspree) -->
+      <form
+        class="reservation-form"
+        id="reservationForm"
+        action="https://formspree.io/f/VOTRE_CLE_ICI"
+        method="POST"
+        novalidate
+        aria-label="Formulaire de demande de réservation"
+      >
+        <!-- Champ honeypot anti-spam -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <!-- Redirection après envoi -->
+        <input type="hidden" name="_subject" value="Nouvelle demande de réservation — Le Népalais Caennais">
+        <input type="hidden" name="_language" value="fr">
 
         <div class="form-row">
           <div class="form-group">
@@ -2229,11 +2575,11 @@ footer {
 
         <div class="form-group">
           <label class="form-label" for="res-notes">Remarques ou demandes spéciales</label>
-          <textarea class="form-input" id="res-notes" name="notes" placeholder="Allergies, anniversaire, régime particulier…"></textarea>
+          <textarea class="form-input" id="res-notes" name="notes" placeholder="Allergies, anniversaire, régime particulier, chaise haute…"></textarea>
         </div>
 
-        <button type="submit" class="form-submit">
-          Envoyer ma demande de réservation
+        <button type="submit" class="form-submit" id="formSubmitBtn">
+          Envoyer ma demande
         </button>
       </form>
     </div>
@@ -2305,6 +2651,24 @@ footer {
   </div>
 </footer>
 
+<!-- ─── STICKY CTA MOBILE ─── -->
+<div class="sticky-cta-mobile" id="stickyCta" role="complementary" aria-label="Actions rapides">
+  <div class="sticky-cta-info">
+    <span class="sticky-cta-status" id="stickyStatus"></span>
+    <span class="sticky-cta-hours" id="stickyHours"></span>
+  </div>
+  <div class="sticky-cta-actions">
+    <a href="tel:+33200000000" class="sticky-cta-phone" aria-label="Appeler le restaurant">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.82 12 19.79 19.79 0 01.77 3.38 2 2 0 012.75 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.4a16 16 0 006.69 6.69l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Appeler
+    </a>
+    <a href="https://www.thefork.fr/restaurants/caen-c511212" target="_blank" rel="noopener noreferrer" class="sticky-cta-btn" aria-label="Réserver sur TheFork">
+      Réserver
+      <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+</div>
+
 <!-- ─── COOKIE BANNER ─── -->
 <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Consentement aux cookies">
   <p class="cookie-text">
@@ -2317,29 +2681,163 @@ footer {
 </div>
 
 <script>
-// ─── PAGE NAVIGATION ───
+/* ═══════════════════════════════════════════════
+   PAGE NAVIGATION — avec transition fluide
+═══════════════════════════════════════════════ */
+const pageOverlay = document.getElementById('pageTransition');
+let transitioning = false;
+
 function showPage(pageId) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const page = document.getElementById('page-' + pageId);
-  if (page) { page.classList.add('active'); }
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  document.querySelectorAll('.nav-link').forEach(a => {
-    a.classList.toggle('active', a.dataset.page === pageId);
-  });
-  document.documentElement.setAttribute('data-page', pageId);
-  initReveal();
+  if (transitioning) return;
+  const currentActive = document.querySelector('.page.active');
+  const target = document.getElementById('page-' + pageId);
+  if (!target || target === currentActive) return;
+
+  transitioning = true;
+  if (pageOverlay) {
+    pageOverlay.classList.add('active');
+    setTimeout(() => {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      document.querySelectorAll('.nav-link').forEach(a => a.classList.toggle('active', a.dataset.page === pageId));
+      document.documentElement.setAttribute('data-page', pageId);
+      initReveal();
+      setTimeout(() => {
+        pageOverlay.classList.remove('active');
+        transitioning = false;
+      }, 350);
+    }, 280);
+  } else {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.querySelectorAll('.nav-link').forEach(a => a.classList.toggle('active', a.dataset.page === pageId));
+    document.documentElement.setAttribute('data-page', pageId);
+    initReveal();
+    transitioning = false;
+  }
 }
 
-// ─── NAVBAR SCROLL ───
+/* ═══════════════════════════════════════════════
+   AMÉLIORATION 1 — VIDEO HERO + PARALLAX
+═══════════════════════════════════════════════ */
+// Video fade-in on load
+const heroVideo = document.getElementById('heroVideo');
+if (heroVideo) {
+  heroVideo.addEventListener('canplay', () => {
+    heroVideo.classList.add('loaded');
+  });
+  // Force play (needed on some mobile browsers)
+  heroVideo.play().catch(() => {});
+}
+
+// Parallax sur scroll
+const heroDeco    = document.querySelector('.hero-deco');
+const heroContent = document.querySelector('.hero-content');
+let ticking = false;
+
+function onParallaxScroll() {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const sy = window.scrollY;
+      if (heroDeco)    heroDeco.style.transform    = `translateY(${sy * 0.18}px) rotate(${sy * 0.02}deg)`;
+      if (heroContent) heroContent.style.transform = `translateY(${sy * 0.08}px)`;
+      ticking = false;
+    });
+    ticking = true;
+  }
+}
+
+window.addEventListener('scroll', onParallaxScroll, { passive: true });
+
+/* ═══════════════════════════════════════════════
+   AMÉLIORATION 2 — STICKY MOBILE CTA
+═══════════════════════════════════════════════ */
+const stickyCta    = document.getElementById('stickyCta');
+const stickyStatus = document.getElementById('stickyStatus');
+const stickyHours  = document.getElementById('stickyHours');
+
+// Calcul statut ouvert/fermé en temps réel
+function getRestaurantStatus() {
+  const now   = new Date();
+  const day   = now.getDay();   // 0=dim, 1=lun…
+  const h     = now.getHours();
+  const m     = now.getMinutes();
+  const t     = h * 60 + m;
+
+  // Lundi = fermé
+  if (day === 1) return { open: false, label: 'Fermé aujourd\'hui', hours: 'Ouverture demain à 12h00' };
+
+  // Plages d'ouverture par jour
+  const schedule = {
+    2: [[12*60, 14*60], [19*60, 22*60]],   // Mardi
+    3: [[12*60, 14*60], [19*60, 22*60]],   // Mercredi
+    4: [[12*60, 14*60], [19*60, 22*60]],   // Jeudi
+    5: [[12*60, 14*60], [19*60, 23*60]],   // Vendredi
+    6: [[12*60, 14*60], [19*60, 23*60]],   // Samedi
+    0: [[12*60, 14*60], [19*60, 21*60]],   // Dimanche
+  };
+
+  const todaySlots = schedule[day] || [];
+  const isOpen = todaySlots.some(([open, close]) => t >= open && t < close);
+
+  if (isOpen) {
+    const currentSlot = todaySlots.find(([open, close]) => t >= open && t < close);
+    const closeH = Math.floor(currentSlot[1] / 60);
+    const closeM = currentSlot[1] % 60;
+    const closeStr = `${closeH}h${closeM === 0 ? '00' : closeM}`;
+    return { open: true, label: 'Ouvert maintenant', hours: `Fermeture à ${closeStr}` };
+  } else {
+    // Prochain service
+    const next = todaySlots.find(([open]) => t < open);
+    if (next) {
+      const openH = Math.floor(next[0] / 60);
+      return { open: false, label: 'Actuellement fermé', hours: `Réouverture à ${openH}h00` };
+    }
+    return { open: false, label: 'Fermé ce soir', hours: 'Prochaine ouverture demain' };
+  }
+}
+
+if (stickyCta && stickyStatus && stickyHours) {
+  const status = getRestaurantStatus();
+  stickyStatus.textContent = status.label;
+  stickyStatus.className   = 'sticky-cta-status ' + (status.open ? 'open' : 'closed');
+  stickyHours.textContent  = status.hours;
+}
+
+// Masquer en scroll vers le haut, réafficher vers le bas
+let lastScrollY   = 0;
+let stickyVisible = true;
+
+window.addEventListener('scroll', () => {
+  if (!stickyCta) return;
+  const sy  = window.scrollY;
+  const dir = sy > lastScrollY ? 'down' : 'up';
+
+  // Masquer si scroll vers le haut ET position haute (near hero)
+  if (dir === 'up' && sy < 300) {
+    if (stickyVisible) { stickyCta.classList.add('hidden'); stickyVisible = false; }
+  } else if (dir === 'down' && sy > 200) {
+    if (!stickyVisible) { stickyCta.classList.remove('hidden'); stickyVisible = true; }
+  }
+  lastScrollY = sy;
+}, { passive: true });
+
+/* ═══════════════════════════════════════════════
+   NAVBAR SCROLL
+═══════════════════════════════════════════════ */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
 
-// ─── MOBILE NAV ───
+/* ═══════════════════════════════════════════════
+   MOBILE NAV
+═══════════════════════════════════════════════ */
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
-let mobileOpen = false;
+let mobileOpen  = false;
 
 hamburger.addEventListener('click', () => {
   mobileOpen = !mobileOpen;
@@ -2348,7 +2846,7 @@ hamburger.addEventListener('click', () => {
   const spans = hamburger.querySelectorAll('span');
   if (mobileOpen) {
     spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
-    spans[1].style.opacity = '0';
+    spans[1].style.opacity   = '0';
     spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
   } else {
     spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
@@ -2362,7 +2860,13 @@ function closeMobileNav() {
   hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
 }
 
-// ─── SCROLL REVEAL ───
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && mobileOpen) closeMobileNav();
+});
+
+/* ═══════════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════════ */
 function initReveal() {
   const els = document.querySelectorAll('.page.active .reveal');
   if (!('IntersectionObserver' in window)) {
@@ -2370,79 +2874,128 @@ function initReveal() {
     return;
   }
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   els.forEach(e => obs.observe(e));
 }
 setTimeout(initReveal, 100);
 
-// ─── HOURS ───
+/* ═══════════════════════════════════════════════
+   HORAIRES
+═══════════════════════════════════════════════ */
 const scheduleData = {
-  'Lundi': null,
-  'Mardi': ['12:00–14:00', '19:00–22:00'],
+  'Lundi':    null,
+  'Mardi':    ['12:00–14:00', '19:00–22:00'],
   'Mercredi': ['12:00–14:00', '19:00–22:00'],
-  'Jeudi': ['12:00–14:00', '19:00–22:00'],
+  'Jeudi':    ['12:00–14:00', '19:00–22:00'],
   'Vendredi': ['12:00–14:00', '19:00–23:00'],
-  'Samedi': ['12:00–14:00', '19:00–23:00'],
+  'Samedi':   ['12:00–14:00', '19:00–23:00'],
   'Dimanche': ['12:00–14:00', '19:00–21:00']
 };
-const dayIdxFr = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
-const today = dayIdxFr[new Date().getDay()];
+const dayIdxFr  = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const today     = dayIdxFr[new Date().getDay()];
 const hoursRows = document.getElementById('hours-rows');
 if (hoursRows) {
   Object.entries(scheduleData).forEach(([day, hours]) => {
     const row = document.createElement('div');
     row.className = 'hours-row' + (day === today ? ' today' : '');
-    if (hours) {
-      row.innerHTML = `<span class="hours-day">${day}</span><span class="hours-time">${hours.join(' · ')}</span>`;
-    } else {
-      row.innerHTML = `<span class="hours-day">${day}</span><span class="hours-closed">Fermé</span>`;
-    }
+    row.innerHTML = hours
+      ? `<span class="hours-day">${day}</span><span class="hours-time">${hours.join(' · ')}</span>`
+      : `<span class="hours-day">${day}</span><span class="hours-closed">Fermé</span>`;
     hoursRows.appendChild(row);
   });
 }
 
-// ─── FORM ───
-const form = document.getElementById('reservationForm');
-const formSuccess = document.getElementById('formSuccess');
+/* ═══════════════════════════════════════════════
+   AMÉLIORATION 3 — FORMULAIRE FORMSPREE
+═══════════════════════════════════════════════ */
+const form          = document.getElementById('reservationForm');
+const formSuccess   = document.getElementById('formSuccess');
+const formSubmitBtn = document.getElementById('formSubmitBtn');
+
 if (form) {
+  // Date minimale = demain
   const dateInput = document.getElementById('res-date');
   if (dateInput) {
-    const now = new Date();
-    now.setDate(now.getDate() + 1);
-    dateInput.min = now.toISOString().split('T')[0];
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    dateInput.min = tomorrow.toISOString().split('T')[0];
   }
-  form.addEventListener('submit', e => {
+
+  // Validation visuelle en temps réel
+  form.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('input', () => { input.style.borderColor = ''; });
+    input.addEventListener('blur', () => {
+      if (input.required && !input.value.trim()) {
+        input.style.borderColor = 'hsl(0,60%,50%)';
+      }
+    });
+  });
+
+  // Soumission — Formspree (fetch async) avec fallback natif
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Validation côté client
     const required = form.querySelectorAll('[required]');
     let valid = true;
     required.forEach(el => {
       if (!el.value.trim()) { el.style.borderColor = 'hsl(0,60%,50%)'; valid = false; }
       else { el.style.borderColor = ''; }
     });
-    if (!valid) return;
-    form.style.display = 'none';
-    formSuccess.classList.add('show');
-  });
-  form.querySelectorAll('.form-input').forEach(input => {
-    input.addEventListener('input', () => { input.style.borderColor = ''; });
+    if (!valid) {
+      form.querySelector('[style*="border-color: hsl(0,60%,50%)"]')?.focus();
+      return;
+    }
+
+    // État chargement
+    if (formSubmitBtn) {
+      formSubmitBtn.disabled = true;
+      formSubmitBtn.textContent = 'Envoi en cours…';
+    }
+
+    try {
+      const action = form.action;
+
+      // Si l'endpoint Formspree est configuré, envoyer via fetch
+      if (action && action.includes('formspree.io') && !action.includes('VOTRE_CLE')) {
+        const data     = new FormData(form);
+        const response = await fetch(action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!response.ok) throw new Error('Erreur réseau');
+      }
+
+      // Succès : afficher le message de confirmation
+      form.style.display = 'none';
+      formSuccess.classList.add('show');
+      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    } catch {
+      // Fallback : soumission native
+      form.submit();
+    } finally {
+      if (formSubmitBtn) {
+        formSubmitBtn.disabled = false;
+        formSubmitBtn.textContent = 'Envoyer ma demande';
+      }
+    }
   });
 }
 
-// ─── COOKIE BANNER ───
+/* ═══════════════════════════════════════════════
+   COOKIE BANNER
+═══════════════════════════════════════════════ */
 const cookieBanner = document.getElementById('cookieBanner');
-if (localStorage.getItem('cookieConsent')) {
-  cookieBanner.classList.add('hidden');
-}
+if (localStorage.getItem('cookieConsent')) cookieBanner.classList.add('hidden');
 function dismissCookieBanner() {
   localStorage.setItem('cookieConsent', 'true');
   cookieBanner.classList.add('hidden');
 }
-
-// ─── KEYBOARD ESC for mobile nav ───
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && mobileOpen) closeMobileNav();
-});
 </script>
 </body>
 </html>
