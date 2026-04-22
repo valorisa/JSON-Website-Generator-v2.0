@@ -1,0 +1,4985 @@
+<!DOCTYPE html>
+<html lang="fr" data-page="home">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Nepali Caen | Cuisine Traditionnelle | Le Népalais Caennais</title>
+<meta name="description" content="Découvrez la cuisine traditionnelle népalaise à Caen. Le Népalais Caennais vous propose des plats authentiques préparés avec des épices himalayennes. Réservation recommandée.">
+<meta property="og:title" content="Le Népalais Caennais | Cuisine Traditionnelle Népalaise à Caen">
+<meta property="og:description" content="Expérience culinaire authentique du Népal au cœur de Caen.">
+<meta property="og:type" content="restaurant">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Restaurant",
+      "name": "Le Népalais Caennais",
+      "description": "Restaurant de cuisine traditionnelle népalaise à Caen, Calvados",
+      "url": "https://lenepalaiscaennais.fr",
+      "telephone": "+332XXXXXXXX",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 Rue de la Gare",
+        "addressLocality": "Caen",
+        "postalCode": "14000",
+        "addressCountry": "FR"
+      },
+      "servesCuisine": ["Nepali", "Himalayan"],
+      "priceRange": "€€"
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: hsl(22, 15%, 7%);
+  --bg-surface: hsl(22, 12%, 10%);
+  --bg-card: hsl(22, 10%, 13%);
+  --primary: hsl(25, 72%, 52%);
+  --primary-hover: hsl(25, 72%, 44%);
+  --gold: hsl(43, 88%, 56%);
+  --gold-dim: hsl(43, 70%, 42%);
+  --text: hsl(35, 20%, 92%);
+  --text-muted: hsl(30, 12%, 62%);
+  --text-faint: hsl(30, 8%, 42%);
+  --border: hsla(30, 20%, 70%, 0.10);
+  --border-strong: hsla(30, 20%, 70%, 0.20);
+  --ff-head: 'Playfair Display', Georgia, serif;
+  --ff-body: 'Source Sans 3', system-ui, sans-serif;
+  --r: 0px;
+  --nav-h: 72px;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: var(--ff-body); border: none; background: none; color: inherit; }
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+nav.scrolled {
+  background: hsla(22, 15%, 6%, 0.96);
+  border-color: var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+  font-family: var(--ff-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.nav-logo span {
+  font-size: 0.65rem;
+  font-family: var(--ff-body);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  height: 1px;
+  width: 0;
+  background: var(--primary);
+  transition: width 0.3s var(--ease);
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--text);
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-cta {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bg) !important;
+  background: var(--primary);
+  padding: 0.55rem 1.4rem;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.nav-cta:hover {
+  background: var(--primary-hover) !important;
+  transform: translateY(-1px);
+}
+
+.nav-cta::after { display: none !important; }
+
+.lang-selector {
+  position: relative;
+  z-index: 120;
+}
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  padding: 0.38rem 0.7rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  position: relative;
+}
+.lang-btn:hover { color: var(--text); border-color: var(--primary); background: hsla(25,72%,52%,0.07); }
+.lang-btn .lang-flag {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+.lang-btn svg { transition: transform 0.2s; flex-shrink: 0; }
+.lang-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+.lang-btn[aria-expanded="true"] { border-color: var(--primary); color: var(--text); }
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  list-style: none;
+  padding: 0.35rem 0;
+  min-width: 130px;
+  display: none;
+  animation: fadeIn 0.15s ease forwards;
+  z-index: 200;
+  box-shadow: 0 8px 24px hsla(0,0%,0%,0.25);
+}
+.lang-dropdown.open { display: block; }
+.lang-dropdown li a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  padding: 0.55rem 0.9rem;
+  transition: color 0.15s, background 0.15s;
+  text-decoration: none;
+}
+.lang-dropdown li a:hover { color: var(--text); background: hsla(25,72%,52%,0.08); }
+.lang-dropdown li a.active { color: var(--primary); }
+.lang-dropdown li a .lang-flag { font-size: 1rem; }
+.lang-dropdown li + li { border-top: 1px solid var(--border); }
+
+/* Mobile lang switcher */
+.nav-mobile .lang-switcher-mobile {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.lang-pill {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  border: 1px solid var(--border-strong);
+  padding: 0.45rem 1rem;
+  transition: color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  background: none;
+  font-family: var(--ff-body);
+}
+.lang-pill.active { color: var(--primary); border-color: var(--primary); }
+.lang-pill:hover { color: var(--text); border-color: var(--primary); }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  z-index: 110;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--text);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* mobile nav */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.nav-mobile.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-mobile a {
+  font-family: var(--ff-head);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.nav-mobile a:hover { color: var(--text); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile { display: flex; }
+}
+
+/* ─── PAGES ─── */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ─── DECORATIVE MANDALA ─── */
+.mandala {
+  position: absolute;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: var(--nav-h) 0 0;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, hsla(25, 60%, 25%, 0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 20% 80%, hsla(43, 80%, 20%, 0.2) 0%, transparent 60%),
+    var(--bg);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+  text-align: left;
+}
+
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease) 0.2s forwards;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--primary);
+}
+
+.hero h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.35s forwards;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--primary);
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.5s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.65s forwards;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  background: var(--primary);
+  color: #fff;
+  transition: background 0.2s, transform 0.15s var(--spring);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.85rem 2rem;
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  transition: border-color 0.2s, color 0.2s, transform 0.15s var(--spring);
+}
+
+.btn-ghost:hover {
+  border-color: var(--primary);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.hero-rating {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.8s forwards;
+}
+
+.stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; }
+
+.hero-rating-text {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+.hero-rating-text strong {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.hero-deco {
+  position: absolute;
+  right: -5%;
+  top: 10%;
+  width: 45vw;
+  max-width: 700px;
+  opacity: 0;
+  animation: fadeIn 1.2s var(--ease) 0.4s forwards;
+  pointer-events: none;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.hero-scroll::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--primary), transparent);
+}
+
+/* ─── SECTION BASE ─── */
+section {
+  position: relative;
+  z-index: 1;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.section-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--primary);
+}
+
+.section-title {
+  font-family: var(--ff-head);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--primary);
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-top: 1rem;
+  line-height: 1.7;
+}
+
+/* ─── DIVIDER ─── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+/* ─── TESTIMONIALS ─── */
+.testimonials {
+  background: var(--bg-surface);
+  overflow: hidden;
+}
+
+.testimonials-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonials-header {
+  margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5px;
+  background: var(--border);
+}
+
+.testimonial-card {
+  background: var(--bg-surface);
+  padding: 2rem;
+  transition: background 0.3s;
+}
+
+.testimonial-card:hover { background: var(--bg-card); }
+
+.testimonial-stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 3px; margin-bottom: 1rem; }
+
+.testimonial-quote {
+  font-family: var(--ff-head);
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.testimonial-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.testimonial-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.testimonial-meta {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+/* ─── STORY ─── */
+.story {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) { .story { grid-template-columns: 1fr; gap: 3rem; } }
+
+.story-image-wrap {
+  position: relative;
+}
+
+.story-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.story-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.story-image-placeholder svg {
+  width: 60%;
+  height: 60%;
+  opacity: 0.15;
+}
+
+.story-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 110px;
+  height: 110px;
+  background: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.story-badge-num {
+  font-family: var(--ff-head);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.story-badge-text {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: hsla(0,0%,100%,0.8);
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.story-content { padding: 1rem 0; }
+
+.story-body {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-top: 1.5rem;
+}
+
+.story-body p + p { margin-top: 1rem; }
+
+.story-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.story-value-item { border-left: 2px solid var(--primary); padding-left: 1rem; }
+
+.story-value-title {
+  font-family: var(--ff-head);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.story-value-body {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+/* ─── MENU PREVIEW ─── */
+.menu-preview {
+  background: var(--bg-surface);
+}
+
+.menu-preview-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.menu-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.menu-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+
+.menu-card {
+  background: var(--bg-surface);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  cursor: default;
+}
+
+.menu-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+
+.menu-card:hover { background: var(--bg-card); }
+.menu-card:hover::before { transform: scaleX(1); }
+
+.menu-card-number {
+  font-family: var(--ff-head);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: hsla(25, 72%, 52%, 0.12);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+
+.menu-card-title {
+  font-family: var(--ff-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.menu-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.menu-card-price {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+/* ─── GALLERY ─── */
+.gallery-section { overflow: hidden; }
+
+.gallery-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-header { margin-bottom: 2.5rem; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 8px;
+}
+
+.gallery-item {
+  background: var(--bg-card);
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.gallery-item:hover::after { opacity: 0.15; }
+
+.gallery-item-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1.5rem 1rem 0.75rem;
+  background: linear-gradient(to top, hsla(22,20%,4%,0.85) 0%, transparent 100%);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: hsl(35,20%,88%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption { opacity: 1; }
+
+.gallery-item svg { opacity: 0.08; }
+
+.gi-1 { grid-column: 1 / 7; grid-row: 1; aspect-ratio: 4/3; }
+.gi-2 { grid-column: 7 / 10; grid-row: 1; aspect-ratio: 3/4; }
+.gi-3 { grid-column: 10 / 13; grid-row: 1; aspect-ratio: 1; }
+.gi-4 { grid-column: 1 / 4; grid-row: 2; aspect-ratio: 1; }
+.gi-5 { grid-column: 4 / 8; grid-row: 2; aspect-ratio: 4/3; }
+.gi-6 { grid-column: 8 / 13; grid-row: 2; aspect-ratio: 16/9; }
+
+@media (max-width: 768px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 4px; }
+  .gi-1, .gi-2, .gi-3, .gi-4, .gi-5, .gi-6 {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 1;
+  }
+}
+
+/* ─── CONVERSION CTA ─── */
+.conversion-cta {
+  background: var(--primary);
+  text-align: center;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.conversion-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.conversion-cta-inner { position: relative; max-width: 700px; margin: 0 auto; }
+
+.conversion-cta h2 {
+  font-family: var(--ff-head);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.conversion-cta p {
+  font-size: 1rem;
+  color: hsla(0,0%,100%,0.8);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  background: #fff;
+  color: var(--primary);
+  transition: transform 0.15s var(--spring), background 0.2s;
+}
+
+.btn-white:hover {
+  transform: translateY(-2px);
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* ─── MENU PAGE ─── */
+.menu-page-hero {
+  padding-top: calc(var(--nav-h) + 3rem);
+  padding-bottom: 3rem;
+  padding-left: clamp(1.5rem, 5vw, 4rem);
+  padding-right: clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+  background:
+    radial-gradient(ellipse 70% 70% at 50% 0%, hsla(25, 60%, 20%, 0.4) 0%, transparent 70%),
+    var(--bg);
+}
+
+.menu-page-hero h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.menu-page-hero p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-style: italic;
+  font-family: var(--ff-head);
+  font-weight: 400;
+}
+
+.menu-categories {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem clamp(1.5rem, 5vw, 4rem) 6rem;
+}
+
+.menu-category {
+  margin-bottom: 3.5rem;
+}
+
+.menu-category-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu-category-title {
+  font-family: var(--ff-head);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.menu-category-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.menu-items { display: flex; flex-direction: column; gap: 0; }
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: padding-left 0.2s;
+}
+
+.menu-item:hover { padding-left: 0.5rem; }
+
+.menu-item-left { flex: 1; min-width: 0; }
+
+.menu-item-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.menu-item-desc {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+.menu-item-price {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gold);
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+/* ─── ABOUT PAGE ─── */
+.about-hero {
+  padding-top: calc(var(--nav-h) + 3rem);
+  padding-bottom: 0;
+  padding-left: clamp(1.5rem, 5vw, 4rem);
+  padding-right: clamp(1.5rem, 5vw, 4rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+  min-height: 70vh;
+}
+
+@media (max-width: 768px) { .about-hero { grid-template-columns: 1fr; min-height: auto; } }
+
+.about-hero-text h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.about-hero-text h1 em {
+  font-style: italic;
+  color: var(--primary);
+}
+
+.about-hero-text p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-hero-image {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero-image svg { opacity: 0.1; width: 50%; }
+
+.about-values {
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  background: var(--bg-surface);
+}
+
+.about-values-inner { max-width: 1100px; margin: 0 auto; }
+
+.about-values-header { margin-bottom: 3rem; }
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+
+.value-card {
+  background: var(--bg-surface);
+  padding: 2.5rem 2rem;
+  transition: background 0.3s;
+}
+
+.value-card:hover { background: var(--bg-card); }
+
+.value-number {
+  font-family: var(--ff-head);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.value-title {
+  font-family: var(--ff-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.value-body {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.about-quote {
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.about-quote blockquote {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: var(--ff-head);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.about-quote blockquote::before { content: '\201C'; color: var(--primary); }
+.about-quote blockquote::after { content: '\201D'; color: var(--primary); }
+
+.about-quote cite {
+  display: block;
+  margin-top: 1.5rem;
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* ─── CONTACT PAGE ─── */
+.contact-hero {
+  padding-top: calc(var(--nav-h) + 3rem);
+  padding-bottom: 3rem;
+  padding-left: clamp(1.5rem, 5vw, 4rem);
+  padding-right: clamp(1.5rem, 5vw, 4rem);
+  text-align: center;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, hsla(25, 60%, 20%, 0.35) 0%, transparent 70%),
+    var(--bg);
+}
+
+.contact-hero h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.contact-hero p { font-size: 1rem; color: var(--text-muted); }
+
+.contact-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem clamp(1.5rem, 5vw, 4rem) 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+.contact-info-title {
+  font-family: var(--ff-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-detail {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.contact-detail-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-detail-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--primary);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-detail-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 0.2rem;
+}
+
+.contact-detail-value {
+  font-size: 0.92rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.hours-table {
+  margin-top: 2.5rem;
+}
+
+.hours-title {
+  font-family: var(--ff-head);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.hours-day { color: var(--text-muted); }
+.hours-time { color: var(--text); font-weight: 500; }
+.hours-closed { color: var(--text-faint); font-style: italic; }
+.hours-row.today .hours-day { color: var(--primary); font-weight: 600; }
+.hours-row.today .hours-time { color: var(--primary); }
+
+/* ─── FORM ─── */
+.reservation-form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.form-title {
+  font-family: var(--ff-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.form-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.form-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-size: 0.92rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  appearance: none;
+}
+
+.form-input::placeholder { color: var(--text-faint); }
+.form-input:focus { border-color: var(--primary); }
+
+select.form-input { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+
+textarea.form-input { resize: vertical; min-height: 100px; }
+
+.form-submit {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s var(--spring);
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.form-submit:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.form-success.show { display: block; }
+.form-success-icon { font-size: 2rem; margin-bottom: 1rem; }
+.form-success-title { font-family: var(--ff-head); font-size: 1.3rem; color: var(--text); margin-bottom: 0.5rem; }
+.form-success-text { font-size: 0.88rem; color: var(--text-muted); }
+
+/* ─── MAP PLACEHOLDER ─── */
+.map-section {
+  padding: 0 clamp(1.5rem, 5vw, 4rem) 6rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.map-container {
+  width: 100%;
+  height: 300px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-placeholder-text {
+  text-align: center;
+}
+
+.map-placeholder-text p {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin-top: 0.5rem;
+}
+
+.map-placeholder-text a {
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  padding: 4rem clamp(1.5rem, 5vw, 4rem) 2rem;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) { .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+@media (max-width: 480px) { .footer-top { grid-template-columns: 1fr; } }
+
+.footer-brand-name {
+  font-family: var(--ff-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.footer-brand-sub {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.footer-brand-desc {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  line-height: 1.6;
+  max-width: 240px;
+}
+
+.footer-col-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--primary); }
+
+.footer-hours { font-size: 0.82rem; color: var(--text-faint); line-height: 2; }
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal a {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover { color: var(--primary); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ─── COOKIE BANNER ─── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-strong);
+  padding: 1.25rem clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  z-index: 200;
+  transform: translateY(0);
+  transition: transform 0.4s var(--ease);
+}
+
+.cookie-banner.hidden { transform: translateY(100%); pointer-events: none; }
+
+.cookie-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.cookie-text a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
+
+.cookie-actions { display: flex; gap: 0.75rem; }
+
+.cookie-accept {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.2rem;
+  background: var(--primary);
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.cookie-accept:hover { background: var(--primary-hover); }
+
+.cookie-decline {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.2rem;
+  border: 1px solid var(--border-strong);
+  color: var(--text-faint);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cookie-decline:hover { border-color: var(--primary); color: var(--text); }
+
+/* ════════════════════════════════════════
+   BLOG — Styles complets
+════════════════════════════════════════ */
+
+/* Hero Blog */
+.blog-hero {
+  padding-top: calc(var(--nav-h) + 4rem);
+  padding-bottom: 3rem;
+  padding-left: clamp(1.5rem, 5vw, 4rem);
+  padding-right: clamp(1.5rem, 5vw, 4rem);
+  background:
+    radial-gradient(ellipse 80% 60% at 30% 20%, hsla(25,55%,18%,0.5) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 70% at 80% 80%, hsla(43,70%,15%,0.3) 0%, transparent 60%),
+    var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-hero::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 40%;
+  background: linear-gradient(to right, transparent, hsla(25,30%,12%,0.15));
+  pointer-events: none;
+}
+
+.blog-hero-inner { max-width: 900px; }
+
+.blog-hero-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.blog-hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px; height: 1px;
+  background: var(--primary);
+}
+
+.blog-hero h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.0;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+.blog-hero h1 em { font-style: italic; color: var(--primary); }
+
+.blog-hero-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* Filtres catégories */
+.blog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.blog-filter-btn {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--border-strong);
+  color: var(--text-faint);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.blog-filter-btn:hover,
+.blog-filter-btn.active {
+  border-color: var(--primary);
+  color: var(--text);
+  background: hsla(25,72%,52%,0.08);
+}
+.blog-filter-btn.active { color: var(--primary); }
+
+/* Article vedette (featured) */
+.blog-featured {
+  padding: 0 clamp(1.5rem, 5vw, 4rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.blog-featured-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  min-height: 460px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+.blog-featured-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 12px 40px hsla(25,70%,30%,0.15);
+}
+
+@media (max-width: 768px) {
+  .blog-featured-card { grid-template-columns: 1fr; }
+}
+
+.blog-featured-img {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-card);
+  min-height: 280px;
+}
+.blog-featured-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s var(--ease);
+}
+.blog-featured-card:hover .blog-featured-img img { transform: scale(1.05); }
+
+.blog-featured-badge {
+  position: absolute;
+  top: 1.25rem; left: 1.25rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  background: var(--primary);
+  color: #fff;
+  z-index: 2;
+}
+
+.blog-featured-body {
+  padding: 2.5rem;
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.blog-featured-title {
+  font-family: var(--ff-head);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.blog-featured-excerpt {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.blog-featured-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.blog-author {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.blog-author-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+.blog-author-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.blog-author-date {
+  font-size: 0.7rem;
+  color: var(--text-faint);
+}
+
+.blog-read-more {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap 0.2s;
+}
+.blog-read-more:hover { gap: 0.75rem; }
+
+/* Grille des articles */
+.blog-grid-section {
+  padding: 3rem clamp(1.5rem, 5vw, 4rem) 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-grid-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.blog-grid-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+
+.blog-card {
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.blog-card:hover { background: var(--bg-surface); }
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease);
+}
+.blog-card:hover::before { transform: scaleX(1); }
+
+.blog-card-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--bg-card);
+  position: relative;
+}
+.blog-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+.blog-card:hover .blog-card-img img { transform: scale(1.07); }
+
+.blog-card-cat {
+  position: absolute;
+  bottom: 0.75rem; left: 0.75rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.65rem;
+  background: var(--primary);
+  color: #fff;
+}
+
+.blog-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+
+.blog-card-title {
+  font-family: var(--ff-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--text);
+  margin-bottom: 0.65rem;
+}
+
+.blog-card-excerpt {
+  font-size: 0.83rem;
+  color: var(--text-faint);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+.blog-card-date {
+  font-size: 0.68rem;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+.blog-card-reading {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ═══ PAGE ARTICLE ═══ */
+.article-page { display: none; }
+.article-page.active { display: block; }
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  cursor: pointer;
+  transition: color 0.2s, gap 0.2s;
+  padding-top: calc(var(--nav-h) + 1.5rem);
+  padding-left: clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  margin-bottom: 0;
+}
+.article-back:hover { color: var(--primary); gap: 0.75rem; }
+
+.article-hero-img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+  margin-top: 1.5rem;
+}
+
+.article-container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 3rem clamp(1.5rem, 5vw, 2rem) 6rem;
+}
+
+.article-header { margin-bottom: 2.5rem; }
+
+.article-cats {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.article-cat-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 0.25rem 0.6rem;
+}
+
+.article-title {
+  font-family: var(--ff-head);
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+
+.article-subtitle {
+  font-size: 1.05rem;
+  font-family: var(--ff-head);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.75rem;
+}
+
+.article-byline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.article-byline-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.article-byline-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.article-byline-meta {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}
+
+.article-byline-stats {
+  margin-left: auto;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.article-stat {
+  text-align: right;
+}
+.article-stat-val {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  display: block;
+}
+.article-stat-lbl {
+  font-size: 0.65rem;
+  color: var(--text-faint);
+  letter-spacing: 0.06em;
+}
+
+/* Corps de l'article */
+.article-body {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-top: 2.5rem;
+}
+
+.article-body h2 {
+  font-family: var(--ff-head);
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 2.75rem 0 1rem;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--primary);
+}
+
+.article-body h3 {
+  font-family: var(--ff-head);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 2rem 0 0.75rem;
+}
+
+.article-body p { margin-bottom: 1.4rem; }
+
+.article-body strong { color: var(--text); font-weight: 600; }
+
+.article-body em { color: var(--primary); font-style: italic; }
+
+.article-body blockquote {
+  margin: 2.5rem 0;
+  padding: 1.75rem 2rem;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--gold);
+  position: relative;
+}
+.article-body blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.5rem; left: 1.5rem;
+  font-family: var(--ff-head);
+  font-size: 4rem;
+  color: var(--gold);
+  opacity: 0.4;
+  line-height: 1;
+}
+.article-body blockquote p {
+  font-family: var(--ff-head);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.6;
+}
+.article-body blockquote cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  font-style: normal;
+}
+
+.article-body ul, .article-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.4rem;
+}
+.article-body li { margin-bottom: 0.5rem; }
+.article-body li::marker { color: var(--primary); }
+
+.article-pull-quote {
+  margin: 2.5rem -1.5rem;
+  padding: 2rem 2rem 2rem 3.5rem;
+  font-family: var(--ff-head);
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  border-left: 4px solid var(--primary);
+  position: relative;
+}
+.article-pull-quote::before {
+  content: '\201C';
+  position: absolute;
+  left: 0.5rem; top: 1.5rem;
+  font-size: 3rem;
+  color: var(--primary);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+.article-img-inline {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  margin: 2rem 0 0.75rem;
+}
+.article-img-caption {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 2rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border);
+}
+
+.article-recipe-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  padding: 1.75rem 2rem;
+  margin: 2.5rem 0;
+  position: relative;
+}
+.article-recipe-box::before {
+  content: 'Recette';
+  position: absolute;
+  top: -0.6rem; left: 1.5rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+}
+.article-recipe-box h4 {
+  font-family: var(--ff-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+.article-recipe-box ul { margin-bottom: 0; }
+.article-recipe-box li { font-size: 0.88rem; }
+
+/* Tags & partage fin d'article */
+.article-footer {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.article-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.article-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border-strong);
+  color: var(--text-faint);
+  transition: border-color 0.2s, color 0.2s;
+  cursor: default;
+}
+.article-tag:hover { border-color: var(--primary); color: var(--primary); }
+
+/* Articles liés */
+.related-articles {
+  background: var(--bg-surface);
+  padding: 3rem clamp(1.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--border);
+}
+.related-articles-inner { max-width: 1200px; margin: 0 auto; }
+.related-title {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 1.75rem;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--border);
+}
+.related-card {
+  background: var(--bg-surface);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.related-card:hover { background: var(--bg-card); }
+.related-card-cat {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.related-card-title {
+  font-family: var(--ff-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+.related-card-date {
+  font-size: 0.68rem;
+  color: var(--text-faint);
+}
+
+/* Newsletter inline blog */
+.blog-newsletter {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  margin: 3rem 0;
+  text-align: center;
+}
+.blog-newsletter h3 {
+  font-family: var(--ff-head);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.blog-newsletter p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+.blog-newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.blog-newsletter-input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  padding: 0.7rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.blog-newsletter-input:focus { border-color: var(--primary); }
+.blog-newsletter-input::placeholder { color: var(--text-faint); }
+.blog-newsletter-btn {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.25rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.blog-newsletter-btn:hover { background: var(--primary-hover); }
+
+@media (max-width: 480px) {
+  .blog-newsletter-form { flex-direction: column; }
+  .article-pull-quote { margin-left: 0; margin-right: 0; }
+}
+════════════════════════════════════════ */
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+/* ════════════════════════════════════════
+   AMÉLIORATION 1 — VIDEO HERO + PARALLAX
+═══════════════════════════════════════════════ */
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+.hero-video.loaded { opacity: 1; }
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, hsla(22,30%,4%,0.88) 0%, hsla(20,25%,8%,0.55) 55%, hsla(22,30%,4%,0.82) 100%);
+  z-index: 1;
+}
+.hero-video-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, transparent 30%, hsla(22,30%,4%,0.65) 100%);
+}
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  position: absolute;
+  inset: 0;
+}
+.hero-video.loaded { opacity: 1; }
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(135deg, hsla(22,30%,4%,0.88) 0%, hsla(20,25%,8%,0.55) 55%, hsla(22,30%,4%,0.82) 100%);
+  pointer-events: none;
+}
+.hero-video-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, transparent 30%, hsla(22,30%,4%,0.65) 100%);
+}
+
+/* Cinematic animated fallback — visible before/if video loads */
+@keyframes heroGlow {
+  0%   { background: radial-gradient(ellipse 90% 65% at 62% 38%, hsl(25,55%,17%) 0%, hsl(22,15%,6%) 65%); }
+  33%  { background: radial-gradient(ellipse 75% 80% at 55% 50%, hsl(32,48%,15%) 0%, hsl(22,15%,6%) 60%); }
+  66%  { background: radial-gradient(ellipse 100% 55% at 66% 32%, hsl(18,58%,13%) 0%, hsl(22,15%,6%) 72%); }
+  100% { background: radial-gradient(ellipse 82% 72% at 50% 46%, hsl(38,42%,17%) 0%, hsl(22,15%,6%) 60%); }
+}
+.hero-bg { 
+  animation: heroGlow 9s ease-in-out infinite alternate; 
+  position: relative;
+  z-index: 0;
+}
+
+/* Force video layer to stay below overlay */
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  display: block;
+}
+
+/* Parallax targets */
+.hero-deco   { will-change: transform; transition: transform 0.05s linear; }
+.hero-content { will-change: transform; transition: transform 0.05s linear; }
+
+/* ════════════════════════════════════════
+   AMÉLIORATION 2 — STICKY MOBILE CTA
+════════════════════════════════════════ */
+.sticky-cta-mobile {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 95;
+  padding: 0.75rem 1.25rem;
+  background: hsla(22, 18%, 6%, 0.97);
+  border-top: 1px solid var(--border-strong);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transform: translateY(0);
+  transition: transform 0.35s var(--ease);
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.sticky-cta-mobile.hidden { transform: translateY(110%); }
+@media (max-width: 768px) { .sticky-cta-mobile { display: flex; } }
+
+.sticky-cta-info { display: flex; flex-direction: column; gap: 0.15rem; flex: 1; min-width: 0; }
+
+.sticky-cta-status {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.sticky-cta-status::before {
+  content: '';
+  display: block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.sticky-cta-status.open { color: hsl(145, 55%, 50%); }
+.sticky-cta-status.open::before { background: hsl(145, 55%, 50%); box-shadow: 0 0 6px hsl(145,55%,50%); }
+.sticky-cta-status.closed { color: var(--text-faint); }
+.sticky-cta-status.closed::before { background: var(--text-faint); }
+
+.sticky-cta-hours { font-size: 0.68rem; color: var(--text-faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.sticky-cta-actions { display: flex; gap: 0.5rem; flex-shrink: 0; }
+
+.sticky-cta-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.sticky-cta-phone:hover { border-color: var(--primary); color: var(--text); }
+.sticky-cta-phone svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+.sticky-cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.1rem;
+  background: var(--primary);
+  color: #fff;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s var(--spring);
+  flex-shrink: 0;
+}
+.sticky-cta-btn:hover { background: var(--primary-hover); transform: translateY(-1px); }
+.sticky-cta-btn svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ════════════════════════════════════════
+   AMÉLIORATION 3 — THEFORK + FORMSPREE
+════════════════════════════════════════ */
+.booking-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+@media (max-width: 480px) { .booking-options { grid-template-columns: 1fr; } }
+
+.booking-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s var(--spring);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.booking-option::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.booking-option:hover { border-color: var(--primary); transform: translateY(-2px); }
+.booking-option:hover::before { opacity: 0.04; }
+
+.booking-option.featured { border-color: hsl(150,55%,42%); }
+.booking-option.featured::before { background: hsl(150,55%,42%); }
+.booking-option.featured:hover { border-color: hsl(150,55%,35%); }
+
+.booking-option-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.booking-option.featured .booking-option-icon { background: hsl(150,55%,42%); color: #fff; }
+.booking-option:not(.featured) .booking-option-icon { background: var(--primary); color: #fff; font-style: italic; }
+
+.booking-option-text { position: relative; z-index: 1; }
+.booking-option-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+}
+.booking-option-sub { font-size: 0.7rem; color: var(--text-faint); }
+
+.booking-option-arrow {
+  margin-left: auto;
+  color: var(--text-faint);
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s, color 0.2s;
+}
+.booking-option:hover .booking-option-arrow { transform: translateX(3px); color: var(--primary); }
+.booking-option.featured:hover .booking-option-arrow { color: hsl(150,55%,42%); }
+
+.booking-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.booking-divider::before, .booking-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.booking-divider span {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+/* Page transition overlay */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--primary);
+  z-index: 300;
+  clip-path: circle(0% at 50% 50%);
+  pointer-events: none;
+  transition: clip-path 0.5s var(--ease);
+}
+.page-transition-overlay.active { clip-path: circle(150% at 50% 50%); pointer-events: all; }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="sr-only" data-i18n="skip_link">Aller au contenu principal</a>
+
+<!-- ─── NAV ─── -->
+<nav id="navbar" role="banner">
+  <a href="#" class="nav-logo" onclick="showPage('home'); return false;" aria-label="Le Népalais Caennais — Accueil">
+    Le Népalais Caennais
+    <span>Cuisine Himalayenne · Caen</span>
+  </a>
+
+  <ul class="nav-links" role="navigation" aria-label="Navigation principale">
+    <li><a href="#" class="nav-link active" data-page="home" onclick="showPage('home'); return false;">Accueil</a></li>
+    <li><a href="#" class="nav-link" data-page="menu" onclick="showPage('menu'); return false;">Menu</a></li>
+    <li><a href="#" class="nav-link" data-page="about" onclick="showPage('about'); return false;">Histoire</a></li>
+    <li><a href="#" class="nav-link" data-page="blog" onclick="showPage('blog'); return false;">Blog</a></li>
+    <li><a href="#" class="nav-link" data-page="contact" onclick="showPage('contact'); return false;">Contact</a></li>
+    <li><a href="#" class="nav-link nav-cta" data-page="contact" onclick="showPage('contact'); return false;">Réserver</a></li>
+    <li class="lang-selector">
+      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Language / Langue">
+        <span class="lang-flag" id="langFlag" aria-hidden="true">🇫🇷</span>
+        <span id="currentLang">FR</span>
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <ul class="lang-dropdown" id="langDropdown" role="listbox" aria-label="Choisir la langue">
+        <li role="option">
+          <a href="#" onclick="setLang('fr'); return false;" id="langOptFr" class="active" aria-selected="true">
+            <span class="lang-flag" aria-hidden="true">🇫🇷</span> Français
+          </a>
+        </li>
+        <li role="option">
+          <a href="#" onclick="setLang('en'); return false;" id="langOptEn" aria-selected="false">
+            <span class="lang-flag" aria-hidden="true">🇬🇧</span> English
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Navigation mobile">
+  <a href="#" data-i18n="nav_home" onclick="showPage('home'); closeMobileNav(); return false;">Accueil</a>
+  <a href="#" data-i18n="nav_menu" onclick="showPage('menu'); closeMobileNav(); return false;">Menu</a>
+  <a href="#" data-i18n="nav_about" onclick="showPage('about'); closeMobileNav(); return false;">Notre Histoire</a>
+  <a href="#" data-i18n="nav_blog" onclick="showPage('blog'); closeMobileNav(); return false;">Blog</a>
+  <a href="#" data-i18n="nav_contact" onclick="showPage('contact'); closeMobileNav(); return false;">Contact & Réservation</a>
+  <div class="lang-switcher-mobile" role="group" aria-label="Langue / Language">
+    <button class="lang-pill active" id="mobileLangFr" onclick="setLang('fr'); closeMobileNav();" aria-pressed="true">🇫🇷 FR</button>
+    <button class="lang-pill" id="mobileLangEn" onclick="setLang('en'); closeMobileNav();" aria-pressed="false">🇬🇧 EN</button>
+  </div>
+</div>
+
+<main id="main-content">
+
+<!-- ═══════════════════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Présentation principale">
+    <div class="hero-bg" id="heroBg"></div>
+
+    <!-- Video cinématique en arrière-plan -->
+    <div class="hero-video-wrap" aria-hidden="true">
+      <video
+        class="hero-video"
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      >
+        <!-- Vidéo principale : cuisine népalaise / épices -->
+        <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4" type="video/mp4">
+        <!-- Fallback : ambiance cuisine -->
+        <source src="https://videos.pexels.com/video-files/4194752/4194752-hd_1920_1080_25fps.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <!-- Page transition overlay -->
+    <div class="page-transition-overlay" id="pageTransition"></div>
+
+    <!-- Decorative mandala -->
+    <svg class="hero-deco" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="300" cy="300" r="280" stroke="hsl(25,72%,52%)" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="240" stroke="hsl(43,88%,56%)" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="200" stroke="hsl(25,72%,52%)" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="160" stroke="hsl(43,88%,56%)" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="120" stroke="hsl(25,72%,52%)" stroke-width="1"/>
+      <circle cx="300" cy="300" r="60" stroke="hsl(43,88%,56%)" stroke-width="1"/>
+      <circle cx="300" cy="300" r="8" fill="hsl(25,72%,52%)"/>
+      <!-- Spokes -->
+      <g stroke="hsl(25,72%,52%)" stroke-width="0.4">
+        <line x1="300" y1="20" x2="300" y2="580"/>
+        <line x1="20" y1="300" x2="580" y2="300"/>
+        <line x1="103" y1="103" x2="497" y2="497"/>
+        <line x1="497" y1="103" x2="103" y2="497"/>
+        <line x1="300" y1="20" x2="497" y2="300"/><line x1="497" y1="300" x2="300" y2="580"/>
+        <line x1="300" y1="580" x2="103" y2="300"/><line x1="103" y1="300" x2="300" y2="20"/>
+        <line x1="20" y1="180" x2="420" y2="580"/><line x1="180" y1="20" x2="580" y2="420"/>
+        <line x1="420" y1="20" x2="20" y2="420"/><line x1="580" y1="180" x2="180" y2="580"/>
+      </g>
+      <!-- Petal ornaments on inner circle -->
+      <g fill="hsl(25,72%,52%)" fill-opacity="0.4">
+        <circle cx="300" cy="140" r="6"/>
+        <circle cx="300" cy="460" r="6"/>
+        <circle cx="140" cy="300" r="6"/>
+        <circle cx="460" cy="300" r="6"/>
+        <circle cx="187" cy="187" r="5"/>
+        <circle cx="413" cy="413" r="5"/>
+        <circle cx="413" cy="187" r="5"/>
+        <circle cx="187" cy="413" r="5"/>
+      </g>
+      <g fill="hsl(43,88%,56%)" fill-opacity="0.6">
+        <circle cx="300" cy="180" r="4"/>
+        <circle cx="300" cy="420" r="4"/>
+        <circle cx="180" cy="300" r="4"/>
+        <circle cx="420" cy="300" r="4"/>
+        <circle cx="215" cy="215" r="3"/>
+        <circle cx="385" cy="385" r="3"/>
+        <circle cx="385" cy="215" r="3"/>
+        <circle cx="215" cy="385" r="3"/>
+      </g>
+    </svg>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">Bienvenue à Caen</p>
+      <h1 data-i18n="hero_h1">L'Authenticité<br><em>Himalayenne</em><br>à Caen</h1>
+      <p class="hero-sub" data-i18n="hero_sub">Cuisine traditionnelle népalaise, préparée avec des épices rares et des recettes ancestrales transmises de génération en génération.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary" onclick="showPage('contact'); return false;" data-i18n="hero_cta1">
+          Réserver une table
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+        <a href="#" class="btn-ghost" onclick="showPage('menu'); return false;" data-i18n="hero_cta2">Découvrir notre menu</a>
+      </div>
+      <div class="hero-rating">
+        <div class="stars" aria-label="4.8 étoiles sur 5">★★★★★</div>
+        <p class="hero-rating-text" data-i18n="hero_rating"><strong>4.8/5</strong> sur Google · Recommandé par les gastronomes caennais</p>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true" data-i18n="hero_scroll">Découvrir</div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials reveal" aria-labelledby="testimonials-heading">
+    <div class="testimonials-inner">
+      <div class="testimonials-header">
+        <p class="section-eyebrow" data-i18n="testimonials_eyebrow">Témoignages</p>
+        <h2 class="section-title" id="testimonials-heading" data-i18n="testimonials_title">Ce que disent<br>nos <em>convives</em></h2>
+      </div>
+      <div class="testimonials-grid" role="list">
+        <article class="testimonial-card reveal reveal-delay-1" role="listitem">
+          <div class="testimonial-stars" aria-label="5 étoiles">★★★★★</div>
+          <blockquote class="testimonial-quote">"Une expérience culinaire extraordinaire. Les momos sont absolument divins — jamais goûté quelque chose d'aussi authentique en dehors du Népal. L'accueil chaleureux nous a transportés."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">MC</div>
+            <div>
+              <p class="testimonial-name">Marie-Claire D.</p>
+              <p class="testimonial-meta">Habitante de Caen · Dal Bhat</p>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal reveal-delay-2" role="listitem">
+          <div class="testimonial-stars" aria-label="5 étoiles">★★★★★</div>
+          <blockquote class="testimonial-quote">"Le Thali complet est une révélation. Chaque saveur raconte une histoire. Un endroit qui mérite absolument le détour — notre restaurant préféré à Caen depuis l'ouverture."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">JL</div>
+            <div>
+              <p class="testimonial-name">Jean-Luc M.</p>
+              <p class="testimonial-meta">Gastronome · Thali complet</p>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card reveal reveal-delay-3" role="listitem">
+          <div class="testimonial-stars" aria-label="5 étoiles">★★★★★</div>
+          <blockquote class="testimonial-quote">"Ambiance feutrée, service attentionné, et une cuisine d'une authenticité remarquable. Le Masala Chai en fin de repas est un pur bonheur. On revient toujours avec plaisir."</blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">SB</div>
+            <div>
+              <p class="testimonial-name">Sophie B.</p>
+              <p class="testimonial-meta">Blogueuse culinaire · Normandie</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section aria-labelledby="story-heading">
+    <div class="story reveal">
+      <div class="story-image-wrap">
+        <div class="story-image-placeholder" role="img" aria-label="Chef préparant un plat traditionnel népalais">
+          <img
+            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80&fit=crop"
+            alt="Chef préparant avec soin un plat népalais traditionnel, épices et ingrédients frais"
+            loading="lazy"
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+          >
+        </div>
+        <div class="story-badge" aria-label="Depuis 2018">
+          <span class="story-badge-num">7+</span>
+          <span class="story-badge-text" data-i18n="story_badge">Années de passion</span>
+        </div>
+      </div>
+      <div class="story-content">
+        <p class="section-eyebrow" data-i18n="story_eyebrow">Notre Histoire</p>
+        <h2 class="section-title" id="story-heading" data-i18n="story_title">Une histoire<br>de <em>saveurs</em></h2>
+        <div class="story-body">
+          <p data-i18n="story_p1">Né d'une passion profonde pour les traditions culinaires de l'Himalaya, Le Népalais Caennais a ouvert ses portes avec une seule mission : apporter l'authenticité des saveurs népalaises au cœur de la Normandie.</p>
+          <p data-i18n="story_p2">Chaque plat est une invitation au voyage. Nos épices sont soigneusement sélectionnées, nos recettes fidèlement transmises par des générations de cuisiniers népalais, et notre hospitalité reflète le <em>nepali aatithya</em> — l'art de l'accueil himalayen.</p>
+        </div>
+        <div class="story-values">
+          <div class="story-value-item">
+            <p class="story-value-title" data-i18n="val1_title">Authenticité</p>
+            <p class="story-value-body" data-i18n="val1_body">Recettes ancestrales préservées avec intégrité</p>
+          </div>
+          <div class="story-value-item">
+            <p class="story-value-title" data-i18n="val2_title">Qualité</p>
+            <p class="story-value-body" data-i18n="val2_body">Ingrédients sélectionnés avec soin</p>
+          </div>
+          <div class="story-value-item">
+            <p class="story-value-title" data-i18n="val3_title">Tradition</p>
+            <p class="story-value-body" data-i18n="val3_body">Techniques transmises de génération en génération</p>
+          </div>
+          <div class="story-value-item">
+            <p class="story-value-title" data-i18n="val4_title">Accueil</p>
+            <p class="story-value-body" data-i18n="val4_body">L'hospitalité himalayenne à chaque table</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU PREVIEW -->
+  <section class="menu-preview" aria-labelledby="menu-preview-heading">
+    <div class="menu-preview-inner">
+      <div class="menu-preview-header reveal">
+        <div>
+          <p class="section-eyebrow" data-i18n="menu_eyebrow">Nos Spécialités</p>
+          <h2 class="section-title" id="menu-preview-heading" data-i18n="menu_title">Les plats<br><em>emblématiques</em></h2>
+        </div>
+        <a href="#" class="btn-ghost" onclick="showPage('menu'); return false;" data-i18n="menu_cta">
+          Voir le menu complet
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="menu-cards" role="list">
+        <article class="menu-card reveal reveal-delay-1" role="listitem">
+          <div class="menu-card-number" aria-hidden="true">01</div>
+          <h3 class="menu-card-title">Dal Bhat</h3>
+          <p class="menu-card-desc" data-i18n="mc_dalbhat_desc">Notre plat signature — riz basmati, lentilles épicées, légumes de saison et achar traditionnel</p>
+          <p class="menu-card-price">18 – 25 €</p>
+        </article>
+        <article class="menu-card reveal reveal-delay-2" role="listitem">
+          <div class="menu-card-number" aria-hidden="true">02</div>
+          <h3 class="menu-card-title">Momos</h3>
+          <p class="menu-card-desc" data-i18n="mc_momos_desc">Raviolis vapeur traditionnels, farce viande ou légumes, sauce sésame-tomate maison</p>
+          <p class="menu-card-price">12 – 15 €</p>
+        </article>
+        <article class="menu-card reveal reveal-delay-3" role="listitem">
+          <div class="menu-card-number" aria-hidden="true">03</div>
+          <h3 class="menu-card-title">Thali</h3>
+          <p class="menu-card-desc" data-i18n="mc_thali_desc">Plateau complet avec dal, riz, curry, légumes sautés, pain Roti et dessert kheer</p>
+          <p class="menu-card-price">22 – 28 €</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" aria-labelledby="gallery-heading">
+    <div class="gallery-inner">
+      <div class="gallery-header reveal">
+        <p class="section-eyebrow" data-i18n="gallery_eyebrow">Ambiance</p>
+        <h2 class="section-title" id="gallery-heading" data-i18n="gallery_title"><em>L'expérience</em><br>en images</h2>
+      </div>
+      <div class="gallery-grid" role="list" aria-label="Galerie photos du restaurant">
+
+        <div class="gallery-item gi-1 reveal" role="listitem" aria-label="Salle principale du restaurant — ambiance chaleureuse">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1517244683847-7456b63c5969?w=1200&q=80&fit=crop"
+              alt="Salle principale du restaurant, éclairage chaud et tables dressées"
+              loading="lazy"
+            >
+            <p class="gallery-caption" data-i18n="gal1_cap">L'ambiance du restaurant</p>
+          </div>
+        </div>
+
+        <div class="gallery-item gi-2 reveal reveal-delay-1" role="listitem" aria-label="Momos traditionnels vapeur">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=800&q=80&fit=crop"
+              alt="Momos traditionnels népalais vapeur servis avec sauce achar"
+              loading="lazy"
+            >
+            <p class="gallery-caption" data-i18n="gal2_cap">Momos maison</p>
+          </div>
+        </div>
+
+        <div class="gallery-item gi-3 reveal reveal-delay-2" role="listitem" aria-label="Épices himalayennes de qualité">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&q=80&fit=crop"
+              alt="Épices himalayennes — curcuma, cardamome, gingembre"
+              loading="lazy"
+            >
+            <p class="gallery-caption" data-i18n="gal3_cap">Épices d'exception</p>
+          </div>
+        </div>
+
+        <div class="gallery-item gi-4 reveal reveal-delay-1" role="listitem" aria-label="Table dressée pour le service">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&fit=crop"
+              alt="Table dressée pour le service du soir, atmosphère intime"
+              loading="lazy"
+            >
+            <p class="gallery-caption" data-i18n="gal4_cap">Tables dressées</p>
+          </div>
+        </div>
+
+        <div class="gallery-item gi-5 reveal reveal-delay-2" role="listitem" aria-label="Dal Bhat traditionnel — plat signature">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1000&q=80&fit=crop"
+              alt="Dal Bhat traditionnel — riz, lentilles, légumes et achar, plat signature"
+              loading="lazy"
+            >
+            <p class="gallery-caption" data-i18n="gal5_cap">Dal Bhat — plat signature</p>
+          </div>
+        </div>
+
+        <div class="gallery-item gi-6 reveal reveal-delay-3" role="listitem" aria-label="Préparation des plats en cuisine">
+          <div class="gallery-item-content">
+            <img
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=80&fit=crop"
+              alt="Masala chai et plats servis — hospitalité himalayenne"
+              loading="lazy"
+            >
+            <p class="gallery-caption" data-i18n="gal6_cap">Hospitalité himalayenne</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONVERSION CTA -->
+  <section class="conversion-cta" aria-labelledby="cta-heading">
+    <div class="conversion-cta-inner reveal">
+      <h2 id="cta-heading" data-i18n="cta_title">Réservez<br>Votre Table</h2>
+      <p data-i18n="cta_body">Laissez-vous emporter par les saveurs de l'Himalaya. Chaque repas est une invitation au voyage — réservez dès aujourd'hui pour une expérience inoubliable.</p>
+      <a href="#" class="btn-white" data-i18n="cta_btn" onclick="showPage('contact'); return false;">
+        Réserver maintenant
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+
+<!-- ═══════════════════════════════════════════════
+     MENU PAGE
+═══════════════════════════════════════════════ -->
+<div class="page" id="page-menu">
+
+  <header class="menu-page-hero">
+    <p class="section-eyebrow" style="justify-content:center; margin-bottom:1rem;" data-i18n="menupage_eyebrow">Notre Carte</p>
+    <h1 data-i18n="menupage_h1">Notre Menu</h1>
+    <p data-i18n="menupage_sub">Des recettes ancestrales, des ingrédients d'exception</p>
+  </header>
+
+  <div class="menu-categories" role="main">
+
+    <div class="menu-category reveal">
+      <div class="menu-category-header">
+        <div class="menu-category-icon" aria-hidden="true">E</div>
+        <h2 class="menu-category-title" data-i18n="cat_entrees">Entrées</h2>
+      </div>
+      <div class="menu-items" role="list">
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Momos</p>
+            <p class="menu-item-desc" data-i18n="item_momos_desc">Raviolis vapeur traditionnels, farce viande ou légumes, sauce sésame-tomate</p>
+          </div>
+          <p class="menu-item-price">12 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Samosa</p>
+            <p class="menu-item-desc" data-i18n="item_samosa_desc">Beignets croustillants épicés, farce pommes de terre-épices, chutney coriandre</p>
+          </div>
+          <p class="menu-item-price">9 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Sel Roti</p>
+            <p class="menu-item-desc" data-i18n="item_selroti_desc">Pain beignet traditionnel népalais, croustillant à l'extérieur, moelleux à l'intérieur</p>
+          </div>
+          <p class="menu-item-price">8 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Soupe Thukpa</p>
+            <p class="menu-item-desc" data-i18n="item_thukpa_desc">Soupe de nouilles himalayenne, bouillon épicé, légumes et herbes fraîches</p>
+          </div>
+          <p class="menu-item-price">11 €</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category reveal">
+      <div class="menu-category-header">
+        <div class="menu-category-icon" aria-hidden="true">P</div>
+        <h2 class="menu-category-title" data-i18n="cat_mains">Plats Principaux</h2>
+      </div>
+      <div class="menu-items" role="list">
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Dal Bhat <span style="font-size:0.7rem; color:var(--primary); margin-left:0.5rem; font-weight:600; letter-spacing:0.08em;">SIGNATURE</span></p>
+            <p class="menu-item-desc" data-i18n="item_dalbhat_desc">Riz basmati, lentilles dorées, légumes de saison, achar maison, accompagnements</p>
+          </div>
+          <p class="menu-item-price">18 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Thali Complet</p>
+            <p class="menu-item-desc" data-i18n="item_thali_desc">Plateau traditionnel : dal, riz, curry agneau, légumes sautés, roti, pickles, kheer</p>
+          </div>
+          <p class="menu-item-price">25 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Chicken Curry Népalais</p>
+            <p class="menu-item-desc" data-i18n="item_chicken_desc">Curry de poulet mijoté aux épices himalayennes, servi avec riz basmati parfumé</p>
+          </div>
+          <p class="menu-item-price">22 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Vegetable Thali <span style="font-size:0.7rem; color:hsl(145,45%,50%); margin-left:0.5rem; font-weight:600; letter-spacing:0.06em;">VÉG.</span></p>
+            <p class="menu-item-desc" data-i18n="item_vegthali_desc">Plateau végétarien complet avec dhal, légumes de saison, raïta, roti et dessert</p>
+          </div>
+          <p class="menu-item-price">18 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Lamb Rara</p>
+            <p class="menu-item-desc" data-i18n="item_lamb_desc">Agneau mijoté en sauce épaisse aux épices, spécialité des montagnes, avec riz</p>
+          </div>
+          <p class="menu-item-price">26 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Kwati</p>
+            <p class="menu-item-desc" data-i18n="item_kwati_desc">Soupe festive aux neuf légumineuses, tradition des célébrations népalaises</p>
+          </div>
+          <p class="menu-item-price">16 €</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category reveal">
+      <div class="menu-category-header">
+        <div class="menu-category-icon" aria-hidden="true">D</div>
+        <h2 class="menu-category-title" data-i18n="cat_desserts">Desserts</h2>
+      </div>
+      <div class="menu-items" role="list">
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Kheer</p>
+            <p class="menu-item-desc" data-i18n="item_kheer_desc">Riz au lait traditionnel, parfumé à la cardamome, pistaches et eau de rose</p>
+          </div>
+          <p class="menu-item-price">8 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Mango Lassi</p>
+            <p class="menu-item-desc" data-i18n="item_lassi_desc">Boisson yaourt à la mangue fraîche, légèrement sucrée et rafraîchissante</p>
+          </div>
+          <p class="menu-item-price">6 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Yomari</p>
+            <p class="menu-item-desc" data-i18n="item_yomari_desc">Boulettes de farine de riz fourrées au miel et sésame, spécialité néwar</p>
+          </div>
+          <p class="menu-item-price">9 €</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category reveal">
+      <div class="menu-category-header">
+        <div class="menu-category-icon" aria-hidden="true">B</div>
+        <h2 class="menu-category-title" data-i18n="cat_drinks">Boissons</h2>
+      </div>
+      <div class="menu-items" role="list">
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Masala Chai</p>
+            <p class="menu-item-desc" data-i18n="item_chai_desc">Thé épicé traditionnel, gingembre, cardamome, cannelle, lait entier</p>
+          </div>
+          <p class="menu-item-price">5 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Lassi Nature ou Sucré</p>
+            <p class="menu-item-desc" data-i18n="item_lassi2_desc">Boisson yaourt battu, nature ou sucré, légère et désaltérante</p>
+          </div>
+          <p class="menu-item-price">6 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Tongba</p>
+            <p class="menu-item-desc" data-i18n="item_tongba_desc">Bière de millet fermenté himalayenne chaude, tradition des hauts plateaux</p>
+          </div>
+          <p class="menu-item-price">8 €</p>
+        </div>
+        <div class="menu-item" role="listitem">
+          <div class="menu-item-left">
+            <p class="menu-item-name">Eau, Sodas, Jus</p>
+            <p class="menu-item-desc" data-i18n="item_soft_desc">Sélection de boissons sans alcool</p>
+          </div>
+          <p class="menu-item-price">3 – 5 €</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; padding: 0 2rem 6rem;">
+    <a href="#" class="btn-primary" data-i18n="hero_cta1" onclick="showPage('contact'); return false;">
+      Réserver une table
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+
+</div><!-- /page-menu -->
+
+
+<!-- ═══════════════════════════════════════════════
+     ABOUT PAGE
+═══════════════════════════════════════════════ -->
+<div class="page" id="page-about">
+
+  <div class="about-hero">
+    <div class="about-hero-text">
+      <p class="section-eyebrow" style="margin-bottom:1.25rem;" data-i18n="about_eyebrow">Notre Histoire</p>
+      <h1 data-i18n="about_h1">L'Authenticité<br>au Service de<br><em>Votre Palais</em></h1>
+      <p data-i18n="about_p1">Né d'un rêve himalyen et d'une passion pour les traditions culinaires du Népal, Le Népalais Caennais est bien plus qu'un restaurant — c'est un voyage sensoriel au cœur des montagnes.</p>
+      <p data-i18n="about_p2">Fondé par une famille amoureuse des saveurs de Katmandou et de Pokhara, nous avons apporté à Caen les recettes ancestrales, les épices rares et surtout, l'hospitalité chaleureuse qui caractérise le peuple népalais.</p>
+      <p data-i18n="about_p3">Chaque plat que nous servons est une ode à notre héritage. Nos épices voyagent directement des marchés de Thamel. Nos techniques de cuisson sont transmises de maître à élève depuis des générations. Notre engagement : ne jamais transiger sur l'authenticité.</p>
+    </div>
+    <div class="about-hero-image" role="img" aria-label="L'équipe du Népalais Caennais en cuisine">
+      <img
+        src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=900&q=80&fit=crop"
+        alt="L'équipe du Népalais Caennais — passion et transmission de la cuisine himalayenne"
+        loading="lazy"
+      >
+    </div>
+  </div>
+
+  <section class="about-values" aria-labelledby="values-heading">
+    <div class="about-values-inner">
+      <div class="about-values-header reveal">
+        <p class="section-eyebrow" data-i18n="about_vals_eyebrow">Nos Engagements</p>
+        <h2 class="section-title" id="values-heading" data-i18n="about_vals_title">Ce qui nous<br><em>définit</em></h2>
+      </div>
+      <div class="values-grid" role="list">
+        <article class="value-card reveal reveal-delay-1" role="listitem">
+          <p class="value-number">01</p>
+          <h3 class="value-title" data-i18n="v1_title">Authenticité</h3>
+          <p class="value-body" data-i18n="v1_body">Nous ne faisons aucun compromis sur nos recettes. Chaque préparation suit les traditions ancestrales du Népal, des épices importées directement aux techniques de cuisson transmises de génération en génération.</p>
+        </article>
+        <article class="value-card reveal reveal-delay-2" role="listitem">
+          <p class="value-number">02</p>
+          <h3 class="value-title" data-i18n="v2_title">Qualité</h3>
+          <p class="value-body" data-i18n="v2_body">Nos ingrédients sont soigneusement sélectionnés : épices rares de l'Himalaya, légumes frais de producteurs locaux normands, et viandes de qualité supérieure. Le meilleur des deux mondes.</p>
+        </article>
+        <article class="value-card reveal reveal-delay-3" role="listitem">
+          <p class="value-number">03</p>
+          <h3 class="value-title" data-i18n="v3_title">Accueil</h3>
+          <p class="value-body" data-i18n="v3_body">Le <em>Nepali Aatithya</em> — l'art de l'hospitalité himalayenne — est au cœur de notre service. Chez nous, chaque convive est traité comme un invité d'honneur, avec chaleur et attention.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-quote reveal" aria-label="Citation du fondateur">
+    <blockquote data-i18n="about_quote">
+      La cuisine népalaise n'est pas seulement une nourriture pour le corps — c'est une conversation entre les générations, une célébration de la terre et une expression de notre âme.
+    </blockquote>
+    <cite data-i18n="about_quote_cite">— Le fondateur, Le Népalais Caennais</cite>
+  </section>
+
+  <div style="text-align:center; padding: 0 2rem 6rem;">
+    <a href="#" class="btn-primary" data-i18n="about_cta" onclick="showPage('contact'); return false;">
+      Venez nous rencontrer
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+
+</div><!-- /page-about -->
+
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT PAGE
+═══════════════════════════════════════════════ -->
+<div class="page" id="page-contact">
+
+  <header class="contact-hero">
+    <p class="section-eyebrow" style="justify-content:center; margin-bottom:1rem;">Nous Trouver</p>
+    <h1 data-i18n="contact_h1">Contact &<br>Réservation</h1>
+    <p data-i18n="contact_sub">Nous serons ravis de vous accueillir autour d'une table</p>
+  </header>
+
+  <div class="contact-grid">
+    <!-- Info -->
+    <div>
+      <p class="contact-info-title" data-i18n="contact_coords">Nos Coordonnées</p>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <p class="contact-detail-label" data-i18n="contact_addr_lbl">Adresse</p>
+          <p class="contact-detail-value">12 Rue de la Gare<br>14000 Caen, Calvados</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.82 12 19.79 19.79 0 01.77 3.38 2 2 0 012.75 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.4a16 16 0 006.69 6.69l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <p class="contact-detail-label" data-i18n="contact_phone_lbl">Téléphone</p>
+          <p class="contact-detail-value">02 XX XX XX XX</p>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <p class="contact-detail-label" data-i18n="contact_email_lbl">Email</p>
+          <p class="contact-detail-value">contact@lenepalaiscaennais.fr</p>
+        </div>
+      </div>
+
+      <div class="hours-table">
+        <p class="hours-title" data-i18n="hours_title">Horaires d'ouverture</p>
+        <div id="hours-rows"></div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div id="reservation-anchor">
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="23" stroke="hsl(145,50%,50%)" stroke-width="1.5"/>
+            <path d="M14 24l7 7 13-14" stroke="hsl(145,50%,50%)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="form-success-title">Demande envoyée !</p>
+        <p class="form-success-text">Merci ! Nous confirmerons votre réservation par email dans les 2h. À très bientôt au Népalais Caennais !</p>
+      </div>
+
+      <p class="form-title" data-i18n="form_title">Réserver une Table</p>
+
+      <!-- OPTIONS DE RÉSERVATION — TheFork + Téléphone -->
+      <div class="booking-options" role="group" aria-label="Choisir un mode de réservation">
+        <a
+          href="https://www.thefork.fr/restaurants/caen-c511212"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="booking-option featured"
+          aria-label="Réserver sur TheFork — confirmation instantanée"
+        >
+          <div class="booking-option-icon" aria-hidden="true">TF</div>
+          <div class="booking-option-text">
+            <p class="booking-option-name">TheFork</p>
+            <p class="booking-option-sub" data-i18n="book_tf_sub">Confirmation instantanée</p>
+          </div>
+          <span class="booking-option-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a
+          href="tel:+33200000000"
+          class="booking-option"
+          aria-label="Réserver par téléphone au 02 XX XX XX XX"
+        >
+          <div class="booking-option-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.82 12 19.79 19.79 0 01.77 3.38 2 2 0 012.75 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.4a16 16 0 006.69 6.69l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="booking-option-text">
+            <p class="booking-option-name" data-i18n="book_phone_name">Téléphone</p>
+            <p class="booking-option-sub">02 XX XX XX XX</p>
+          </div>
+          <span class="booking-option-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="booking-divider">
+        <span data-i18n="book_or">ou envoyez une demande par email</span>
+      </div>
+
+      <!-- FORMULAIRE RÉEL — Formspree (remplacer l'endpoint par votre clé Formspree) -->
+      <form
+        class="reservation-form"
+        id="reservationForm"
+        action="https://formspree.io/f/VOTRE_CLE_ICI"
+        method="POST"
+        novalidate
+        aria-label="Formulaire de demande de réservation"
+      >
+        <!-- Champ honeypot anti-spam -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <!-- Redirection après envoi -->
+        <input type="hidden" name="_subject" value="Nouvelle demande de réservation — Le Népalais Caennais">
+        <input type="hidden" name="_language" value="fr">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-name" data-i18n="form_name_lbl">Nom complet *</label>
+            <input class="form-input" type="text" id="res-name" name="name" placeholder="Jean Dupont" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-email" data-i18n="form_email_lbl">Email *</label>
+            <input class="form-input" type="email" id="res-email" name="email" placeholder="jean@exemple.fr" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-phone" data-i18n="form_phone_lbl">Téléphone</label>
+            <input class="form-input" type="tel" id="res-phone" name="phone" placeholder="06 XX XX XX XX" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-guests" data-i18n="form_guests_lbl">Nombre de couverts *</label>
+            <select class="form-input" id="res-guests" name="guests" required>
+              <option value="">Sélectionner…</option>
+              <option>1 personne</option>
+              <option>2 personnes</option>
+              <option>3 personnes</option>
+              <option>4 personnes</option>
+              <option>5 personnes</option>
+              <option>6 personnes</option>
+              <option>7+ personnes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-date" data-i18n="form_date_lbl">Date souhaitée *</label>
+            <input class="form-input" type="date" id="res-date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-time" data-i18n="form_time_lbl">Service *</label>
+            <select class="form-input" id="res-time" name="time" required>
+              <option value="">Sélectionner…</option>
+              <optgroup label="Déjeuner">
+                <option>12:00</option>
+                <option>12:30</option>
+                <option>13:00</option>
+                <option>13:30</option>
+              </optgroup>
+              <optgroup label="Dîner">
+                <option>19:00</option>
+                <option>19:30</option>
+                <option>20:00</option>
+                <option>20:30</option>
+                <option>21:00</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="res-notes" data-i18n="form_notes_lbl">Remarques ou demandes spéciales</label>
+          <textarea class="form-input" id="res-notes" name="notes" placeholder="Allergies, anniversaire, régime particulier, chaise haute…"></textarea>
+        </div>
+
+        <button type="submit" class="form-submit" id="formSubmitBtn" data-i18n="form_submit">
+          Envoyer ma demande
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="map-section">
+    <div class="map-container" role="img" aria-label="Carte de localisation — 12 Rue de la Gare, 14000 Caen">
+      <div class="map-placeholder-text">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="hsl(25,72%,52%)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        <p>12 Rue de la Gare, 14000 Caen</p>
+        <p style="margin-top:0.5rem;">
+          <a href="https://maps.google.com?q=12+Rue+de+la+Gare+14000+Caen" target="_blank" rel="noopener noreferrer" data-i18n="map_link">Ouvrir dans Google Maps →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-contact -->
+
+<!-- ═══════════════════════════════════════════════
+     BLOG PAGE
+═══════════════════════════════════════════════ -->
+<div class="page" id="page-blog">
+
+  <!-- Hero blog -->
+  <header class="blog-hero">
+    <div class="blog-hero-inner">
+      <p class="blog-hero-eyebrow" data-i18n="blog_eyebrow">Chroniques himalayennes</p>
+      <h1 data-i18n="blog_h1">Le <em>Carnet</em><br>du Népalais</h1>
+      <p class="blog-hero-desc" data-i18n="blog_desc">Recettes ancestrales, portraits d'épices, carnets de voyage et histoires qui nourrissent l'âme autant que le palais.</p>
+      <div class="blog-filters" role="group" aria-label="Filtrer les articles">
+        <button class="blog-filter-btn active" data-i18n="filter_all" onclick="filterBlog('all', this)">Tous les articles</button>
+        <button class="blog-filter-btn" data-i18n="filter_recettes" onclick="filterBlog('recettes', this)">Recettes</button>
+        <button class="blog-filter-btn" data-i18n="filter_culture" onclick="filterBlog('culture', this)">Culture & Histoire</button>
+        <button class="blog-filter-btn" data-i18n="filter_epices" onclick="filterBlog('epices', this)">Épices & Saveurs</button>
+        <button class="blog-filter-btn" data-i18n="filter_voyage" onclick="filterBlog('voyage', this)">Carnet de Voyage</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article vedette -->
+  <div class="blog-featured" id="blogFeatured">
+    <div class="blog-featured-card reveal" onclick="openArticle('dal-bhat')" role="article" aria-label="Lire l'article sur le Dal Bhat" tabindex="0" onkeydown="if(event.key==='Enter')openArticle('dal-bhat')">
+      <div class="blog-featured-img">
+        <img
+          src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=900&q=80&fit=crop"
+          alt="Dal Bhat traditionnel — riz, lentilles, légumes et achar"
+          loading="lazy"
+        >
+        <span class="blog-featured-badge" aria-label="Article à la une">À la une</span>
+      </div>
+      <div class="blog-featured-body">
+        <p class="blog-cat-pill" aria-label="Catégorie : Recettes">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="var(--primary)" aria-hidden="true"><circle cx="5" cy="5" r="5"/></svg>
+          Recettes
+        </p>
+        <h2 class="blog-featured-title">Dal Bhat : le plat qui nourrit l'âme d'un peuple entier</h2>
+        <p class="blog-featured-excerpt">Plus qu'un simple repas, le Dal Bhat est un art de vivre. Riz blanc parfumé, dal de lentilles corail mijotées aux épices, légumes de saison et pickles acidulés — cette assiette raconte l'histoire de millions de Népalais qui la partagent deux fois par jour depuis des générations. Plongez au cœur de notre plat signature.</p>
+        <div class="blog-featured-meta">
+          <div class="blog-author">
+            <div class="blog-author-avatar" aria-hidden="true">RK</div>
+            <div>
+              <p class="blog-author-name">Rajesh Kumar</p>
+              <p class="blog-author-date">12 mars 2025 · 8 min de lecture</p>
+            </div>
+          </div>
+          <span class="blog-read-more" aria-hidden="true">Lire l'article →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grille articles -->
+  <div class="blog-grid-section">
+    <div class="blog-grid-header">
+      <p class="blog-grid-title">Tous les articles</p>
+    </div>
+
+    <div class="blog-grid" id="blogGrid" role="list">
+
+      <!-- Article 1 -->
+      <article class="blog-card reveal" data-cat="epices" role="listitem" onclick="openArticle('cardamome')" tabindex="0" onkeydown="if(event.key==='Enter')openArticle('cardamome')" aria-label="Lire l'article sur la cardamome">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=700&q=80&fit=crop" alt="Cardamome verte et épices himalayennes" loading="lazy">
+          <span class="blog-card-cat">Épices & Saveurs</span>
+        </div>
+        <div class="blog-card-body">
+          <h3 class="blog-card-title">La cardamome verte : l'or vert de l'Himalaya</h3>
+          <p class="blog-card-excerpt">Récoltée à la main sur les versants humides du Sikkim et du Népal oriental, la cardamome verte parfume nos thés, nos currys et nos desserts. Voyage au cœur de cette épice aux mille vertus.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">5 février 2025</span>
+            <span class="blog-card-reading">6 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="blog-card reveal reveal-delay-1" data-cat="culture" role="listitem" onclick="openArticle('tihar')" tabindex="0" onkeydown="if(event.key==='Enter')openArticle('tihar')" aria-label="Lire l'article sur la fête de Tihar">
+        <div class="blog-card-img">
+          <img src="https://www.oasis-voyages.com/wp-content/uploads/2023/05/Bhai-tika-Tihar-Nepal-1280x720.jpg.webp?w=700&q=80&fit=crop" alt="Bougies et lumières de la fête de Tihar" loading="lazy">
+          <span class="blog-card-cat">Culture & Histoire</span>
+        </div>
+        <div class="blog-card-body">
+          <h3 class="blog-card-title">Tihar, la fête des lumières : quand le Népal scintille</h3>
+          <p class="blog-card-excerpt">Cinq jours de fête, de dieux, d'animaux honorés et de sucreries partagées. Tihar est bien plus que Diwali — c'est la célébration de la vie sous toutes ses formes. Nous vous emmenons dans les rues illuminées de Katmandou.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">18 janvier 2025</span>
+            <span class="blog-card-reading">10 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="blog-card reveal reveal-delay-2" data-cat="recettes" role="listitem" onclick="openArticle('momos')" tabindex="0" onkeydown="if(event.key==='Enter')openArticle('momos')" aria-label="Lire l'article sur les momos">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=700&q=80&fit=crop" alt="Momos vapeur népalais servis avec sauce" loading="lazy">
+          <span class="blog-card-cat">Recettes</span>
+        </div>
+        <div class="blog-card-body">
+          <h3 class="blog-card-title">Les momos, secret de famille dévoilé</h3>
+          <p class="blog-card-excerpt">Comment plier un momo parfait ? Quelle farce choisir ? Notre chef partage, pour la première fois, les astuces transmises de mère en fille dans sa famille de Pokhara. Une recette et des gestes à reproduire chez vous.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">3 décembre 2024</span>
+            <span class="blog-card-reading">7 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="blog-card reveal" data-cat="voyage" role="listitem" onclick="openArticle('katmandou')" tabindex="0" onkeydown="if(event.key==='Enter')openArticle('katmandou')" aria-label="Lire l'article sur Katmandou">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=700&q=80&fit=crop" alt="Vue sur Katmandou et les temples" loading="lazy">
+          <span class="blog-card-cat">Carnet de Voyage</span>
+        </div>
+        <div class="blog-card-body">
+          <h3 class="blog-card-title">Katmandou, capitale des mille saveurs</h3>
+          <p class="blog-card-excerpt">Thamel au petit matin, les marchés d'épices de Asan, les bhattis cachés derrière les stupas dorées — Katmandou est une ville qui se mange autant qu'elle se visite. Notre carnet de voyage gourmand.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">14 novembre 2024</span>
+            <span class="blog-card-reading">12 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="blog-card reveal reveal-delay-1" data-cat="culture" role="listitem" onclick="openArticle('masala-chai')" tabindex="0" onkeydown="if(event.key==='Enter')openArticle('masala-chai')" aria-label="Lire l'article sur le Masala Chai">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=700&q=80&fit=crop" alt="Masala chai dans une tasse de terre cuite" loading="lazy">
+          <span class="blog-card-cat">Culture & Histoire</span>
+        </div>
+        <div class="blog-card-body">
+          <h3 class="blog-card-title">Le Masala Chai, rituel universel de l'hospitalité</h3>
+          <p class="blog-card-excerpt">On dit au Népal qu'une maison sans chai est une maison sans âme. Cette boisson épicée — gingembre, cardamome, cannelle, poivre — est le premier geste d'accueil offert à chaque visiteur. Une philosophie en tasse.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">29 octobre 2024</span>
+            <span class="blog-card-reading">5 min</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="blog-card reveal reveal-delay-2" data-cat="epices" role="listitem" onclick="openArticle('timut')" tabindex="0" onkeydown="if(event.key==='Enter')openArticle('timut')" aria-label="Lire l'article sur le poivre timut">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=700&q=80&fit=crop" alt="Poivre timut et épices variées" loading="lazy">
+          <span class="blog-card-cat">Épices & Saveurs</span>
+        </div>
+        <div class="blog-card-body">
+          <h3 class="blog-card-title">Le poivre timut : l'épice secrète du Népal</h3>
+          <p class="blog-card-excerpt">Voisin du poivre de Sichuan, le timut crépite en bouche avec ses notes de pamplemousse et de coriandre fraîche. Inconnu en France il y a dix ans, il est aujourd'hui chéri par les meilleurs chefs. Notre guide complet.</p>
+          <div class="blog-card-footer">
+            <span class="blog-card-date">8 octobre 2024</span>
+            <span class="blog-card-reading">6 min</span>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /blog-grid -->
+
+    <!-- Newsletter -->
+    <div class="blog-newsletter reveal">
+      <h3 data-i18n="newsletter_title">Les chroniques himalayennes dans votre boîte</h3>
+      <p data-i18n="newsletter_sub">Recettes, histoires et secrets d'épices — une fois par mois, pas plus.</p>
+      <div class="blog-newsletter-form" role="form" aria-label="Inscription newsletter">
+        <input type="email" class="blog-newsletter-input" placeholder="votre@email.fr" aria-label="Votre adresse email">
+        <button class="blog-newsletter-btn" data-i18n="newsletter_btn" type="button" onclick="this.textContent=(window.currentLang==='en'?'Thank you ✓':'Merci ✓'); this.disabled=true;">S'inscrire</button>
+      </div>
+    </div>
+
+  </div><!-- /blog-grid-section -->
+
+</div><!-- /page-blog -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE ARTICLE — Dal Bhat (article vedette)
+═══════════════════════════════════════════════ -->
+<div class="article-page" id="article-dal-bhat" role="article" aria-label="Article : Dal Bhat">
+
+  <button class="article-back" data-i18n="art_back" onclick="closeArticle()" aria-label="Retour au blog">
+    ← Retour au blog
+  </button>
+
+  <img
+    class="article-hero-img"
+    src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=1400&q=85&fit=crop"
+    alt="Dal Bhat traditionnel servi sur plateau en acier inoxydable"
+    loading="eager"
+  >
+
+  <div class="article-container">
+    <header class="article-header">
+      <div class="article-cats">
+        <span class="article-cat-tag">Recettes</span>
+        <span class="article-cat-tag">Culture</span>
+      </div>
+      <h1 class="article-title">Dal Bhat : le plat qui nourrit l'âme d'un peuple entier</h1>
+      <p class="article-subtitle">Plus qu'une recette, une philosophie. Comment riz et lentilles sont devenus le cœur battant de la cuisine népalaise — et de notre restaurant.</p>
+      <div class="article-byline">
+        <div class="article-byline-avatar" aria-hidden="true">RK</div>
+        <div>
+          <p class="article-byline-name">Rajesh Kumar</p>
+          <p class="article-byline-meta">Chef fondateur · Le Népalais Caennais</p>
+        </div>
+        <div class="article-byline-stats">
+          <div class="article-stat">
+            <span class="article-stat-val">12 mars 2025</span>
+            <span class="article-stat-lbl">Publié le</span>
+          </div>
+          <div class="article-stat">
+            <span class="article-stat-val">8 min</span>
+            <span class="article-stat-lbl">Lecture</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-body">
+
+      <p>Il existe des plats qui transcendent la simple notion de nourriture. Le Dal Bhat en est l'exemple absolu. Dans les collines du Népal, dans les vallées himalayennes, sur les sentiers de trek entre Namche et Lukla, une phrase résonne comme un mantra : <em>"Dal Bhat Power, 24-Hour."</em> Ce n'est pas un slogan publicitaire. C'est une vérité viscérale.</p>
+
+      <p>Depuis que j'ai quitté Pokhara pour poser mes valises — et mes casseroles — à Caen, cette assiette est devenue ma boussole. Elle me recentre. Elle me rappelle d'où je viens. Et chaque fois que je la prépare pour nos convives, j'espère leur transmettre un peu de cette certitude tranquille que seule la cuisine ancestrale peut donner.</p>
+
+      <div class="article-pull-quote">
+        "En 18 ans de cuisine, j'ai réalisé que le Dal Bhat n'est pas une recette. C'est un dialogue entre la terre et celui qui la mange."
+      </div>
+
+      <h2>L'anatomie d'un plat parfait</h2>
+
+      <p>Le Dal Bhat, dans sa forme la plus épurée, se compose de trois éléments inséparables : le <strong>Bhat</strong> (riz blanc vapeur), le <strong>Dal</strong> (soupe de lentilles épicée) et le <strong>Tarkari</strong> (curry de légumes de saison). Autour d'eux gravitent les satellites indispensables : l'<em>achar</em> (pickle maison), le papad croustillant, parfois du yaourt nature ou une portion de viande.</p>
+
+      <p>Ce qui rend ce plat unique, c'est son équilibre nutritionnel presque parfait. Les protéines complètes issues de l'association riz-lentilles, les vitamines des légumes, la digestion facilitée par les épices — le Dal Bhat est l'une des rares préparations traditionnelles qui satisfait à la fois la diététique moderne et la sagesse ancestrale.</p>
+
+      <img
+        class="article-img-inline"
+        src="https://images.unsplash.com/photo-1547592180-85f173990554?w=900&q=80&fit=crop"
+        alt="Préparation des épices pour le Dal — curcuma, gingembre et cumin"
+        loading="lazy"
+      >
+      <p class="article-img-caption">La magie commence dans les épices : curcuma frais, gingembre pilé, cumin torréfié à sec.</p>
+
+      <h2>La recette de ma mère</h2>
+
+      <p>Il m'a fallu des années pour comprendre que la recette de ma mère n'était pas vraiment une recette. C'était une façon d'être attentif — à la chaleur du feu, à la consistance du dal, au parfum qui change tout quand on ajoute le <em>ghee</em> en dernier. Voici ce que j'ai réussi à transcrire.</p>
+
+      <div class="article-recipe-box">
+        <h4>Dal aux lentilles corail — pour 4 personnes</h4>
+        <ul>
+          <li>250 g de lentilles corail (masoor dal), rincées</li>
+          <li>1 oignon jaune, finement émincé</li>
+          <li>3 gousses d'ail, 2 cm de gingembre frais</li>
+          <li>1 c. à c. de curcuma · 1 c. à c. de cumin en poudre</li>
+          <li>½ c. à c. de piment rouge séché · 1 c. à c. de coriandre</li>
+          <li>2 tomates mûres · 1 litre d'eau · sel</li>
+          <li><strong>Pour le tarka :</strong> 2 c. à s. de ghee, 1 c. à c. de cumin entier, 1 piment séché</li>
+        </ul>
+        <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.75rem;margin-bottom:0;">Faire revenir oignon, ail et gingembre. Ajouter épices, tomates, lentilles et eau. Mijoter 25 minutes. En fin de cuisson, préparer le tarka : faire grésiller cumin et piment dans le ghee fumant, verser en filet sur le dal. C'est ce geste final qui fait toute la différence.</p>
+      </div>
+
+      <blockquote>
+        <p>Le dal ne se mange pas. Il se boit avec les yeux d'abord — cette couleur or, ce nuage de vapeur — puis avec l'odorat. Le goût arrive en dernier, mais il reste le plus longtemps.</p>
+        <cite>— Rashmi Tamang, grand-mère du chef, Pokhara</cite>
+      </blockquote>
+
+      <h2>Pourquoi nous le servons différemment</h2>
+
+      <p>Au Népalais Caennais, nous avons fait un choix délibéré : ne pas "adapter" notre Dal Bhat au palais français. Pas de sel en moins, pas de piment atténué, pas d'épices diluées par souci de conformité. Notre pari est exactement inverse — faire confiance à nos convives, les emmener vraiment là-bas.</p>
+
+      <p>Ce qui a changé, en revanche, c'est la provenance. Nos lentilles viennent d'un producteur normand qui travaille des variétés à l'ancienne. Le riz basmati est importé d'une coopérative du Terai népalais. Les épices arrivent directement de Thamel, contrôlées par notre famille sur place. Ce n'est pas de l'exotisme performatif. C'est de la rigueur.</p>
+
+      <h3>La règle du refill infini</h3>
+
+      <p>Une tradition que nous maintenons fidèlement : <strong>le Dal Bhat se ressert sans fin.</strong> Dans tous les teahouses de l'Annapurna, cette règle est sacrée. Chez nous aussi. Commandez ce plat, et notre serveur reviendra vous proposer du riz, du dal et des légumes supplémentaires — sans frais, sans question, sans limite. Parce que c'est ainsi. Parce que c'est généreux. Parce que c'est népalais.</p>
+
+    </div><!-- /article-body -->
+
+    <footer class="article-footer">
+      <div class="article-tags" aria-label="Tags de l'article">
+        <span class="article-tag">Dal Bhat</span>
+        <span class="article-tag">Recette</span>
+        <span class="article-tag">Tradition</span>
+        <span class="article-tag">Népal</span>
+        <span class="article-tag">Lentilles</span>
+      </div>
+    </footer>
+  </div><!-- /article-container -->
+
+  <!-- Articles liés -->
+  <section class="related-articles" aria-labelledby="related-heading">
+    <div class="related-articles-inner">
+      <p class="related-title" id="related-heading">Continuez votre voyage</p>
+      <div class="related-grid" role="list">
+        <div class="related-card" role="listitem" onclick="openArticle('momos')" tabindex="0" onkeydown="if(event.key==='Enter')openArticle('momos')">
+          <p class="related-card-cat">Recettes</p>
+          <p class="related-card-title">Les momos, secret de famille dévoilé</p>
+          <p class="related-card-date">3 décembre 2024</p>
+        </div>
+        <div class="related-card" role="listitem" onclick="openArticle('cardamome')" tabindex="0" onkeydown="if(event.key==='Enter')openArticle('cardamome')">
+          <p class="related-card-cat">Épices & Saveurs</p>
+          <p class="related-card-title">La cardamome verte : l'or vert de l'Himalaya</p>
+          <p class="related-card-date">5 février 2025</p>
+        </div>
+        <div class="related-card" role="listitem" onclick="openArticle('katmandou')" tabindex="0" onkeydown="if(event.key==='Enter')openArticle('katmandou')">
+          <p class="related-card-cat">Carnet de Voyage</p>
+          <p class="related-card-title">Katmandou, capitale des mille saveurs</p>
+          <p class="related-card-date">14 novembre 2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /article-dal-bhat -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE ARTICLE — Cardamome
+═══════════════════════════════════════════════ -->
+<div class="article-page" id="article-cardamome">
+  <button class="article-back" data-i18n="art_back" onclick="closeArticle()">← Retour au blog</button>
+  <img class="article-hero-img" src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=1400&q=85&fit=crop" alt="Cardamome verte et épices himalayennes" loading="lazy">
+  <div class="article-container">
+    <header class="article-header">
+      <div class="article-cats"><span class="article-cat-tag">Épices & Saveurs</span></div>
+      <h1 class="article-title">La cardamome verte : l'or vert de l'Himalaya</h1>
+      <p class="article-subtitle">Récoltée à la main sur les versants humides du Sikkim et du Népal oriental, elle parfume thés, currys et desserts d'un arôme incomparable.</p>
+      <div class="article-byline">
+        <div class="article-byline-avatar" aria-hidden="true">PM</div>
+        <div>
+          <p class="article-byline-name">Priya Maharjan</p>
+          <p class="article-byline-meta">Sommelier d'épices · Le Népalais Caennais</p>
+        </div>
+        <div class="article-byline-stats">
+          <div class="article-stat"><span class="article-stat-val">5 fév. 2025</span><span class="article-stat-lbl">Publié le</span></div>
+          <div class="article-stat"><span class="article-stat-val">6 min</span><span class="article-stat-lbl">Lecture</span></div>
+        </div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Imaginez une forêt humide à 1 500 mètres d'altitude. Des plants de deux mètres de haut, aux feuilles larges comme des paumes, poussent à l'ombre des érables. Sur leurs tiges basses, des gousses vertes se pressent en grappes denses — chacune portant, à l'intérieur, entre dix et vingt graines noires qui renferment l'un des arômes les plus complexes du règne végétal. Bienvenue dans la forêt à cardamome du Népal oriental.</p>
+
+      <div class="article-pull-quote">"La cardamome verte, c'est à la fois du citron, de l'eucalyptus, de la menthe et quelque chose d'indéfinissable — quelque chose de montagnard."</div>
+
+      <h2>Une épice aux deux visages</h2>
+      <p>La cardamome verte (<em>Elettaria cardamomum</em>) joue un double rôle dans la cuisine himalayenne. Dans les préparations sucrées — le <em>kheer</em> (riz au lait), le <em>sel roti</em>, les <em>juju dhau</em> — elle apporte une fraîcheur florale et camphréée. Dans les plats salés — currys, marinades, masalas — elle agit en profondeur, liant les autres épices et ajoutant une dimension presque mentholée qui équilibre le piment.</p>
+      <p>Au Népalais Caennais, nous l'utilisons entière (pour les bouillons et riz pilaf), fendue (pour les currys mijotés) et moulue à la commande (pour nos Masala Chai). Cette distinction n'est pas anecdotique : une cardamome moulue d'avance perd 60 % de ses composés aromatiques en moins de deux semaines.</p>
+
+      <h2>Comment la choisir et la conserver</h2>
+      <p>Une bonne cardamome verte doit être d'un vert profond — signe qu'elle a été récoltée à maturité et séchée à basse température. Si les gousses tirent sur le beige ou le brun, les graines ont perdu leur huile essentielle. Les meilleures proviennent du district d'Ilam au Népal ou des collines du Sikkim. Conservez-les entières dans un bocal hermétique à l'abri de la lumière — elles tiennent ainsi 18 mois sans perte notable.</p>
+    </div>
+    <footer class="article-footer">
+      <div class="article-tags">
+        <span class="article-tag">Cardamome</span>
+        <span class="article-tag">Épices</span>
+        <span class="article-tag">Himalaya</span>
+        <span class="article-tag">Saveurs</span>
+      </div>
+    </footer>
+  </div>
+  <section class="related-articles"><div class="related-articles-inner"><p class="related-title">Continuez votre voyage</p><div class="related-grid"><div class="related-card" onclick="openArticle('timut')" tabindex="0"><p class="related-card-cat">Épices & Saveurs</p><p class="related-card-title">Le poivre timut : l'épice secrète du Népal</p><p class="related-card-date">8 octobre 2024</p></div><div class="related-card" onclick="openArticle('dal-bhat')" tabindex="0"><p class="related-card-cat">Recettes</p><p class="related-card-title">Dal Bhat : le plat qui nourrit l'âme d'un peuple</p><p class="related-card-date">12 mars 2025</p></div></div></div></section>
+</div><!-- /article-cardamome -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE ARTICLE — Momos
+═══════════════════════════════════════════════ -->
+<div class="article-page" id="article-momos">
+  <button class="article-back" data-i18n="art_back" onclick="closeArticle()">← Retour au blog</button>
+  <img class="article-hero-img" src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1400&q=85&fit=crop" alt="Momos vapeur népalais" loading="lazy">
+  <div class="article-container">
+    <header class="article-header">
+      <div class="article-cats"><span class="article-cat-tag">Recettes</span></div>
+      <h1 class="article-title">Les momos, secret de famille enfin dévoilé</h1>
+      <p class="article-subtitle">Comment plier un momo parfait ? Quelle farce choisir ? Notre chef partage pour la première fois les gestes transmis de mère en fille dans sa famille de Pokhara.</p>
+      <div class="article-byline">
+        <div class="article-byline-avatar" aria-hidden="true">RK</div>
+        <div>
+          <p class="article-byline-name">Rajesh Kumar</p>
+          <p class="article-byline-meta">Chef fondateur · Le Népalais Caennais</p>
+        </div>
+        <div class="article-byline-stats">
+          <div class="article-stat"><span class="article-stat-val">3 déc. 2024</span><span class="article-stat-lbl">Publié le</span></div>
+          <div class="article-stat"><span class="article-stat-val">7 min</span><span class="article-stat-lbl">Lecture</span></div>
+        </div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Le momo est probablement la chose la plus simple et la plus complexe que je connaisse. Simple, parce que sa liste d'ingrédients tient sur une main. Complexe, parce que le <em>pliage</em> — ce geste unique qui scelle la poche de pâte — demande des années pour être vraiment maîtrisé. Ma mère peut faire 200 momos à l'heure. Je mets, à peu près, trois fois ce temps.</p>
+
+      <h2>La pâte : l'équation de base</h2>
+      <p>Farine de blé ordinaire (type 45 ou 55), eau tiède, une pincée de sel. C'est tout. Le ratio est deux parts de farine pour une part d'eau. On pétrit dix minutes, on laisse reposer sous un linge humide trente minutes. La pâte doit être souple, non collante, légèrement brillante. Si elle colle, trop d'eau — on rajoute de la farine par pincées.</p>
+
+      <div class="article-recipe-box">
+        <h4>Momos poulet-coriandre — pour 4 personnes (env. 30 pièces)</h4>
+        <ul>
+          <li>300 g de farine · 150 ml d'eau tiède · 1 pincée de sel</li>
+          <li><strong>Farce :</strong> 400 g de poulet haché, 1 oignon rouge finement ciselé</li>
+          <li>3 gousses d'ail · 1 c. à c. de gingembre frais râpé</li>
+          <li>1 botte de coriandre fraîche · 1 c. à s. de sauce soja</li>
+          <li>1 c. à c. de poivre noir · sel · 1 c. à s. d'huile neutre</li>
+          <li><strong>Achar :</strong> 3 tomates, 2 piments rouges séchés, 1 c. à s. de sésame torréfié</li>
+        </ul>
+      </div>
+
+      <h2>Le pliage : la half-moon ou la rose ?</h2>
+      <p>Il existe des dizaines de façons de plier un momo. Les deux plus répandues sont la <em>half-moon</em> (demi-lune, plus facile pour les débutants) et la <em>rose</em> ou <em>flower fold</em> (qui demande de créer 12 à 15 petits plis réguliers tout autour). Chez nous, nous utilisons exclusivement la rose — elle est plus jolie, certes, mais surtout, elle scelle mieux la pâte et évite que le jus de la farce ne s'échappe pendant la cuisson vapeur.</p>
+
+      <blockquote>
+        <p>Un momo bien plié ne s'ouvre jamais. Il gonfle, il brille, il tremble légèrement sur le panier vapeur — et quand on le mange, le jus qui éclate en bouche est la récompense du geste juste.</p>
+        <cite>— Sushila Gurung, mère du chef</cite>
+      </blockquote>
+    </div>
+    <footer class="article-footer">
+      <div class="article-tags"><span class="article-tag">Momos</span><span class="article-tag">Recette</span><span class="article-tag">Technique</span><span class="article-tag">Vapeur</span></div>
+    </footer>
+  </div>
+  <section class="related-articles"><div class="related-articles-inner"><p class="related-title">Continuez votre voyage</p><div class="related-grid"><div class="related-card" onclick="openArticle('dal-bhat')" tabindex="0"><p class="related-card-cat">Recettes</p><p class="related-card-title">Dal Bhat : le plat qui nourrit l'âme d'un peuple</p><p class="related-card-date">12 mars 2025</p></div><div class="related-card" onclick="openArticle('tihar')" tabindex="0"><p class="related-card-cat">Culture & Histoire</p><p class="related-card-title">Tihar, la fête des lumières</p><p class="related-card-date">18 janvier 2025</p></div></div></div></section>
+</div><!-- /article-momos -->
+
+
+<!-- Articles légers (Tihar, Katmandou, Masala Chai, Timut) — structure complète -->
+<div class="article-page" id="article-tihar">
+  <button class="article-back" data-i18n="art_back" onclick="closeArticle()">← Retour au blog</button>
+  <img class="article-hero-img" src="https://www.oasis-voyages.com/wp-content/uploads/2023/05/Bhai-tika-Tihar-Nepal-1280x720.jpg.webp?w=1400&q=85&fit=crop" alt="Lumières de Tihar" loading="lazy">
+  <div class="article-container">
+    <header class="article-header">
+      <div class="article-cats"><span class="article-cat-tag">Culture & Histoire</span></div>
+      <h1 class="article-title">Tihar, la fête des lumières : quand le Népal scintille</h1>
+      <p class="article-subtitle">Cinq jours de fête, de dieux honorés, d'animaux célébrés et de sucreries partagées. Plongée dans le plus beau festival népalais.</p>
+      <div class="article-byline">
+        <div class="article-byline-avatar">PM</div>
+        <div><p class="article-byline-name">Priya Maharjan</p><p class="article-byline-meta">Le Népalais Caennais</p></div>
+        <div class="article-byline-stats"><div class="article-stat"><span class="article-stat-val">18 jan. 2025</span><span class="article-stat-lbl">Publié le</span></div><div class="article-stat"><span class="article-stat-val">10 min</span><span class="article-stat-lbl">Lecture</span></div></div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Tihar arrive en automne, juste après Dashain, et pourtant rien ne ressemble à ce qui précède. Là où Dashain est austère et solennel, Tihar est lumineux, coloré, festif. Pendant cinq jours, le Népal tout entier se métamorphose en jardin de lumières — guirlandes dorées aux fenêtres, rangoli de poudres colorées sur les seuils, lampes à huile vacillantes le long des ruelles.</p>
+
+      <h2>Les cinq jours sacrés</h2>
+      <p>Chaque journée de Tihar est dédiée à un être particulier. Le premier jour (Kaag Tihar) honore les corbeaux, messagers des dieux. Le second (Kukur Tihar) célèbre les chiens, gardiens fidèles. Le troisième jour — le plus important — est Laxmi Puja, dédié à la déesse de la richesse et de la prospérité. Le quatrième célèbre les bœufs. Le cinquième, Bhai Tika, renforce le lien frère-sœur à travers un rituel de bénédiction.</p>
+
+      <blockquote>
+        <p>À Tihar, même les chiens errants de Katmandou portent une guirlande de fleurs autour du cou. C'est la seule fête au monde, à ma connaissance, où les animaux sont officiellement honorés.</p>
+        <cite>— Rajesh Kumar</cite>
+      </blockquote>
+
+      <h2>La table de Tihar</h2>
+      <p>La cuisine de Tihar est une cuisine de fête et de partage. On prépare des <strong>sel roti</strong> — ces couronnes de pain de riz croustillant et légèrement sucré — qui se cuisent dans un bain de ghee bouillant et se partagent entre voisins. Les <strong>Kwati</strong>, soupe aux neuf légumineuses, symbolisent l'abondance. Et le <strong>Juju Dhau</strong>, ce yaourt royal de Bhaktapur servi dans une coupe de terre cuite, conclut chaque repas festif avec une douceur crémeuse irremplaçable.</p>
+
+      <p>Au Népalais Caennais, nous organisons chaque année une soirée Tihar en octobre ou novembre — sel roti maison, bougies sur les tables, musique traditionnelle. C'est notre façon d'ouvrir notre fête à Caen. Les places partent vite.</p>
+    </div>
+    <footer class="article-footer"><div class="article-tags"><span class="article-tag">Tihar</span><span class="article-tag">Festival</span><span class="article-tag">Culture</span><span class="article-tag">Népal</span></div></footer>
+  </div>
+  <section class="related-articles"><div class="related-articles-inner"><p class="related-title">Continuez votre voyage</p><div class="related-grid"><div class="related-card" onclick="openArticle('masala-chai')" tabindex="0"><p class="related-card-cat">Culture</p><p class="related-card-title">Le Masala Chai, rituel de l'hospitalité</p><p class="related-card-date">29 oct. 2024</p></div><div class="related-card" onclick="openArticle('katmandou')" tabindex="0"><p class="related-card-cat">Carnet de Voyage</p><p class="related-card-title">Katmandou, capitale des mille saveurs</p><p class="related-card-date">14 nov. 2024</p></div></div></div></section>
+</div>
+
+<div class="article-page" id="article-katmandou">
+  <button class="article-back" data-i18n="art_back" onclick="closeArticle()">← Retour au blog</button>
+  <img class="article-hero-img" src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1400&q=85&fit=crop" alt="Katmandou" loading="lazy">
+  <div class="article-container">
+    <header class="article-header">
+      <div class="article-cats"><span class="article-cat-tag">Carnet de Voyage</span></div>
+      <h1 class="article-title">Katmandou, capitale des mille saveurs</h1>
+      <p class="article-subtitle">Thamel au petit matin, les marchés d'épices d'Asan, les bhattis cachés derrière les stupas dorées — notre carnet de voyage gourmand.</p>
+      <div class="article-byline">
+        <div class="article-byline-avatar">RK</div>
+        <div><p class="article-byline-name">Rajesh Kumar</p><p class="article-byline-meta">Chef fondateur</p></div>
+        <div class="article-byline-stats"><div class="article-stat"><span class="article-stat-val">14 nov. 2024</span><span class="article-stat-lbl">Publié le</span></div><div class="article-stat"><span class="article-stat-val">12 min</span><span class="article-stat-lbl">Lecture</span></div></div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Il est 6h30 du matin à Thamel, le quartier touristique de Katmandou, et déjà l'air sent la cardamome et le lait chaud. Les premiers marchands de chai allument leurs réchauds. Les klaxons n'ont pas encore commencé leur symphonie chaotique. C'est l'heure parfaite pour se perdre dans une ville qui ne dort jamais vraiment.</p>
+
+      <h2>Asan Chowk : le cœur qui bat</h2>
+      <p>Le marché d'Asan, dans la vieille ville, est l'un des plus anciens marchés d'Asie du Sud. On y trouve de tout — légumes de la plaine du Terai, épices des collines, céréales du Mustang. Mais pour nous, cuisiniers, c'est le secteur des épices qui retient le regard. Des dizaines de sacs en jute ouverts laissent déborder des montagnes de curcuma orange, de piment de Taplejung, de poivre timut vert-gris, de coriandre séchée couleur noisette.</p>
+
+      <p>Je reviens chaque année à Asan vérifier la récolte, négocier avec les mêmes vendeurs que mon père connaissait, humer les lots avant d'en commander. C'est artisanal, chronophage et irremplaçable.</p>
+
+      <h2>Les bhattis : restaurants de l'âme</h2>
+      <p>Les bhattis sont ces petits restaurants familiaux sans enseigne ni menu écrit, souvent dissimulés dans des ruelles pavées, où l'on mange sur des tables en bois brut sous un néon blanc. Pas de carte, pas de choix : on sert ce qu'on a préparé ce matin. Du dal, du bhat, des légumes, parfois de la viande. La nourriture la plus honnête qui soit.</p>
+
+      <blockquote>
+        <p>La meilleure table de Katmandou n'a pas de nom. Elle est tenue par une vieille femme en sari bleu, dans une ruelle derrière Durbar Square, et elle sert le même dal bhat depuis quarante ans.</p>
+        <cite>— Rajesh Kumar, carnet de voyage 2019</cite>
+      </blockquote>
+    </div>
+    <footer class="article-footer"><div class="article-tags"><span class="article-tag">Katmandou</span><span class="article-tag">Voyage</span><span class="article-tag">Marchés</span><span class="article-tag">Street food</span></div></footer>
+  </div>
+  <section class="related-articles"><div class="related-articles-inner"><p class="related-title">Continuez votre voyage</p><div class="related-grid"><div class="related-card" onclick="openArticle('tihar')" tabindex="0"><p class="related-card-cat">Culture</p><p class="related-card-title">Tihar, la fête des lumières</p><p class="related-card-date">18 jan. 2025</p></div><div class="related-card" onclick="openArticle('dal-bhat')" tabindex="0"><p class="related-card-cat">Recettes</p><p class="related-card-title">Dal Bhat : le plat signature</p><p class="related-card-date">12 mars 2025</p></div></div></div></section>
+</div>
+
+<div class="article-page" id="article-masala-chai">
+  <button class="article-back" data-i18n="art_back" onclick="closeArticle()">← Retour au blog</button>
+  <img class="article-hero-img" src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1400&q=85&fit=crop" alt="Masala chai" loading="lazy">
+  <div class="article-container">
+    <header class="article-header">
+      <div class="article-cats"><span class="article-cat-tag">Culture & Histoire</span></div>
+      <h1 class="article-title">Le Masala Chai, rituel universel de l'hospitalité</h1>
+      <p class="article-subtitle">On dit au Népal qu'une maison sans chai est une maison sans âme. Une philosophie en tasse.</p>
+      <div class="article-byline">
+        <div class="article-byline-avatar">PM</div>
+        <div><p class="article-byline-name">Priya Maharjan</p><p class="article-byline-meta">Le Népalais Caennais</p></div>
+        <div class="article-byline-stats"><div class="article-stat"><span class="article-stat-val">29 oct. 2024</span><span class="article-stat-lbl">Publié le</span></div><div class="article-stat"><span class="article-stat-val">5 min</span><span class="article-stat-lbl">Lecture</span></div></div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Il y a une scène qui se répète, invariablement, dans chaque foyer népalais que j'ai fréquenté. Vous arrivez, quel que soit l'heure, quel que soit le motif de votre visite, on vous dit de vous asseoir — et avant toute parole, avant toute question, une casserole monte sur le feu. Ce n'est pas une politesse. C'est un réflexe. C'est le chai.</p>
+
+      <div class="article-pull-quote">"Offrir du chai, c'est dire : tu es chez toi ici. Tes problèmes peuvent attendre. D'abord, réchauffe-toi."</div>
+
+      <h2>L'alchimie des épices</h2>
+      <p>La recette du masala chai n'existe pas au singulier. Chaque famille a la sienne, transmise et ajustée au fil des générations. La base est universelle : thé noir fort (CTC de préférence), lait entier, eau, sucre. Les épices varient — mais on retrouve presque toujours <strong>cardamome verte</strong>, <strong>gingembre frais</strong>, <strong>cannelle</strong> et <strong>poivre noir</strong>. Certains ajoutent des clous de girofle, de la badiane ou du fenouil.</p>
+
+      <p>Le secret n'est pas dans la liste mais dans la méthode : les épices doivent infuser dans l'eau <em>avant</em> l'ajout du thé et du lait. Cette étape, que beaucoup sautent, est celle qui fait toute la différence entre un chai tiède et un chai qui vous traverse.</p>
+
+      <div class="article-recipe-box">
+        <h4>Notre Masala Chai maison</h4>
+        <ul>
+          <li>250 ml d'eau · 200 ml de lait entier · 2 c. à c. de thé CTC noir</li>
+          <li>4 gousses de cardamome écrasées · 1 cm de gingembre frais tranché</li>
+          <li>½ bâton de cannelle · 4 grains de poivre noir · 2 c. à c. de sucre</li>
+        </ul>
+        <p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.75rem;margin-bottom:0;">Faire bouillir eau + épices 3 min. Ajouter thé, infuser 2 min. Ajouter lait + sucre, laisser monter à ébullition. Filtrer et servir brûlant dans une petite tasse. Ne jamais laisser refroidir avant de boire.</p>
+      </div>
+    </div>
+    <footer class="article-footer"><div class="article-tags"><span class="article-tag">Chai</span><span class="article-tag">Hospitalité</span><span class="article-tag">Recette</span><span class="article-tag">Thé</span></div></footer>
+  </div>
+  <section class="related-articles"><div class="related-articles-inner"><p class="related-title">Continuez votre voyage</p><div class="related-grid"><div class="related-card" onclick="openArticle('cardamome')" tabindex="0"><p class="related-card-cat">Épices</p><p class="related-card-title">La cardamome verte : l'or vert de l'Himalaya</p><p class="related-card-date">5 fév. 2025</p></div><div class="related-card" onclick="openArticle('tihar')" tabindex="0"><p class="related-card-cat">Culture</p><p class="related-card-title">Tihar, la fête des lumières</p><p class="related-card-date">18 jan. 2025</p></div></div></div></section>
+</div>
+
+<div class="article-page" id="article-timut">
+  <button class="article-back" data-i18n="art_back" onclick="closeArticle()">← Retour au blog</button>
+  <img class="article-hero-img" src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1400&q=85&fit=crop" alt="Poivre timut et épices" loading="lazy">
+  <div class="article-container">
+    <header class="article-header">
+      <div class="article-cats"><span class="article-cat-tag">Épices & Saveurs</span></div>
+      <h1 class="article-title">Le poivre timut : l'épice secrète du Népal</h1>
+      <p class="article-subtitle">Voisin du poivre de Sichuan, le timut crépite en bouche avec ses notes de pamplemousse et de coriandre fraîche. Notre guide complet.</p>
+      <div class="article-byline">
+        <div class="article-byline-avatar">RK</div>
+        <div><p class="article-byline-name">Rajesh Kumar</p><p class="article-byline-meta">Chef fondateur</p></div>
+        <div class="article-byline-stats"><div class="article-stat"><span class="article-stat-val">8 oct. 2024</span><span class="article-stat-lbl">Publié le</span></div><div class="article-stat"><span class="article-stat-val">6 min</span><span class="article-stat-lbl">Lecture</span></div></div>
+      </div>
+    </header>
+    <div class="article-body">
+      <p>Si vous vous asseyez à notre table et que vous nous demandez quelle est l'épice la plus précieuse de notre cuisine, nous hésiterons un instant — puis nous vous répondrons : le timut. Ou <em>Timur</em>, comme on dit au Népal. Ce petit baie séchée à la robe gris-vert, récoltée sur des arbres épineux dans les collines de l'Ouest népalais, est à la fois la moins connue et la plus fascinante de nos épices.</p>
+
+      <h2>Un poivre qui n'est pas un poivre</h2>
+      <p>Botaniquement, le timut (<em>Zanthoxylum armatum</em>) n'appartient pas à la famille des poivriers. C'est un cousin du poivre de Sichuan, de la famille des Rutacées — la même que les agrumes, ce qui explique ses notes caractéristiques de <strong>pamplemousse</strong> et de <strong>bergamote</strong>. Sa signature olfactive est à la fois florale, herbacée et légèrement mentholée.</p>
+
+      <p>Mais ce qui rend le timut vraiment unique, c'est son effet en bouche : après quelques secondes, il provoque un léger engourdissement de la langue et des lèvres — le fameux effet <em>"mâ là"</em> des cuisines sichuan et himalayennes. Cette sensation n'est pas désagréable. Elle est addictive.</p>
+
+      <div class="article-pull-quote">"Le timut fait à la bouche ce qu'un bon vin fait à l'esprit : il l'ouvre, il l'éveille, il la prépare à recevoir."</div>
+
+      <h2>Comment nous l'utilisons</h2>
+      <p>Chez nous, le timut apparaît dans l'achar (pickle) des momos — toasté à sec puis pilé avec de la tomate et du sésame. On le retrouve aussi dans notre marinade pour le poulet grillé et, en très petite quantité, dans notre masala maison. Nous ne le cuisons jamais longtemps : sa volatilité aromatique le rend vulnérable à la chaleur prolongée. On l'ajoute donc en fin de cuisson, ou directement au moment du service.</p>
+    </div>
+    <footer class="article-footer"><div class="article-tags"><span class="article-tag">Timut</span><span class="article-tag">Poivre</span><span class="article-tag">Épices</span><span class="article-tag">Saveurs</span></div></footer>
+  </div>
+  <section class="related-articles"><div class="related-articles-inner"><p class="related-title">Continuez votre voyage</p><div class="related-grid"><div class="related-card" onclick="openArticle('cardamome')" tabindex="0"><p class="related-card-cat">Épices</p><p class="related-card-title">La cardamome verte : l'or vert de l'Himalaya</p><p class="related-card-date">5 fév. 2025</p></div><div class="related-card" onclick="openArticle('momos')" tabindex="0"><p class="related-card-cat">Recettes</p><p class="related-card-title">Les momos, secret de famille dévoilé</p><p class="related-card-date">3 déc. 2024</p></div></div></div></section>
+</div>
+
+</main><!-- /main-content -->
+
+
+<!-- ─── FOOTER ─── -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand-name">Le Népalais Caennais</p>
+        <p class="footer-brand-sub">Cuisine Himalayenne</p>
+        <p class="footer-brand-desc" data-i18n="footer_desc">Cuisine traditionnelle népalaise au cœur de Caen depuis 2018. Une expérience authentique de l'Himalaya.</p>
+      </div>
+      <div>
+        <p class="footer-col-title" data-i18n="footer_nav">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="#" data-i18n="nav_home" onclick="showPage('home'); return false;">Accueil</a></li>
+          <li><a href="#" data-i18n="footer_menu" onclick="showPage('menu'); return false;">Notre Menu</a></li>
+          <li><a href="#" data-i18n="footer_about" onclick="showPage('about'); return false;">Notre Histoire</a></li>
+          <li><a href="#" data-i18n="nav_blog" onclick="showPage('blog'); return false;">Blog</a></li>
+          <li><a href="#" data-i18n="nav_contact" onclick="showPage('contact'); return false;">Contact</a></li>
+          <li><a href="#" data-i18n="footer_reservation" onclick="showPage('contact'); return false;">Réservation</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title" data-i18n="footer_contact">Contact</p>
+        <ul class="footer-links">
+          <li><a>12 Rue de la Gare, Caen</a></li>
+          <li><a>02 XX XX XX XX</a></li>
+          <li><a>contact@lenepalaiscaennais.fr</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title" data-i18n="footer_hours_title">Horaires</p>
+        <div class="footer-hours">
+          <p data-i18n="fh1">Mar – Jeu : 12h–14h / 19h–22h</p>
+          <p data-i18n="fh2">Ven – Sam : 12h–14h / 19h–23h</p>
+          <p data-i18n="fh3">Dimanche : 12h–14h / 19h–21h</p>
+          <p style="color:var(--text-faint);" data-i18n="fh4">Lundi : Fermé</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy" data-i18n="footer_copy">© 2024 Le Népalais Caennais. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── STICKY CTA MOBILE ─── -->
+<div class="sticky-cta-mobile" id="stickyCta" role="complementary" aria-label="Actions rapides">
+  <div class="sticky-cta-info">
+    <span class="sticky-cta-status" id="stickyStatus"></span>
+    <span class="sticky-cta-hours" id="stickyHours"></span>
+  </div>
+  <div class="sticky-cta-actions">
+    <a href="tel:+33200000000" class="sticky-cta-phone" data-i18n-aria="sticky_phone_aria" aria-label="Appeler le restaurant">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.82 12 19.79 19.79 0 01.77 3.38 2 2 0 012.75 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.4a16 16 0 006.69 6.69l1.06-1.06a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span data-i18n="sticky_call">Appeler</span>
+    </a>
+    <a href="https://www.thefork.fr/restaurants/caen-c511212" target="_blank" rel="noopener noreferrer" class="sticky-cta-btn" aria-label="Réserver sur TheFork">
+      Réserver
+      <span data-i18n="sticky_book">Réserver</span><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ─── COOKIE BANNER ─── -->
+<div class="cookie-banner" id="cookieBanner" role="region" aria-label="Consentement aux cookies">
+  <p class="cookie-text" data-i18n="cookie_text">
+    Ce site utilise des cookies pour améliorer votre expérience. En continuant votre navigation, vous acceptez notre <a href="#" data-i18n="cookie_link">politique de confidentialité</a>.
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-decline" data-i18n="cookie_decline" onclick="dismissCookieBanner()">Refuser</button>
+    <button class="cookie-accept" data-i18n="cookie_accept" onclick="dismissCookieBanner()">Accepter</button>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════
+   PAGE NAVIGATION — avec transition fluide
+═══════════════════════════════════════════════ */
+const pageOverlay = document.getElementById('pageTransition');
+let transitioning = false;
+
+function showPage(pageId) {
+  if (transitioning) return;
+  const currentActive = document.querySelector('.page.active');
+  const target = document.getElementById('page-' + pageId);
+  if (!target || target === currentActive) return;
+
+  transitioning = true;
+  if (pageOverlay) {
+    pageOverlay.classList.add('active');
+    setTimeout(() => {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      document.querySelectorAll('.nav-link').forEach(a => a.classList.toggle('active', a.dataset.page === pageId));
+      document.documentElement.setAttribute('data-page', pageId);
+      initReveal();
+      setTimeout(() => {
+        pageOverlay.classList.remove('active');
+        transitioning = false;
+      }, 350);
+    }, 280);
+  } else {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.querySelectorAll('.nav-link').forEach(a => a.classList.toggle('active', a.dataset.page === pageId));
+    document.documentElement.setAttribute('data-page', pageId);
+    initReveal();
+    transitioning = false;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   AMÉLIORATION 1 — VIDEO HERO + PARALLAX
+═══════════════════════════════════════════════ */
+// Video fade-in on load
+const heroVideo = document.getElementById('heroVideo');
+if (heroVideo) {
+  heroVideo.addEventListener('canplay', () => {
+    heroVideo.classList.add('loaded');
+  });
+  // Force play (needed on some mobile browsers)
+  heroVideo.play().catch(() => {});
+}
+
+// Parallax sur scroll
+const heroDeco    = document.querySelector('.hero-deco');
+const heroContent = document.querySelector('.hero-content');
+let ticking = false;
+
+function onParallaxScroll() {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const sy = window.scrollY;
+      if (heroDeco)    heroDeco.style.transform    = `translateY(${sy * 0.18}px) rotate(${sy * 0.02}deg)`;
+      if (heroContent) heroContent.style.transform = `translateY(${sy * 0.08}px)`;
+      ticking = false;
+    });
+    ticking = true;
+  }
+}
+
+window.addEventListener('scroll', onParallaxScroll, { passive: true });
+
+/* ═══════════════════════════════════════════════
+   AMÉLIORATION 2 — STICKY MOBILE CTA
+═══════════════════════════════════════════════ */
+const stickyCta    = document.getElementById('stickyCta');
+const stickyStatus = document.getElementById('stickyStatus');
+const stickyHours  = document.getElementById('stickyHours');
+
+// Calcul statut ouvert/fermé en temps réel
+function getRestaurantStatus() {
+  const now   = new Date();
+  const day   = now.getDay();   // 0=dim, 1=lun…
+  const h     = now.getHours();
+  const m     = now.getMinutes();
+  const t     = h * 60 + m;
+
+  // Lundi = fermé
+  if (day === 1) return { open: false, label: 'Fermé aujourd\'hui', hours: 'Ouverture demain à 12h00' };
+
+  // Plages d'ouverture par jour
+  const schedule = {
+    2: [[12*60, 14*60], [19*60, 22*60]],   // Mardi
+    3: [[12*60, 14*60], [19*60, 22*60]],   // Mercredi
+    4: [[12*60, 14*60], [19*60, 22*60]],   // Jeudi
+    5: [[12*60, 14*60], [19*60, 23*60]],   // Vendredi
+    6: [[12*60, 14*60], [19*60, 23*60]],   // Samedi
+    0: [[12*60, 14*60], [19*60, 21*60]],   // Dimanche
+  };
+
+  const todaySlots = schedule[day] || [];
+  const isOpen = todaySlots.some(([open, close]) => t >= open && t < close);
+
+  if (isOpen) {
+    const currentSlot = todaySlots.find(([open, close]) => t >= open && t < close);
+    const closeH = Math.floor(currentSlot[1] / 60);
+    const closeM = currentSlot[1] % 60;
+    const closeStr = `${closeH}h${closeM === 0 ? '00' : closeM}`;
+    return { open: true, label: 'Ouvert maintenant', hours: `Fermeture à ${closeStr}` };
+  } else {
+    // Prochain service
+    const next = todaySlots.find(([open]) => t < open);
+    if (next) {
+      const openH = Math.floor(next[0] / 60);
+      return { open: false, label: 'Actuellement fermé', hours: `Réouverture à ${openH}h00` };
+    }
+    return { open: false, label: 'Fermé ce soir', hours: 'Prochaine ouverture demain' };
+  }
+}
+
+if (stickyCta && stickyStatus && stickyHours) {
+  const status = getRestaurantStatus();
+  stickyStatus.textContent = status.label;
+  stickyStatus.className   = 'sticky-cta-status ' + (status.open ? 'open' : 'closed');
+  stickyHours.textContent  = status.hours;
+}
+
+// Masquer en scroll vers le haut, réafficher vers le bas
+let lastScrollY   = 0;
+let stickyVisible = true;
+
+window.addEventListener('scroll', () => {
+  if (!stickyCta) return;
+  const sy  = window.scrollY;
+  const dir = sy > lastScrollY ? 'down' : 'up';
+
+  // Masquer si scroll vers le haut ET position haute (near hero)
+  if (dir === 'up' && sy < 300) {
+    if (stickyVisible) { stickyCta.classList.add('hidden'); stickyVisible = false; }
+  } else if (dir === 'down' && sy > 200) {
+    if (!stickyVisible) { stickyCta.classList.remove('hidden'); stickyVisible = true; }
+  }
+  lastScrollY = sy;
+}, { passive: true });
+
+/* ═══════════════════════════════════════════════
+   NAVBAR SCROLL
+═══════════════════════════════════════════════ */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* ═══════════════════════════════════════════════
+   MOBILE NAV
+═══════════════════════════════════════════════ */
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+let mobileOpen  = false;
+
+hamburger.addEventListener('click', () => {
+  mobileOpen = !mobileOpen;
+  mobileNav.classList.toggle('open', mobileOpen);
+  hamburger.setAttribute('aria-expanded', mobileOpen);
+  const spans = hamburger.querySelectorAll('span');
+  if (mobileOpen) {
+    spans[0].style.transform = 'translateY(6.5px) rotate(45deg)';
+    spans[1].style.opacity   = '0';
+    spans[2].style.transform = 'translateY(-6.5px) rotate(-45deg)';
+  } else {
+    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+  }
+});
+
+function closeMobileNav() {
+  mobileOpen = false;
+  mobileNav.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && mobileOpen) closeMobileNav();
+});
+
+/* ═══════════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════════ */
+function initReveal() {
+  const els = document.querySelectorAll('.page.active .reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(e => e.classList.add('visible'));
+    return;
+  }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  els.forEach(e => obs.observe(e));
+}
+setTimeout(initReveal, 100);
+
+/* ═══════════════════════════════════════════════
+   HORAIRES
+═══════════════════════════════════════════════ */
+const scheduleData = {
+  'Lundi':    null,
+  'Mardi':    ['12:00–14:00', '19:00–22:00'],
+  'Mercredi': ['12:00–14:00', '19:00–22:00'],
+  'Jeudi':    ['12:00–14:00', '19:00–22:00'],
+  'Vendredi': ['12:00–14:00', '19:00–23:00'],
+  'Samedi':   ['12:00–14:00', '19:00–23:00'],
+  'Dimanche': ['12:00–14:00', '19:00–21:00']
+};
+const dayIdxFr  = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const today     = dayIdxFr[new Date().getDay()];
+const hoursRows = document.getElementById('hours-rows');
+if (hoursRows) {
+  Object.entries(scheduleData).forEach(([day, hours]) => {
+    const row = document.createElement('div');
+    row.className = 'hours-row' + (day === today ? ' today' : '');
+    row.innerHTML = hours
+      ? `<span class="hours-day">${day}</span><span class="hours-time">${hours.join(' · ')}</span>`
+      : `<span class="hours-day">${day}</span><span class="hours-closed">Fermé</span>`;
+    hoursRows.appendChild(row);
+  });
+}
+
+/* ═══════════════════════════════════════════════
+   AMÉLIORATION 3 — FORMULAIRE FORMSPREE
+═══════════════════════════════════════════════ */
+const form          = document.getElementById('reservationForm');
+const formSuccess   = document.getElementById('formSuccess');
+const formSubmitBtn = document.getElementById('formSubmitBtn');
+
+if (form) {
+  // Date minimale = demain
+  const dateInput = document.getElementById('res-date');
+  if (dateInput) {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    dateInput.min = tomorrow.toISOString().split('T')[0];
+  }
+
+  // Validation visuelle en temps réel
+  form.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('input', () => { input.style.borderColor = ''; });
+    input.addEventListener('blur', () => {
+      if (input.required && !input.value.trim()) {
+        input.style.borderColor = 'hsl(0,60%,50%)';
+      }
+    });
+  });
+
+  // Soumission — Formspree (fetch async) avec fallback natif
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Validation côté client
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(el => {
+      if (!el.value.trim()) { el.style.borderColor = 'hsl(0,60%,50%)'; valid = false; }
+      else { el.style.borderColor = ''; }
+    });
+    if (!valid) {
+      form.querySelector('[style*="border-color: hsl(0,60%,50%)"]')?.focus();
+      return;
+    }
+
+    // État chargement
+    if (formSubmitBtn) {
+      formSubmitBtn.disabled = true;
+      formSubmitBtn.textContent = 'Envoi en cours…';
+    }
+
+    try {
+      const action = form.action;
+
+      // Si l'endpoint Formspree est configuré, envoyer via fetch
+      if (action && action.includes('formspree.io') && !action.includes('VOTRE_CLE')) {
+        const data     = new FormData(form);
+        const response = await fetch(action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!response.ok) throw new Error('Erreur réseau');
+      }
+
+      // Succès : afficher le message de confirmation
+      form.style.display = 'none';
+      formSuccess.classList.add('show');
+      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    } catch {
+      // Fallback : soumission native
+      form.submit();
+    } finally {
+      if (formSubmitBtn) {
+        formSubmitBtn.disabled = false;
+        formSubmitBtn.textContent = 'Envoyer ma demande';
+      }
+    }
+  });
+}
+
+/* ═══════════════════════════════════════════════
+   BLOG — Navigation articles & filtres
+═══════════════════════════════════════════════ */
+let currentArticle = null;
+
+function openArticle(slug) {
+  // Masquer toutes les pages et tous les articles
+  document.querySelectorAll('.page, .article-page').forEach(el => el.classList.remove('active'));
+  const art = document.getElementById('article-' + slug);
+  if (!art) return;
+  art.classList.add('active');
+  currentArticle = slug;
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function closeArticle() {
+  document.querySelectorAll('.article-page').forEach(el => el.classList.remove('active'));
+  currentArticle = null;
+  // Réactiver la page blog
+  const blogPage = document.getElementById('page-blog');
+  if (blogPage) blogPage.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  // Réinitialiser les animations
+  setTimeout(initReveal, 80);
+}
+
+function filterBlog(cat, btn) {
+  // Mettre à jour les boutons
+  document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Filtrer les cartes
+  const cards = document.querySelectorAll('#blogGrid .blog-card');
+  cards.forEach(card => {
+    const cardCat = card.dataset.cat;
+    const show    = cat === 'all' || cardCat === cat;
+    card.style.transition  = 'opacity 0.3s, transform 0.3s';
+    card.style.opacity     = show ? '1' : '0.25';
+    card.style.pointerEvents = show ? '' : 'none';
+    card.style.transform   = show ? '' : 'scale(0.97)';
+  });
+
+  // Featured : masquer si on filtre sur une cat non-recette
+  const featured = document.getElementById('blogFeatured');
+  if (featured) {
+    featured.style.transition = 'opacity 0.3s';
+    featured.style.opacity    = (cat === 'all' || cat === 'recettes') ? '1' : '0.25';
+    featured.style.pointerEvents = (cat === 'all' || cat === 'recettes') ? '' : 'none';
+  }
+}
+
+// Étendre showPage pour gérer les articles ouverts
+const _origShowPage = showPage;
+window.showPage = function(pageId) {
+  // Fermer tout article ouvert
+  document.querySelectorAll('.article-page').forEach(el => el.classList.remove('active'));
+  currentArticle = null;
+  _origShowPage(pageId);
+};
+const cookieBanner = document.getElementById('cookieBanner');
+if (localStorage.getItem('cookieConsent')) cookieBanner.classList.add('hidden');
+function dismissCookieBanner() {
+  localStorage.setItem('cookieConsent', 'true');
+  cookieBanner.classList.add('hidden');
+}
+
+/* ════════════════════════════════════════════════
+   LANGUAGE SWITCHER — Complete FR / EN
+════════════════════════════════════════════════ */
+
+const translations = {
+  fr: {
+    // Navigation
+    nav_home: "Accueil", nav_menu: "Menu", nav_about: "Histoire",
+    nav_blog: "Blog", nav_contact: "Contact", nav_cta: "Réserver",
+    // Skip link
+    skip_link: "Aller au contenu principal",
+    // Hero
+    hero_eyebrow: "Bienvenue à Caen",
+    hero_h1: "L'Authenticité<br><em>Himalayenne</em><br>à Caen",
+    hero_sub: "Cuisine traditionnelle népalaise, préparée avec des épices rares et des recettes ancestrales transmises de génération en génération.",
+    hero_cta1: "Réserver une table", hero_cta2: "Découvrir notre menu",
+    hero_rating: "<strong>4.8/5</strong> sur Google · Recommandé par les gastronomes caennais",
+    hero_scroll: "Découvrir",
+    // Testimonials
+    testimonials_eyebrow: "Témoignages",
+    testimonials_title: "Ce que disent<br>nos <em>convives</em>",
+    // Story
+    story_eyebrow: "Notre Histoire",
+    story_title: "Une histoire<br>de <em>saveurs</em>",
+    story_badge: "Années de passion",
+    story_p1: "Né d'une passion profonde pour les traditions culinaires de l'Himalaya, Le Népalais Caennais a ouvert ses portes avec une seule mission : apporter l'authenticité des saveurs népalaises au cœur de la Normandie.",
+    story_p2: "Chaque plat est une invitation au voyage. Nos épices sont soigneusement sélectionnées, nos recettes fidèlement transmises par des générations de cuisiniers népalais, et notre hospitalité reflète le <em>nepali aatithya</em> — l'art de l'accueil himalayen.",
+    val1_title: "Authenticité", val1_body: "Recettes ancestrales préservées avec intégrité",
+    val2_title: "Qualité",      val2_body: "Ingrédients sélectionnés avec soin",
+    val3_title: "Tradition",    val3_body: "Techniques transmises de génération en génération",
+    val4_title: "Accueil",      val4_body: "L'hospitalité himalayenne à chaque table",
+    // Menu preview
+    menu_eyebrow: "Nos Spécialités",
+    menu_title: "Les plats<br><em>emblématiques</em>",
+    menu_cta: "Voir le menu complet",
+    mc_dalbhat_desc: "Notre plat signature — riz basmati, lentilles épicées, légumes de saison et achar traditionnel",
+    mc_momos_desc: "Raviolis vapeur traditionnels, farce viande ou légumes, sauce sésame-tomate maison",
+    mc_thali_desc: "Plateau complet avec dal, riz, curry, légumes sautés, pain Roti et dessert kheer",
+    // Gallery
+    gallery_eyebrow: "Ambiance",
+    gallery_title: "<em>L'expérience</em><br>en images",
+    gal1_cap: "L'ambiance du restaurant", gal2_cap: "Momos maison",
+    gal3_cap: "Épices d'exception",       gal4_cap: "Tables dressées",
+    gal5_cap: "Dal Bhat — plat signature", gal6_cap: "Hospitalité himalayenne",
+    // CTA band
+    cta_title: "Réservez<br>Votre Table",
+    cta_body: "Laissez-vous emporter par les saveurs de l'Himalaya. Chaque repas est une invitation au voyage — réservez dès aujourd'hui pour une expérience inoubliable.",
+    cta_btn: "Réserver maintenant",
+    // Menu page
+    menupage_eyebrow: "Notre Carte", menupage_h1: "Notre Menu",
+    menupage_sub: "Des recettes ancestrales, des ingrédients d'exception",
+    cat_entrees: "Entrées", cat_mains: "Plats Principaux",
+    cat_desserts: "Desserts", cat_drinks: "Boissons",
+    item_momos_desc: "Raviolis vapeur traditionnels, farce viande ou légumes, sauce sésame-tomate",
+    item_samosa_desc: "Beignets croustillants épicés, farce pommes de terre-épices, chutney coriandre",
+    item_selroti_desc: "Pain beignet traditionnel népalais, croustillant à l'extérieur, moelleux à l'intérieur",
+    item_thukpa_desc: "Soupe de nouilles himalayenne, bouillon épicé, légumes et herbes fraîches",
+    item_dalbhat_desc: "Riz basmati, lentilles dorées, légumes de saison, achar maison, accompagnements",
+    item_thali_desc: "Plateau traditionnel : dal, riz, curry agneau, légumes sautés, roti, pickles, kheer",
+    item_chicken_desc: "Curry de poulet mijoté aux épices himalayennes, servi avec riz basmati parfumé",
+    item_vegthali_desc: "Plateau végétarien complet avec dhal, légumes de saison, raïta, roti et dessert",
+    item_lamb_desc: "Agneau mijoté en sauce épaisse aux épices, spécialité des montagnes, avec riz",
+    item_kwati_desc: "Soupe festive aux neuf légumineuses, tradition des célébrations népalaises",
+    item_kheer_desc: "Riz au lait traditionnel, parfumé à la cardamome, pistaches et eau de rose",
+    item_lassi_desc: "Boisson yaourt à la mangue fraîche, légèrement sucrée et rafraîchissante",
+    item_yomari_desc: "Boulettes de farine de riz fourrées au miel et sésame, spécialité néwar",
+    item_chai_desc: "Thé épicé traditionnel, gingembre, cardamome, cannelle, lait entier",
+    item_lassi2_desc: "Boisson yaourt battu, nature ou sucré, légère et désaltérante",
+    item_tongba_desc: "Bière de millet fermenté himalayenne chaude, tradition des hauts plateaux",
+    item_soft_desc: "Sélection de boissons sans alcool",
+    // About page
+    about_eyebrow: "Notre Histoire",
+    about_h1: "L'Authenticité<br>au Service de<br><em>Votre Palais</em>",
+    about_p1: "Né d'un rêve himalyen et d'une passion pour les traditions culinaires du Népal, Le Népalais Caennais est bien plus qu'un restaurant — c'est un voyage sensoriel au cœur des montagnes.",
+    about_p2: "Fondé par une famille amoureuse des saveurs de Katmandou et de Pokhara, nous avons apporté à Caen les recettes ancestrales, les épices rares et surtout, l'hospitalité chaleureuse qui caractérise le peuple népalais.",
+    about_p3: "Chaque plat que nous servons est une ode à notre héritage. Nos épices voyagent directement des marchés de Thamel. Nos techniques de cuisson sont transmises de maître à élève depuis des générations. Notre engagement : ne jamais transiger sur l'authenticité.",
+    about_vals_eyebrow: "Nos Engagements",
+    about_vals_title: "Ce qui nous<br><em>définit</em>",
+    v1_title: "Authenticité", v1_body: "Nous ne faisons aucun compromis sur nos recettes. Chaque préparation suit les traditions ancestrales du Népal, des épices importées directement aux techniques de cuisson transmises de génération en génération.",
+    v2_title: "Qualité",      v2_body: "Nos ingrédients sont soigneusement sélectionnés : épices rares de l'Himalaya, légumes frais de producteurs locaux normands, et viandes de qualité supérieure. Le meilleur des deux mondes.",
+    v3_title: "Accueil",      v3_body: "Le <em>Nepali Aatithya</em> — l'art de l'hospitalité himalayenne — est au cœur de notre service. Chez nous, chaque convive est traité comme un invité d'honneur, avec chaleur et attention.",
+    about_quote: "La cuisine népalaise n'est pas seulement une nourriture pour le corps — c'est une conversation entre les générations, une célébration de la terre et une expression de notre âme.",
+    about_quote_cite: "— Le fondateur, Le Népalais Caennais",
+    about_cta: "Venez nous rencontrer",
+    // Contact page
+    contact_h1: "Contact &<br>Réservation",
+    contact_sub: "Nous serons ravis de vous accueillir autour d'une table",
+    contact_coords: "Nos Coordonnées",
+    contact_addr_lbl: "Adresse", contact_phone_lbl: "Téléphone", contact_email_lbl: "Email",
+    hours_title: "Horaires d'ouverture",
+    book_tf_sub: "Confirmation instantanée",
+    book_phone_name: "Téléphone",
+    book_or: "ou envoyez une demande par email",
+    form_title: "Réserver une Table",
+    form_name_lbl: "Nom complet *", form_email_lbl: "Email *",
+    form_phone_lbl: "Téléphone", form_guests_lbl: "Nombre de couverts *",
+    form_date_lbl: "Date souhaitée *", form_time_lbl: "Service *",
+    form_notes_lbl: "Remarques ou demandes spéciales",
+    form_submit: "Envoyer ma demande",
+    map_link: "Ouvrir dans Google Maps →",
+    // Blog
+    blog_eyebrow: "Chroniques himalayennes",
+    blog_h1: "Le <em>Carnet</em><br>du Népalais",
+    blog_desc: "Recettes ancestrales, portraits d'épices, carnets de voyage et histoires qui nourrissent l'âme autant que le palais.",
+    filter_all: "Tous les articles", filter_recettes: "Recettes",
+    filter_culture: "Culture & Histoire", filter_epices: "Épices & Saveurs",
+    filter_voyage: "Carnet de Voyage",
+    newsletter_title: "Les chroniques himalayennes dans votre boîte",
+    newsletter_sub: "Recettes, histoires et secrets d'épices — une fois par mois, pas plus.",
+    newsletter_btn: "S'inscrire",
+    art_back: "← Retour au blog",
+    // Sticky CTA
+    sticky_call: "Appeler", sticky_book: "Réserver",
+    sticky_phone_aria: "Appeler le restaurant",
+    // Cookie
+    cookie_text: "Ce site utilise des cookies pour améliorer votre expérience. En continuant votre navigation, vous acceptez notre <a href='#' data-i18n='cookie_link'>politique de confidentialité</a>.",
+    cookie_link: "politique de confidentialité",
+    cookie_decline: "Refuser", cookie_accept: "Accepter",
+    // Footer
+    footer_desc: "Cuisine traditionnelle népalaise au cœur de Caen depuis 2018. Une expérience authentique de l'Himalaya.",
+    footer_nav: "Navigation", footer_contact: "Contact", footer_hours_title: "Horaires",
+    footer_menu: "Notre Menu", footer_about: "Notre Histoire",
+    footer_reservation: "Réservation",
+    fh1: "Mar – Jeu : 12h–14h / 19h–22h",
+    fh2: "Ven – Sam : 12h–14h / 19h–23h",
+    fh3: "Dimanche : 12h–14h / 19h–21h",
+    fh4: "Lundi : Fermé",
+    footer_copy: "© 2024 Le Népalais Caennais. Tous droits réservés."
+  },
+
+  en: {
+    // Navigation
+    nav_home: "Home", nav_menu: "Menu", nav_about: "Our Story",
+    nav_blog: "Blog", nav_contact: "Contact", nav_cta: "Book",
+    // Skip link
+    skip_link: "Skip to main content",
+    // Hero
+    hero_eyebrow: "Welcome to Caen",
+    hero_h1: "Himalayan<br><em>Authenticity</em><br>in Caen",
+    hero_sub: "Traditional Nepali cuisine, crafted with rare spices and ancestral recipes passed down through generations.",
+    hero_cta1: "Book a Table", hero_cta2: "Discover Our Menu",
+    hero_rating: "<strong>4.8/5</strong> on Google · Recommended by Caen food lovers",
+    hero_scroll: "Explore",
+    // Testimonials
+    testimonials_eyebrow: "Testimonials",
+    testimonials_title: "What our<br><em>guests say</em>",
+    // Story
+    story_eyebrow: "Our Story",
+    story_title: "A story<br>of <em>flavors</em>",
+    story_badge: "Years of passion",
+    story_p1: "Born from a deep passion for the culinary traditions of the Himalayas, Le Népalais Caennais opened with a single mission: to bring the authenticity of Nepali flavors to the heart of Normandy.",
+    story_p2: "Every dish is an invitation to travel. Our spices are carefully selected, our recipes faithfully handed down by generations of Nepali cooks, and our hospitality reflects <em>nepali aatithya</em> — the art of Himalayan welcome.",
+    val1_title: "Authenticity", val1_body: "Ancestral recipes preserved with integrity",
+    val2_title: "Quality",      val2_body: "Ingredients carefully selected",
+    val3_title: "Tradition",    val3_body: "Techniques passed down through generations",
+    val4_title: "Hospitality",  val4_body: "Himalayan warmth at every table",
+    // Menu preview
+    menu_eyebrow: "Our Specialties",
+    menu_title: "The iconic<br><em>dishes</em>",
+    menu_cta: "View Full Menu",
+    mc_dalbhat_desc: "Our signature dish — basmati rice, spiced lentils, seasonal vegetables and traditional achar",
+    mc_momos_desc: "Traditional steamed dumplings, meat or vegetable filling, house sesame-tomato sauce",
+    mc_thali_desc: "Complete platter with dal, rice, curry, sautéed vegetables, Roti bread and kheer dessert",
+    // Gallery
+    gallery_eyebrow: "Atmosphere",
+    gallery_title: "<em>The experience</em><br>in images",
+    gal1_cap: "Restaurant ambiance",  gal2_cap: "Homemade momos",
+    gal3_cap: "Exceptional spices",   gal4_cap: "Laid tables",
+    gal5_cap: "Dal Bhat — signature dish", gal6_cap: "Himalayan hospitality",
+    // CTA band
+    cta_title: "Reserve<br>Your Table",
+    cta_body: "Let yourself be carried away by the flavors of the Himalayas. Every meal is an invitation to travel — book today for an unforgettable experience.",
+    cta_btn: "Book Now",
+    // Menu page
+    menupage_eyebrow: "Our Menu Card", menupage_h1: "Our Menu",
+    menupage_sub: "Ancestral recipes, exceptional ingredients",
+    cat_entrees: "Starters", cat_mains: "Main Courses",
+    cat_desserts: "Desserts", cat_drinks: "Drinks",
+    item_momos_desc: "Traditional steamed dumplings, meat or vegetable filling, sesame-tomato sauce",
+    item_samosa_desc: "Crispy spiced fritters, potato-spice filling, coriander chutney",
+    item_selroti_desc: "Traditional Nepali rice donut, crispy outside, soft inside",
+    item_thukpa_desc: "Himalayan noodle soup, spiced broth, vegetables and fresh herbs",
+    item_dalbhat_desc: "Basmati rice, golden lentils, seasonal vegetables, house achar, accompaniments",
+    item_thali_desc: "Traditional platter: dal, rice, lamb curry, sautéed vegetables, roti, pickles, kheer",
+    item_chicken_desc: "Chicken curry slow-cooked with Himalayan spices, served with fragrant basmati rice",
+    item_vegthali_desc: "Complete vegetarian platter with dhal, seasonal vegetables, raita, roti and dessert",
+    item_lamb_desc: "Lamb slow-cooked in thick spiced sauce, mountain specialty, with rice",
+    item_kwati_desc: "Festive nine-legume soup, tradition of Nepali celebrations",
+    item_kheer_desc: "Traditional rice pudding, flavored with cardamom, pistachios and rose water",
+    item_lassi_desc: "Fresh mango yogurt drink, lightly sweetened and refreshing",
+    item_yomari_desc: "Rice flour dumplings filled with honey and sesame, Newar specialty",
+    item_chai_desc: "Traditional spiced tea, ginger, cardamom, cinnamon, whole milk",
+    item_lassi2_desc: "Whipped yogurt drink, plain or sweetened, light and refreshing",
+    item_tongba_desc: "Hot Himalayan fermented millet beer, highland tradition",
+    item_soft_desc: "Selection of non-alcoholic beverages",
+    // About page
+    about_eyebrow: "Our Story",
+    about_h1: "Authenticity<br>at the Service of<br><em>Your Palate</em>",
+    about_p1: "Born from a Himalayan dream and a passion for Nepal's culinary traditions, Le Népalais Caennais is far more than a restaurant — it is a sensory journey to the heart of the mountains.",
+    about_p2: "Founded by a family in love with the flavors of Kathmandu and Pokhara, we brought to Caen the ancestral recipes, rare spices and above all the warm hospitality that defines the Nepali people.",
+    about_p3: "Every dish we serve is an ode to our heritage. Our spices travel directly from the markets of Thamel. Our cooking techniques are passed from master to apprentice across generations. Our commitment: never compromise on authenticity.",
+    about_vals_eyebrow: "Our Commitments",
+    about_vals_title: "What<br><em>defines us</em>",
+    v1_title: "Authenticity", v1_body: "We make no compromise on our recipes. Every preparation follows Nepal's ancestral traditions, from directly imported spices to cooking techniques passed down through generations.",
+    v2_title: "Quality",      v2_body: "Our ingredients are carefully selected: rare Himalayan spices, fresh vegetables from local Norman producers, and premium quality meats. The best of both worlds.",
+    v3_title: "Hospitality",  v3_body: "The <em>Nepali Aatithya</em> — the art of Himalayan hospitality — is at the heart of our service. Here, every guest is treated as an honored visitor, with warmth and care.",
+    about_quote: "Nepali cuisine is not just food for the body — it is a conversation between generations, a celebration of the earth and an expression of our soul.",
+    about_quote_cite: "— The founder, Le Népalais Caennais",
+    about_cta: "Come and meet us",
+    // Contact page
+    contact_h1: "Contact &<br>Reservation",
+    contact_sub: "We will be delighted to welcome you around a table",
+    contact_coords: "Our Contact Details",
+    contact_addr_lbl: "Address", contact_phone_lbl: "Phone", contact_email_lbl: "Email",
+    hours_title: "Opening Hours",
+    book_tf_sub: "Instant confirmation",
+    book_phone_name: "Phone",
+    book_or: "or send a reservation request by email",
+    form_title: "Book a Table",
+    form_name_lbl: "Full Name *", form_email_lbl: "Email *",
+    form_phone_lbl: "Phone", form_guests_lbl: "Number of Guests *",
+    form_date_lbl: "Desired Date *", form_time_lbl: "Service *",
+    form_notes_lbl: "Remarks or special requests",
+    form_submit: "Send my request",
+    map_link: "Open in Google Maps →",
+    // Blog
+    blog_eyebrow: "Himalayan Chronicles",
+    blog_h1: "The <em>Journal</em><br>of the Nepali",
+    blog_desc: "Ancestral recipes, spice portraits, travel journals and stories that nourish the soul as much as the palate.",
+    filter_all: "All Articles", filter_recettes: "Recipes",
+    filter_culture: "Culture & History", filter_epices: "Spices & Flavors",
+    filter_voyage: "Travel Journal",
+    newsletter_title: "Himalayan chronicles in your inbox",
+    newsletter_sub: "Recipes, stories and spice secrets — once a month, no more.",
+    newsletter_btn: "Subscribe",
+    art_back: "← Back to blog",
+    // Sticky CTA
+    sticky_call: "Call", sticky_book: "Book",
+    sticky_phone_aria: "Call the restaurant",
+    // Cookie
+    cookie_text: "This site uses cookies to improve your experience. By continuing to browse, you accept our <a href='#' data-i18n='cookie_link'>privacy policy</a>.",
+    cookie_link: "privacy policy",
+    cookie_decline: "Decline", cookie_accept: "Accept",
+    // Footer
+    footer_desc: "Traditional Nepali cuisine in the heart of Caen since 2018. An authentic Himalayan experience.",
+    footer_nav: "Navigation", footer_contact: "Contact", footer_hours_title: "Hours",
+    footer_menu: "Our Menu", footer_about: "Our Story",
+    footer_reservation: "Reservation",
+    fh1: "Tue – Thu: 12pm–2pm / 7pm–10pm",
+    fh2: "Fri – Sat: 12pm–2pm / 7pm–11pm",
+    fh3: "Sunday: 12pm–2pm / 7pm–9pm",
+    fh4: "Monday: Closed",
+    footer_copy: "© 2024 Le Népalais Caennais. All rights reserved."
+  }
+};
+
+let currentLang = localStorage.getItem('lang') || 'fr';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  window.currentLang = lang;
+
+  // ── Update <html> lang attribute + title ──
+  document.documentElement.lang = lang;
+
+  // ── Update lang switcher UI ──
+  const flag       = lang === 'fr' ? '🇫🇷' : '🇬🇧';
+  const flagEl     = document.getElementById('langFlag');
+  const labelEl    = document.getElementById('currentLang');
+  const btnEl      = document.getElementById('langBtn');
+  if (flagEl)  flagEl.textContent  = flag;
+  if (labelEl) labelEl.textContent = lang.toUpperCase();
+  if (btnEl)   btnEl.setAttribute('aria-expanded', 'false');
+  document.getElementById('langDropdown')?.classList.remove('open');
+
+  // Update dropdown active states
+  document.getElementById('langOptFr')?.classList.toggle('active', lang === 'fr');
+  document.getElementById('langOptEn')?.classList.toggle('active', lang === 'en');
+  document.getElementById('langOptFr')?.setAttribute('aria-selected', lang === 'fr' ? 'true' : 'false');
+  document.getElementById('langOptEn')?.setAttribute('aria-selected', lang === 'en' ? 'true' : 'false');
+
+  // Update mobile pills
+  document.getElementById('mobileLangFr')?.classList.toggle('active', lang === 'fr');
+  document.getElementById('mobileLangEn')?.classList.toggle('active', lang === 'en');
+  document.getElementById('mobileLangFr')?.setAttribute('aria-pressed', lang === 'fr' ? 'true' : 'false');
+  document.getElementById('mobileLangEn')?.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+
+  const t = translations[lang];
+
+  // ── Translate all [data-i18n] elements ──
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (!t[key]) return;
+    // Buttons/inputs with just text content
+    const tag = el.tagName.toLowerCase();
+    if (tag === 'input' || tag === 'textarea') {
+      // handled via data-i18n-placeholder
+    } else if (tag === 'a' && el.closest('.cookie-text')) {
+      el.textContent = t[key];
+    } else {
+      el.innerHTML = t[key];
+    }
+  });
+
+  // ── Translate [data-i18n-placeholder] ──
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key]) el.placeholder = t[key];
+  });
+
+  // ── Translate [data-i18n-aria] ──
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria');
+    if (t[key]) el.setAttribute('aria-label', t[key]);
+  });
+
+  // ── Nav links by data-page ──
+  document.querySelectorAll('.nav-link[data-page]').forEach(el => {
+    const page = el.dataset.page;
+    const key  = 'nav_' + page;
+    if (t[key]) el.textContent = t[key];
+  });
+  const ctaLink = document.querySelector('.nav-link.nav-cta');
+  if (ctaLink && t.nav_cta) ctaLink.textContent = t.nav_cta;
+
+  // ── Form placeholders (manually, since labels cover them) ──
+  const placeholders = {
+    'res-name':   lang === 'fr' ? 'Jean Dupont'     : 'John Smith',
+    'res-email':  lang === 'fr' ? 'jean@exemple.fr' : 'john@example.co.uk',
+    'res-phone':  lang === 'fr' ? '06 XX XX XX XX'  : '+44 7XXX XXXXXX',
+    'res-notes':  lang === 'fr' ? 'Allergies, anniversaire, régime particulier, chaise haute…'
+                                : 'Allergies, birthday, dietary requirements, high chair…'
+  };
+  Object.entries(placeholders).forEach(([id, ph]) => {
+    const el = document.getElementById(id);
+    if (el) el.placeholder = ph;
+  });
+
+  // ── Select options ──
+  const guestsEl = document.getElementById('res-guests');
+  if (guestsEl) {
+    const opts = lang === 'fr'
+      ? ['Sélectionner…','1 personne','2 personnes','3 personnes','4 personnes','5 personnes','6 personnes','7+ personnes']
+      : ['Select…','1 person','2 people','3 people','4 people','5 people','6 people','7+ people'];
+    Array.from(guestsEl.options).forEach((opt, i) => { if (opts[i]) opt.text = opts[i]; });
+  }
+  const timeEl = document.getElementById('res-time');
+  if (timeEl) {
+    const groups = timeEl.querySelectorAll('optgroup');
+    if (groups[0]) groups[0].label = lang === 'fr' ? 'Déjeuner' : 'Lunch';
+    if (groups[1]) groups[1].label = lang === 'fr' ? 'Dîner'    : 'Dinner';
+    const firstOpt = timeEl.options[0];
+    if (firstOpt) firstOpt.text = lang === 'fr' ? 'Sélectionner…' : 'Select…';
+  }
+
+  // ── Sticky CTA status recalculate ──
+  if (typeof getRestaurantStatus === 'function') {
+    const status = getRestaurantStatus();
+    const statusEl = document.getElementById('stickyStatus');
+    const hoursEl  = document.getElementById('stickyHours');
+    if (statusEl) {
+      statusEl.textContent = lang === 'fr'
+        ? (status.open ? 'Ouvert maintenant' : status.label)
+        : (status.open ? 'Open now'          : (status.label === 'Fermé aujourd\'hui' ? 'Closed today' : status.label === 'Actuellement fermé' ? 'Currently closed' : 'Closed tonight'));
+    }
+    if (hoursEl && status.hours) {
+      hoursEl.textContent = lang === 'en'
+        ? status.hours.replace('Fermeture à','Closes at').replace('Réouverture à','Opens at').replace('h00','').replace('Prochaine ouverture demain','Next opening tomorrow').replace('Fermé ce soir','Closed tonight').replace("Ouverture demain à 12h00","Opens tomorrow at noon")
+        : status.hours;
+    }
+  }
+
+  // ── Hours table — rebuild with translated day names ──
+  const hoursContainer = document.getElementById('hours-rows');
+  if (hoursContainer) {
+    const daysFr = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+    const daysEn = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const todayIdx = new Date().getDay();
+    const scheduleData = {
+      1: null,
+      2: ['12:00–14:00','19:00–22:00'], 3: ['12:00–14:00','19:00–22:00'],
+      4: ['12:00–14:00','19:00–22:00'], 5: ['12:00–14:00','19:00–23:00'],
+      6: ['12:00–14:00','19:00–23:00'], 0: ['12:00–14:00','19:00–21:00']
+    };
+    // Map day order: Mon→Sun
+    const orderedIdx = [1,2,3,4,5,6,0];
+    hoursContainer.innerHTML = '';
+    orderedIdx.forEach(dayIdx => {
+      const hours = scheduleData[dayIdx];
+      const dayName = lang === 'fr' ? daysFr[dayIdx] : daysEn[dayIdx];
+      const isToday = dayIdx === todayIdx;
+      const row = document.createElement('div');
+      row.className = 'hours-row' + (isToday ? ' today' : '');
+      if (hours) {
+        const timeStr = lang === 'en'
+          ? hours.map(h => h.replace('12:00','12pm').replace('14:00','2pm').replace('19:00','7pm').replace('22:00','10pm').replace('23:00','11pm').replace('21:00','9pm').replace('–','–')).join(' · ')
+          : hours.join(' · ');
+        row.innerHTML = `<span class="hours-day">${dayName}</span><span class="hours-time">${timeStr}</span>`;
+      } else {
+        row.innerHTML = `<span class="hours-day">${dayName}</span><span class="hours-closed">${lang === 'fr' ? 'Fermé' : 'Closed'}</span>`;
+      }
+      hoursContainer.appendChild(row);
+    });
+  }
+
+  // ── document title + meta description ──
+  if (lang === 'en') {
+    document.title = 'Nepali Restaurant Caen | Traditional Cuisine | Le Népalais Caennais';
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.content = 'Discover traditional Nepali cuisine in Caen. Le Népalais Caennais offers authentic dishes prepared with Himalayan spices. Booking recommended.';
+  } else {
+    document.title = 'Restaurant Nepali Caen | Cuisine Traditionnelle | Le Népalais Caennais';
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.content = 'Découvrez la cuisine traditionnelle népalaise à Caen. Le Népalais Caennais vous propose des plats authentiques préparés avec des épices himalayennes. Réservation recommandée.';
+  }
+
+  // ── Form submit button text reset if not disabled ──
+  const submitBtn = document.getElementById('formSubmitBtn');
+  if (submitBtn && !submitBtn.disabled) {
+    submitBtn.innerHTML = t.form_submit;
+  }
+}
+
+// Language dropdown toggle
+document.getElementById('langBtn').addEventListener('click', function(e) {
+  e.stopPropagation();
+  const dd = document.getElementById('langDropdown');
+  const open = dd.classList.toggle('open');
+  this.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+document.addEventListener('click', () => {
+  document.getElementById('langDropdown')?.classList.remove('open');
+  document.getElementById('langBtn')?.setAttribute('aria-expanded', 'false');
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.getElementById('langDropdown')?.classList.remove('open');
+    document.getElementById('langBtn')?.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// Init on load
+window.currentLang = currentLang;
+if (currentLang !== 'fr') setLang(currentLang);
+
+</script>
+</body>
+</html>
