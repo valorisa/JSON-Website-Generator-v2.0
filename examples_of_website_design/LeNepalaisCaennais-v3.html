@@ -2341,6 +2341,15 @@ footer {
   z-index: 0;
   overflow: hidden;
 }
+/* ════════════════════════════════════════
+   AMÉLIORATION 1 — VIDEO HERO + PARALLAX
+═══════════════════════════════════════════════ */
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
 .hero-video {
   width: 100%;
   height: 100%;
@@ -2363,6 +2372,30 @@ footer {
   inset: 0;
   background: radial-gradient(ellipse 70% 80% at 50% 50%, transparent 30%, hsla(22,30%,4%,0.65) 100%);
 }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  position: absolute;
+  inset: 0;
+}
+.hero-video.loaded { opacity: 1; }
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(135deg, hsla(22,30%,4%,0.88) 0%, hsla(20,25%,8%,0.55) 55%, hsla(22,30%,4%,0.82) 100%);
+  pointer-events: none;
+}
+.hero-video-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, transparent 30%, hsla(22,30%,4%,0.65) 100%);
+}
 
 /* Cinematic animated fallback — visible before/if video loads */
 @keyframes heroGlow {
@@ -2371,7 +2404,20 @@ footer {
   66%  { background: radial-gradient(ellipse 100% 55% at 66% 32%, hsl(18,58%,13%) 0%, hsl(22,15%,6%) 72%); }
   100% { background: radial-gradient(ellipse 82% 72% at 50% 46%, hsl(38,42%,17%) 0%, hsl(22,15%,6%) 60%); }
 }
-.hero-bg { animation: heroGlow 9s ease-in-out infinite alternate; }
+.hero-bg { 
+  animation: heroGlow 9s ease-in-out infinite alternate; 
+  position: relative;
+  z-index: 0;
+}
+
+/* Force video layer to stay below overlay */
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  display: block;
+}
 
 /* Parallax targets */
 .hero-deco   { will-change: transform; transition: transform 0.05s linear; }
