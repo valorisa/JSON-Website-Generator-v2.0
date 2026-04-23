@@ -651,7 +651,7 @@ Le champ `reconstruction_order` dans `meta.chunking` indique l'ordre de réassem
 
 ### Usage minimal
 
-Copier le contenu du prompt complet `json-website-generator-v2.md` et coller-le dans le system prompt d'un LLM compatible (chat, coder), puis envoyer en message utilisateur :
+Copier le contenu du prompt complet `json-website-generator-v2.md` et coller-le dans le system prompt d'un LLM compatible (ex : chat, coder), puis envoyer en message utilisateur :
 
 ```
 site vitrine pour un architecte d'intérieur parisien haut de gamme
